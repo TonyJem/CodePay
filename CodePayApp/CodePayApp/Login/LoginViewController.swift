@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
     lazy var phoneView: InputView = {
         let view = InputView()
         view.imageName = "phone"
-        view.labelTitle = "Phone number"
+        view.labelTitle = __("phone_title")
         
         self.view.addSubview(view)
         return view
@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
     lazy var passwordView: InputView = {
         let view = InputView()
         view.imageName = "lock"
-        view.labelTitle = "Password"
+        view.labelTitle = __("password_title")
         
         self.view.addSubview(view)
         return view
