@@ -3,13 +3,22 @@ import UIKit
 class LoginViewController: UIViewController {
     
     // MARK: - Views
-    lazy var personView: UIView = {
+    lazy var imageContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(named: "lightBlue")
         view.layer.cornerRadius = 45
         
         self.view.addSubview(view)
         return view
+    }()
+    
+    lazy var personImage: UIImageView = {
+        let imageName = "person.png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        
+        imageContainerView.addSubview(imageView)
+        return imageView
     }()
     
     lazy var loginLabel: UILabel = {
