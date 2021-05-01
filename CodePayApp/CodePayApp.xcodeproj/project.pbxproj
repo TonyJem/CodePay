@@ -15,6 +15,7 @@
 		3A06B382263D334B00E8C56E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3A06B381263D334B00E8C56E /* SnapKit */; };
 		3A06B386263D3DAB00E8C56E /* LoginViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B385263D3DAB00E8C56E /* LoginViewController+Constraints.swift */; };
 		3A06B39D263D870F00E8C56E /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B39C263D870F00E8C56E /* InputView.swift */; };
+		3A06B3A6263DA2F400E8C56E /* TextFieldContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3A5263DA2F400E8C56E /* TextFieldContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		3A06B35C263C80B100E8C56E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3A06B385263D3DAB00E8C56E /* LoginViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Constraints.swift"; sourceTree = "<group>"; };
 		3A06B39C263D870F00E8C56E /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		3A06B3A5263DA2F400E8C56E /* TextFieldContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				3A06B39C263D870F00E8C56E /* InputView.swift */,
+				3A06B3A5263DA2F400E8C56E /* TextFieldContainerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			files = (
 				3A06B386263D3DAB00E8C56E /* LoginViewController+Constraints.swift in Sources */,
 				3A06B39D263D870F00E8C56E /* InputView.swift in Sources */,
+				3A06B3A6263DA2F400E8C56E /* TextFieldContainerView.swift in Sources */,
 				3A06B35D263C80B100E8C56E /* LoginViewController.swift in Sources */,
 				3A06B345263C7B9400E8C56E /* AppDelegate.swift in Sources */,
 				3A06B347263C7B9400E8C56E /* SceneDelegate.swift in Sources */,

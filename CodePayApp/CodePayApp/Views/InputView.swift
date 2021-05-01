@@ -7,7 +7,6 @@ class InputView: UIView {
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel(frame: .zero)
-        lbl.textAlignment = .right
         lbl.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         lbl.textColor = UIColor(named: "lightBlue")
         lbl.text = titleLabelText
@@ -31,9 +30,8 @@ class InputView: UIView {
         return imageView
     }()
     
-    lazy var textFieldContainer: UIView = {
-        let view = UIView()
-        view.backgroundColor = .systemGreen
+    lazy var textFieldContainer: TextFieldContainerView = {
+        let view = TextFieldContainerView()
         
         self.addSubview(view)
         return view
@@ -47,12 +45,10 @@ class InputView: UIView {
         self.addSubview(view)
         return view
     }()
-
 }
 
 extension InputView {
     func setupConstraints() {
-        
         titleLabel.snp.makeConstraints { make in
             make.height.equalTo(20)
             make.top.leading.equalToSuperview()
@@ -80,5 +76,6 @@ extension InputView {
             make.trailing.equalToSuperview()
             make.bottom.equalTo(bottomLineView.snp.top).inset(-4)
         }
+        textFieldContainer.setupConstraints()
     }
 }
