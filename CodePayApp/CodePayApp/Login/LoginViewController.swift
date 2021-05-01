@@ -46,6 +46,17 @@ class LoginViewController: UIViewController {
         return btn
     }()
     
+    lazy var registerButton: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.setTitle("Create a New Account", for: .normal)
+        btn.setTitleColor(.systemGray, for: .normal)
+        btn.titleLabel?.font = .systemFont(ofSize: 15, weight: .medium)
+        btn.addTarget(self, action: #selector(registerButtonDidTap(_:)), for: .touchUpInside)
+        
+        self.view.addSubview(btn)
+        return btn
+    }()
+    
     // MARK:  - Setup
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +68,10 @@ class LoginViewController: UIViewController {
     
     
     @objc func submitButtonDidTap(_ sender: UIButton) {
-      print("🟢 Submit button in Login Scene did Tap")
+      print("🟢 'Submit' button in Login Scene did Tap")
+    }
+    
+    @objc func registerButtonDidTap(_ sender: UIButton) {
+      print("🟣 'SignIn' button in Login Scene did Tap")
     }
 }

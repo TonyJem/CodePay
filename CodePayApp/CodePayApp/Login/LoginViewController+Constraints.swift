@@ -31,6 +31,13 @@ extension LoginViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(100)
             make.centerX.equalToSuperview()
         }
+        
+        registerButton.snp.makeConstraints { make in
+            make.height.equalTo(40)
+            make.width.lessThanOrEqualTo(300)
+            make.top.equalTo(submitButton.snp.bottom).offset(20)
+            make.centerX.equalToSuperview()
+        }
     }
 }
 
