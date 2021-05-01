@@ -22,6 +22,7 @@
 		3A06B3B9263DE60500E8C56E /* CodePayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3B8263DE60500E8C56E /* CodePayButton.swift */; };
 		3A06B3BC263DE64800E8C56E /* CodePayButtonDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3BB263DE64800E8C56E /* CodePayButtonDTO.swift */; };
 		3A06B3C0263DEEB700E8C56E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A06B3BF263DEEB700E8C56E /* Localizable.strings */; };
+		3A06B3C4263DF04B00E8C56E /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3C3263DF04B00E8C56E /* Localizations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		3A06B3B8263DE60500E8C56E /* CodePayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayButton.swift; sourceTree = "<group>"; };
 		3A06B3BB263DE64800E8C56E /* CodePayButtonDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayButtonDTO.swift; sourceTree = "<group>"; };
 		3A06B3BF263DEEB700E8C56E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		3A06B3C3263DF04B00E8C56E /* Localizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 		3A06B3C2263DEFD400E8C56E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				3A06B3C3263DF04B00E8C56E /* Localizations.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			files = (
 				3A06B3BC263DE64800E8C56E /* CodePayButtonDTO.swift in Sources */,
 				3A06B386263D3DAB00E8C56E /* LoginViewController+Constraints.swift in Sources */,
+				3A06B3C4263DF04B00E8C56E /* Localizations.swift in Sources */,
 				3A06B3B9263DE60500E8C56E /* CodePayButton.swift in Sources */,
 				3A06B3B5263DD75900E8C56E /* Colors.swift in Sources */,
 				3A06B39D263D870F00E8C56E /* InputView.swift in Sources */,

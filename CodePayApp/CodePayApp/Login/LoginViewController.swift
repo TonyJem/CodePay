@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
     
     lazy var loginLabel: CodePayLabel = {
         let lbl = CodePayLabel(frame: .zero)
-        lbl.setup(title: "Login", dto: CodePayLabelDTO.heading)
+        lbl.setup(title: __("login_heading"), dto: CodePayLabelDTO.heading)
         lbl.textAlignment = .center
         
         self.view.addSubview(lbl)
@@ -50,12 +50,10 @@ class LoginViewController: UIViewController {
     
     lazy var submitButton: UIButton = {
         let btn = UIButton(type: .custom)
-        btn.layer.cornerRadius = 30
-        btn.backgroundColor = Colors.lightBlue
         btn.setTitle("Login", for: .normal)
-        
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 22, weight: .semibold)
+        btn.layer.cornerRadius = 30
         btn.backgroundColor = Colors.lightBlue
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(submitButtonDidTap(_:)), for: .touchUpInside)
