@@ -53,8 +53,10 @@ class LoginViewController: UIViewController {
         btn.layer.cornerRadius = 30
         btn.backgroundColor = Colors.lightBlue
         btn.setTitle("Login", for: .normal)
+        
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 22, weight: .semibold)
+        btn.backgroundColor = Colors.lightBlue
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(submitButtonDidTap(_:)), for: .touchUpInside)
         
