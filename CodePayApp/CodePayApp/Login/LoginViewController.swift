@@ -32,6 +32,13 @@ class LoginViewController: UIViewController {
         return lbl
     }()
     
+    lazy var phoneView: InputView = {
+       let view = InputView()
+        
+        self.view.addSubview(view)
+        return view
+    }()
+    
     lazy var submitButton: UIButton = {
         let btn = UIButton(type: .custom)
         btn.layer.cornerRadius = 30

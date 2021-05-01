@@ -25,6 +25,15 @@ extension LoginViewController {
             make.centerX.equalToSuperview()
         }
         
+        phoneView.snp.makeConstraints { make in
+            make.width.equalTo(300)
+            make.height.equalTo(70)
+            make.top.equalTo(loginLabel.snp.bottom).offset(50)
+            make.centerX.equalToSuperview()
+        }
+        
+        phoneView.setupConstraints()
+        
         submitButton.snp.makeConstraints { make in
             make.height.equalTo(60)
             make.width.equalTo(300)
