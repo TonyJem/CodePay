@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		3A06B34E263C7B9600E8C56E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A06B34D263C7B9600E8C56E /* Assets.xcassets */; };
 		3A06B351263C7B9600E8C56E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A06B34F263C7B9600E8C56E /* LaunchScreen.storyboard */; };
 		3A06B35D263C80B100E8C56E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B35C263C80B100E8C56E /* LoginViewController.swift */; };
+		3A06B382263D334B00E8C56E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3A06B381263D334B00E8C56E /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A06B382263D334B00E8C56E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = CodePayApp;
+			packageProductDependencies = (
+				3A06B381263D334B00E8C56E /* SnapKit */,
+			);
 			productName = CodePayApp;
 			productReference = 3A06B341263C7B9400E8C56E /* CodePayApp.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +115,9 @@
 				Base,
 			);
 			mainGroup = 3A06B338263C7B9400E8C56E;
+			packageReferences = (
+				3A06B380263D334B00E8C56E /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 3A06B342263C7B9400E8C56E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -333,6 +341,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A06B380263D334B00E8C56E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A06B381263D334B00E8C56E /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A06B380263D334B00E8C56E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3A06B339263C7B9400E8C56E /* Project object */;
 }
