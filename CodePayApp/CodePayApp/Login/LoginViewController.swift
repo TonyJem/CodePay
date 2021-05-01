@@ -9,20 +9,32 @@ class LoginViewController: UIViewController {
         view.layer.cornerRadius = 45
         
         self.view.addSubview(view)
-        
         return view
     }()
     
     lazy var loginLabel: UILabel = {
-        let label = UILabel(frame: .zero)
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
-        label.textColor = UIColor(named: "lightBlue")
-        label.text = "Login"
+        let lbl = UILabel(frame: .zero)
+        lbl.textAlignment = .center
+        lbl.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
+        lbl.textColor = UIColor(named: "lightBlue")
+        lbl.text = "Login"
         
-        self.view.addSubview(label)
+        self.view.addSubview(lbl)
+        return lbl
+    }()
+    
+    lazy var submitButton: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.layer.cornerRadius = 30
+        btn.backgroundColor = UIColor(named: "lightBlue")
+        btn.setTitle("Login", for: .normal)
+        btn.setTitleColor(.white, for: .normal)
+        btn.titleLabel?.font = .systemFont(ofSize: 22, weight: .semibold)
+        btn.showsTouchWhenHighlighted = true
+        btn.addTarget(self, action: #selector(submitButtonDidTap(_:)), for: .touchUpInside)
         
-        return label
+        self.view.addSubview(btn)
+        return btn
     }()
     
     // MARK:  - Setup
@@ -32,5 +44,10 @@ class LoginViewController: UIViewController {
         self.view.backgroundColor = .systemGray6
         
         setupConstraints()
+    }
+    
+    
+    @objc func submitButtonDidTap(_ sender: UIButton) {
+      print("🟢 Submit button in Login Scene did Tap")
     }
 }

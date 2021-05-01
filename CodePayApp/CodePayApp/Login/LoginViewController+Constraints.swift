@@ -2,6 +2,7 @@ import UIKit
 import SnapKit
 
 extension LoginViewController {
+    
     func setupConstraints() {
         personView.snp.makeConstraints { make in
             make.height.equalTo(90)
@@ -12,8 +13,15 @@ extension LoginViewController {
         
         loginLabel.snp.makeConstraints { make in
             make.height.equalTo(25)
-            make.width.equalTo(90)
+            make.width.equalTo(250)
             make.top.equalTo(personView.snp.bottom).offset(20)
+            make.centerX.equalToSuperview()
+        }
+        
+        submitButton.snp.makeConstraints { make in
+            make.height.equalTo(60)
+            make.width.equalTo(250)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(50)
             make.centerX.equalToSuperview()
         }
     }
