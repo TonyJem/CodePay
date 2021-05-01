@@ -5,7 +5,7 @@ class LoginViewController: UIViewController {
     // MARK: - Views
     lazy var personView: UIView = {
         let view = UIView()
-        view.backgroundColor = .green
+        view.backgroundColor = UIColor(named: "lightBlue")
         
         self.view.addSubview(view)
         
