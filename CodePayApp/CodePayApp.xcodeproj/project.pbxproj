@@ -21,6 +21,7 @@
 		3A06B3B5263DD75900E8C56E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3B4263DD75900E8C56E /* Colors.swift */; };
 		3A06B3B9263DE60500E8C56E /* CodePayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3B8263DE60500E8C56E /* CodePayButton.swift */; };
 		3A06B3BC263DE64800E8C56E /* CodePayButtonDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3BB263DE64800E8C56E /* CodePayButtonDTO.swift */; };
+		3A06B3C0263DEEB700E8C56E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A06B3BF263DEEB700E8C56E /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		3A06B3B4263DD75900E8C56E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3A06B3B8263DE60500E8C56E /* CodePayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayButton.swift; sourceTree = "<group>"; };
 		3A06B3BB263DE64800E8C56E /* CodePayButtonDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayButtonDTO.swift; sourceTree = "<group>"; };
+		3A06B3BF263DEEB700E8C56E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		3A06B343263C7B9400E8C56E /* CodePayApp */ = {
 			isa = PBXGroup;
 			children = (
+				3A06B3C2263DEFD400E8C56E /* Helpers */,
 				3A06B39B263D86D800E8C56E /* Views */,
 				3A06B390263D423B00E8C56E /* Login */,
 				3A06B38A263D415600E8C56E /* Resources */,
@@ -95,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				3A06B34D263C7B9600E8C56E /* Assets.xcassets */,
+				3A06B3BF263DEEB700E8C56E /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -152,6 +156,13 @@
 				3A06B3B1263DD67A00E8C56E /* CodePayLabelDTO.swift */,
 			);
 			path = Label;
+			sourceTree = "<group>";
+		};
+		3A06B3C2263DEFD400E8C56E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A06B351263C7B9600E8C56E /* LaunchScreen.storyboard in Resources */,
+				3A06B3C0263DEEB700E8C56E /* Localizable.strings in Resources */,
 				3A06B34E263C7B9600E8C56E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,5 @@
+// MARK: Login Scene
+"login_heading" = "Login";
+"phone_title" = "Phone number";
+"password_title" = "Password";
+
