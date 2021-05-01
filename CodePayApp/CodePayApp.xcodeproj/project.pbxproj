@@ -16,6 +16,9 @@
 		3A06B386263D3DAB00E8C56E /* LoginViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B385263D3DAB00E8C56E /* LoginViewController+Constraints.swift */; };
 		3A06B39D263D870F00E8C56E /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B39C263D870F00E8C56E /* InputView.swift */; };
 		3A06B3A6263DA2F400E8C56E /* TextFieldContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3A5263DA2F400E8C56E /* TextFieldContainerView.swift */; };
+		3A06B3AE263DD5F900E8C56E /* CodePayLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3AD263DD5F900E8C56E /* CodePayLabel.swift */; };
+		3A06B3B2263DD67A00E8C56E /* CodePayLabelDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3B1263DD67A00E8C56E /* CodePayLabelDTO.swift */; };
+		3A06B3B5263DD75900E8C56E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3B4263DD75900E8C56E /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		3A06B385263D3DAB00E8C56E /* LoginViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Constraints.swift"; sourceTree = "<group>"; };
 		3A06B39C263D870F00E8C56E /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		3A06B3A5263DA2F400E8C56E /* TextFieldContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldContainerView.swift; sourceTree = "<group>"; };
+		3A06B3AD263DD5F900E8C56E /* CodePayLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayLabel.swift; sourceTree = "<group>"; };
+		3A06B3B1263DD67A00E8C56E /* CodePayLabelDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayLabelDTO.swift; sourceTree = "<group>"; };
+		3A06B3B4263DD75900E8C56E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +107,45 @@
 		3A06B39B263D86D800E8C56E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3A06B3A9263DD3E800E8C56E /* UIElements */,
 				3A06B39C263D870F00E8C56E /* InputView.swift */,
 				3A06B3A5263DA2F400E8C56E /* TextFieldContainerView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3A06B3A9263DD3E800E8C56E /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				3A06B3AB263DD53E00E8C56E /* Button */,
+				3A06B3AC263DD54B00E8C56E /* Label */,
+				3A06B3AA263DD40200E8C56E /* TextField */,
+				3A06B3B4263DD75900E8C56E /* Colors.swift */,
+			);
+			path = UIElements;
+			sourceTree = "<group>";
+		};
+		3A06B3AA263DD40200E8C56E /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		3A06B3AB263DD53E00E8C56E /* Button */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		3A06B3AC263DD54B00E8C56E /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				3A06B3AD263DD5F900E8C56E /* CodePayLabel.swift */,
+				3A06B3B1263DD67A00E8C56E /* CodePayLabelDTO.swift */,
+			);
+			path = Label;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,10 +224,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A06B386263D3DAB00E8C56E /* LoginViewController+Constraints.swift in Sources */,
+				3A06B3B5263DD75900E8C56E /* Colors.swift in Sources */,
 				3A06B39D263D870F00E8C56E /* InputView.swift in Sources */,
 				3A06B3A6263DA2F400E8C56E /* TextFieldContainerView.swift in Sources */,
 				3A06B35D263C80B100E8C56E /* LoginViewController.swift in Sources */,
+				3A06B3B2263DD67A00E8C56E /* CodePayLabelDTO.swift in Sources */,
 				3A06B345263C7B9400E8C56E /* AppDelegate.swift in Sources */,
+				3A06B3AE263DD5F900E8C56E /* CodePayLabel.swift in Sources */,
 				3A06B347263C7B9400E8C56E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

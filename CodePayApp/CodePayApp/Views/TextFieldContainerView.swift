@@ -9,7 +9,7 @@ class TextFieldContainerView: UIView {
         let textField = UITextField(frame: .zero)
         textField.textAlignment = .left
         textField.font = UIFont.systemFont(ofSize: 17, weight: .medium)
-        textField.textColor = UIColor(named: "lightBlue")
+        textField.textColor = Colors.lightBlue
         textField.placeholder = placeholderText
         
         self.addSubview(textField)

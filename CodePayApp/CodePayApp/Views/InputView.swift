@@ -8,7 +8,7 @@ class InputView: UIView {
     lazy var titleLabel: UILabel = {
         let lbl = UILabel(frame: .zero)
         lbl.font = UIFont.systemFont(ofSize: 17, weight: .medium)
-        lbl.textColor = UIColor(named: "lightBlue")
+        lbl.textColor = Colors.lightBlue
         lbl.text = titleLabelText
         
         self.addSubview(lbl)
@@ -40,7 +40,7 @@ class InputView: UIView {
     
     lazy var bottomLineView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(named: "lightBlue")
+        view.backgroundColor = Colors.lightBlue
         
         self.addSubview(view)
         return view

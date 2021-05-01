@@ -5,7 +5,7 @@ class LoginViewController: UIViewController {
     // MARK: - Views
     lazy var imageContainerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(named: "lightBlue")
+        view.backgroundColor = Colors.lightBlue
         view.layer.cornerRadius = 45
         
         self.view.addSubview(view)
@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
         let lbl = UILabel(frame: .zero)
         lbl.textAlignment = .center
         lbl.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
-        lbl.textColor = UIColor(named: "lightBlue")
+        lbl.textColor = Colors.lightBlue
         lbl.text = "Login"
         
         self.view.addSubview(lbl)
@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
     lazy var phoneView: InputView = {
         let view = InputView()
         view.imageName = "phone"
-        view.titleLabelText = "Phone numbe"
+        view.titleLabelText = "Phone number"
         
         self.view.addSubview(view)
         return view
@@ -53,7 +53,7 @@ class LoginViewController: UIViewController {
     lazy var submitButton: UIButton = {
         let btn = UIButton(type: .custom)
         btn.layer.cornerRadius = 30
-        btn.backgroundColor = UIColor(named: "lightBlue")
+        btn.backgroundColor = Colors.lightBlue
         btn.setTitle("Login", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 22, weight: .semibold)
