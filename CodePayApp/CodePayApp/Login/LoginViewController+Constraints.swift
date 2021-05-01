@@ -7,21 +7,21 @@ extension LoginViewController {
         personView.snp.makeConstraints { make in
             make.height.equalTo(90)
             make.width.equalTo(90)
-            make.top.equalTo(view.safeAreaLayoutGuide).inset(50)
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(150)
             make.centerX.equalToSuperview()
         }
         
         loginLabel.snp.makeConstraints { make in
             make.height.equalTo(25)
-            make.width.equalTo(250)
+            make.width.equalTo(300)
             make.top.equalTo(personView.snp.bottom).offset(20)
             make.centerX.equalToSuperview()
         }
         
         submitButton.snp.makeConstraints { make in
             make.height.equalTo(60)
-            make.width.equalTo(250)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(50)
+            make.width.equalTo(300)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(100)
             make.centerX.equalToSuperview()
         }
     }
