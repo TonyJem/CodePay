@@ -9,24 +9,22 @@
 /* Begin PBXBuildFile section */
 		3A06B345263C7B9400E8C56E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B344263C7B9400E8C56E /* AppDelegate.swift */; };
 		3A06B347263C7B9400E8C56E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B346263C7B9400E8C56E /* SceneDelegate.swift */; };
-		3A06B349263C7B9400E8C56E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B348263C7B9400E8C56E /* ViewController.swift */; };
 		3A06B34E263C7B9600E8C56E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A06B34D263C7B9600E8C56E /* Assets.xcassets */; };
 		3A06B351263C7B9600E8C56E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A06B34F263C7B9600E8C56E /* LaunchScreen.storyboard */; };
 		3A06B35D263C80B100E8C56E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B35C263C80B100E8C56E /* LoginViewController.swift */; };
 		3A06B382263D334B00E8C56E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3A06B381263D334B00E8C56E /* SnapKit */; };
-		3A06B386263D3DAB00E8C56E /* Login+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B385263D3DAB00E8C56E /* Login+Constraints.swift */; };
+		3A06B386263D3DAB00E8C56E /* LoginViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B385263D3DAB00E8C56E /* LoginViewController+Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3A06B341263C7B9400E8C56E /* CodePayApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodePayApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A06B344263C7B9400E8C56E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A06B346263C7B9400E8C56E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3A06B348263C7B9400E8C56E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3A06B34D263C7B9600E8C56E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A06B350263C7B9600E8C56E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A06B352263C7B9600E8C56E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A06B35C263C80B100E8C56E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		3A06B385263D3DAB00E8C56E /* Login+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login+Constraints.swift"; sourceTree = "<group>"; };
+		3A06B385263D3DAB00E8C56E /* LoginViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Constraints.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,16 +58,39 @@
 		3A06B343263C7B9400E8C56E /* CodePayApp */ = {
 			isa = PBXGroup;
 			children = (
-				3A06B344263C7B9400E8C56E /* AppDelegate.swift */,
-				3A06B346263C7B9400E8C56E /* SceneDelegate.swift */,
-				3A06B35C263C80B100E8C56E /* LoginViewController.swift */,
-				3A06B385263D3DAB00E8C56E /* Login+Constraints.swift */,
-				3A06B348263C7B9400E8C56E /* ViewController.swift */,
-				3A06B34D263C7B9600E8C56E /* Assets.xcassets */,
+				3A06B390263D423B00E8C56E /* Login */,
+				3A06B38A263D415600E8C56E /* Resources */,
+				3A06B388263D411A00E8C56E /* Delegate */,
 				3A06B34F263C7B9600E8C56E /* LaunchScreen.storyboard */,
 				3A06B352263C7B9600E8C56E /* Info.plist */,
 			);
 			path = CodePayApp;
+			sourceTree = "<group>";
+		};
+		3A06B388263D411A00E8C56E /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				3A06B344263C7B9400E8C56E /* AppDelegate.swift */,
+				3A06B346263C7B9400E8C56E /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		3A06B38A263D415600E8C56E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3A06B34D263C7B9600E8C56E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3A06B390263D423B00E8C56E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3A06B35C263C80B100E8C56E /* LoginViewController.swift */,
+				3A06B385263D3DAB00E8C56E /* LoginViewController+Constraints.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,9 +168,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A06B386263D3DAB00E8C56E /* Login+Constraints.swift in Sources */,
+				3A06B386263D3DAB00E8C56E /* LoginViewController+Constraints.swift in Sources */,
 				3A06B35D263C80B100E8C56E /* LoginViewController.swift in Sources */,
-				3A06B349263C7B9400E8C56E /* ViewController.swift in Sources */,
 				3A06B345263C7B9400E8C56E /* AppDelegate.swift in Sources */,
 				3A06B347263C7B9400E8C56E /* SceneDelegate.swift in Sources */,
 			);
