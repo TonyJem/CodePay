@@ -9,6 +9,13 @@ extension LoginViewController {
             make.top.equalTo(view.safeAreaLayoutGuide).inset(50)
             make.centerX.equalToSuperview()
         }
+        
+        loginLabel.snp.makeConstraints { make in
+            make.height.equalTo(25)
+            make.width.equalTo(90)
+            make.top.equalTo(personView.snp.bottom).offset(20)
+            make.centerX.equalToSuperview()
+        }
     }
 }
 
