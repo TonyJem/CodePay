@@ -2,8 +2,8 @@ import UIKit
 
 class InputView: UIView {
     
-    var imageName = "phone.png"
-    var titleLabelText = "Phone number"
+    var imageName = ""
+    var titleLabelText = ""
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel(frame: .zero)

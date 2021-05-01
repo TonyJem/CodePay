@@ -33,14 +33,16 @@ class LoginViewController: UIViewController {
     }()
     
     lazy var phoneView: InputView = {
-       let view = InputView()
+        let view = InputView()
+        view.imageName = "phone"
+        view.titleLabelText = "Phone numbe"
         
         self.view.addSubview(view)
         return view
     }()
     
     lazy var passwordView: InputView = {
-       let view = InputView()
+        let view = InputView()
         view.imageName = "lock"
         view.titleLabelText = "Password"
         
@@ -84,10 +86,10 @@ class LoginViewController: UIViewController {
     
     
     @objc func submitButtonDidTap(_ sender: UIButton) {
-      print("🟢 'Submit' button in Login Scene did Tap")
+        print("🟢 'Submit' button in Login Scene did Tap")
     }
     
     @objc func registerButtonDidTap(_ sender: UIButton) {
-      print("🟣 'SignIn' button in Login Scene did Tap")
+        print("🟣 'SignIn' button in Login Scene did Tap")
     }
 }
