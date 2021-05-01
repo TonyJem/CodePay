@@ -21,12 +21,10 @@ class LoginViewController: UIViewController {
         return imageView
     }()
     
-    lazy var loginLabel: UILabel = {
-        let lbl = UILabel(frame: .zero)
+    lazy var loginLabel: CodePayLabel = {
+        let lbl = CodePayLabel(frame: .zero)
+        lbl.setup(title: "Login", dto: CodePayLabelDTO.heading)
         lbl.textAlignment = .center
-        lbl.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
-        lbl.textColor = Colors.lightBlue
-        lbl.text = "Login"
         
         self.view.addSubview(lbl)
         return lbl
