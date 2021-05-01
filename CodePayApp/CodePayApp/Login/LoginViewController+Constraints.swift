@@ -7,7 +7,7 @@ extension LoginViewController {
         imageContainerView.snp.makeConstraints { make in
             make.height.equalTo(90)
             make.width.equalTo(90)
-            make.top.equalTo(view.safeAreaLayoutGuide).inset(150)
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(100)
             make.centerX.equalToSuperview()
         }
         
@@ -28,11 +28,20 @@ extension LoginViewController {
         phoneView.snp.makeConstraints { make in
             make.width.equalTo(300)
             make.height.equalTo(70)
-            make.top.equalTo(loginLabel.snp.bottom).offset(50)
+            make.top.equalTo(loginLabel.snp.bottom).offset(70)
             make.centerX.equalToSuperview()
         }
         
         phoneView.setupConstraints()
+        
+        passwordView.snp.makeConstraints { make in
+            make.width.equalTo(300)
+            make.height.equalTo(70)
+            make.top.equalTo(phoneView.snp.bottom).offset(25)
+            make.centerX.equalToSuperview()
+        }
+        
+        passwordView.setupConstraints()
         
         submitButton.snp.makeConstraints { make in
             make.height.equalTo(60)

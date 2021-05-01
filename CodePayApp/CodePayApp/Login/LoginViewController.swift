@@ -39,6 +39,15 @@ class LoginViewController: UIViewController {
         return view
     }()
     
+    lazy var passwordView: InputView = {
+       let view = InputView()
+        view.imageName = "lock"
+        view.titleLabelText = "Password"
+        
+        self.view.addSubview(view)
+        return view
+    }()
+    
     lazy var submitButton: UIButton = {
         let btn = UIButton(type: .custom)
         btn.layer.cornerRadius = 30
