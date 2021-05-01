@@ -3,13 +3,11 @@ import UIKit
 class InputView: UIView {
     
     var imageName = ""
-    var titleLabelText = ""
+    var labelTitle = ""
     
-    lazy var titleLabel: UILabel = {
-        let lbl = UILabel(frame: .zero)
-        lbl.font = UIFont.systemFont(ofSize: 17, weight: .medium)
-        lbl.textColor = Colors.lightBlue
-        lbl.text = titleLabelText
+    lazy var titleLabel: CodePayLabel = {
+        let lbl = CodePayLabel(frame: .zero)
+        lbl.setup(title: labelTitle, dto: CodePayLabelDTO.title)
         
         self.addSubview(lbl)
         return lbl
