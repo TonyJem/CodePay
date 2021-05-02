@@ -25,6 +25,7 @@
 		3A06B3C4263DF04B00E8C56E /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3C3263DF04B00E8C56E /* Localizations.swift */; };
 		3A06B3C8263E839100E8C56E /* InputViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3C7263E839100E8C56E /* InputViewType.swift */; };
 		3A47B92E263E9C9E0085477E /* PhoneInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47B92D263E9C9E0085477E /* PhoneInputView.swift */; };
+		3A47B931263EA04B0085477E /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47B930263EA04B0085477E /* PasswordInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		3A06B3C3263DF04B00E8C56E /* Localizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizations.swift; sourceTree = "<group>"; };
 		3A06B3C7263E839100E8C56E /* InputViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewType.swift; sourceTree = "<group>"; };
 		3A47B92D263E9C9E0085477E /* PhoneInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInputView.swift; sourceTree = "<group>"; };
+		3A47B930263EA04B0085477E /* PasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				3A06B39C263D870F00E8C56E /* InputView.swift */,
 				3A06B3C7263E839100E8C56E /* InputViewType.swift */,
 				3A47B92D263E9C9E0085477E /* PhoneInputView.swift */,
+				3A47B930263EA04B0085477E /* PasswordInputView.swift */,
 			);
 			path = InputView;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A06B3BC263DE64800E8C56E /* CodePayButtonDTO.swift in Sources */,
+				3A47B931263EA04B0085477E /* PasswordInputView.swift in Sources */,
 				3A06B386263D3DAB00E8C56E /* LoginViewController+Constraints.swift in Sources */,
 				3A06B3C4263DF04B00E8C56E /* Localizations.swift in Sources */,
 				3A06B3B9263DE60500E8C56E /* CodePayButton.swift in Sources */,

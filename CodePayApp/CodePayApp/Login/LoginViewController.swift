@@ -36,9 +36,8 @@ class LoginViewController: UIViewController {
         return view
     }()
     
-    lazy var passwordView: InputView = {
-        let view = InputView()
-        view.type = .password
+    lazy var passwordView: PasswordInputView = {
+        let view = PasswordInputView()
         view.textFieldContainer.placeholderText = __("password_placeholder")
         view.textFieldContainer.imageName = "passwordShow"
         
