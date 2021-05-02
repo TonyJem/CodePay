@@ -68,6 +68,8 @@ class LoginViewController: UIViewController {
         self.view.backgroundColor = Colors.loginSceneBackground
         
         setupConstraints()
+        
+        observeKeyboardNotifications()
     }
     
     // MARK:  - Actions
