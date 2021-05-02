@@ -3,6 +3,7 @@ import UIKit
 class PasswordView: UIView {
     
     private var type: InputViewType = .password
+    
     private var passwordIsVisible = false {
         didSet {
             if passwordIsVisible {
@@ -12,6 +13,7 @@ class PasswordView: UIView {
                 let image = UIImage(named: "passwordShow")
                 visibilityButton.setImage(image, for: .normal)
             }
+            textField.isSecureTextEntry = !passwordIsVisible
         }
     }
     
@@ -44,12 +46,11 @@ class PasswordView: UIView {
         return view
     }()
     
-    lazy var textField: UITextField = {
-        let textField = UITextField(frame: .zero)
-        textField.textAlignment = .left
-        textField.font = UIFont.systemFont(ofSize: 17, weight: .medium)
-        textField.textColor = Colors.lightBlue
+    lazy var textField: CodePayTextField = {
+        let textField = CodePayTextField(frame: .zero)
+        textField.setup(title: "", dto: CodePayTextFieldDTO.regular)
         textField.placeholder = type.placeholder
+        textField.isSecureTextEntry = true
         
         textFieldContainer.addSubview(textField)
         return textField

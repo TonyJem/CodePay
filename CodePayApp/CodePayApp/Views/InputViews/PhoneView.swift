@@ -26,11 +26,9 @@ class PhoneView: UIView {
         return imageView
     }()
     
-    lazy var textField: UITextField = {
-        let textField = UITextField(frame: .zero)
-        textField.textAlignment = .left
-        textField.font = UIFont.systemFont(ofSize: 17, weight: .medium)
-        textField.textColor = Colors.lightBlue
+    lazy var textField: CodePayTextField = {
+        let textField = CodePayTextField(frame: .zero)
+        textField.setup(title: "", dto: CodePayTextFieldDTO.regular)
         textField.placeholder = type.placeholder
         
         self.addSubview(textField)
