@@ -1,14 +1,11 @@
 import UIKit
 
 enum InputViewType {
-    case empty
     case phone
     case password
     
     var imageName: String {
         switch self {
-        case .empty:
-            return ""
         case .phone:
             return "phone"
         case .password:
@@ -16,14 +13,21 @@ enum InputViewType {
         }
     }
     
-    var labelTitle: String {
+    var title: String {
         switch self {
-        case .empty:
-            return ""
         case .phone:
             return __("phone_title")
         case .password:
             return __("password_title")
+        }
+    }
+    
+    var placeholder: String {
+        switch self {
+        case .phone:
+            return __("phone_placeholder")
+        case .password:
+            return __("password_placeholder")
         }
     }
 }

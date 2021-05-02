@@ -14,8 +14,6 @@
 		3A06B35D263C80B100E8C56E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B35C263C80B100E8C56E /* LoginViewController.swift */; };
 		3A06B382263D334B00E8C56E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3A06B381263D334B00E8C56E /* SnapKit */; };
 		3A06B386263D3DAB00E8C56E /* LoginViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B385263D3DAB00E8C56E /* LoginViewController+Constraints.swift */; };
-		3A06B39D263D870F00E8C56E /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B39C263D870F00E8C56E /* InputView.swift */; };
-		3A06B3A6263DA2F400E8C56E /* TextFieldContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3A5263DA2F400E8C56E /* TextFieldContainerView.swift */; };
 		3A06B3AE263DD5F900E8C56E /* CodePayLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3AD263DD5F900E8C56E /* CodePayLabel.swift */; };
 		3A06B3B2263DD67A00E8C56E /* CodePayLabelDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3B1263DD67A00E8C56E /* CodePayLabelDTO.swift */; };
 		3A06B3B5263DD75900E8C56E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3B4263DD75900E8C56E /* Colors.swift */; };
@@ -24,9 +22,8 @@
 		3A06B3C0263DEEB700E8C56E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A06B3BF263DEEB700E8C56E /* Localizable.strings */; };
 		3A06B3C4263DF04B00E8C56E /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3C3263DF04B00E8C56E /* Localizations.swift */; };
 		3A06B3C8263E839100E8C56E /* InputViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3C7263E839100E8C56E /* InputViewType.swift */; };
-		3A47B92E263E9C9E0085477E /* PhoneInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47B92D263E9C9E0085477E /* PhoneInputView.swift */; };
-		3A47B931263EA04B0085477E /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47B930263EA04B0085477E /* PasswordInputView.swift */; };
-		3AF7B282263ED1EE007233A4 /* PhoneTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7B281263ED1EE007233A4 /* PhoneTextFieldView.swift */; };
+		3AF7B286263EE1BB007233A4 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7B285263EE1BB007233A4 /* PhoneView.swift */; };
+		3AF7B28B263EE711007233A4 /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7B28A263EE711007233A4 /* PasswordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +35,6 @@
 		3A06B352263C7B9600E8C56E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A06B35C263C80B100E8C56E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3A06B385263D3DAB00E8C56E /* LoginViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Constraints.swift"; sourceTree = "<group>"; };
-		3A06B39C263D870F00E8C56E /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
-		3A06B3A5263DA2F400E8C56E /* TextFieldContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldContainerView.swift; sourceTree = "<group>"; };
 		3A06B3AD263DD5F900E8C56E /* CodePayLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayLabel.swift; sourceTree = "<group>"; };
 		3A06B3B1263DD67A00E8C56E /* CodePayLabelDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayLabelDTO.swift; sourceTree = "<group>"; };
 		3A06B3B4263DD75900E8C56E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -48,9 +43,8 @@
 		3A06B3BF263DEEB700E8C56E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		3A06B3C3263DF04B00E8C56E /* Localizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizations.swift; sourceTree = "<group>"; };
 		3A06B3C7263E839100E8C56E /* InputViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewType.swift; sourceTree = "<group>"; };
-		3A47B92D263E9C9E0085477E /* PhoneInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInputView.swift; sourceTree = "<group>"; };
-		3A47B930263EA04B0085477E /* PasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
-		3AF7B281263ED1EE007233A4 /* PhoneTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextFieldView.swift; sourceTree = "<group>"; };
+		3AF7B285263EE1BB007233A4 /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
+		3AF7B28A263EE711007233A4 /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,9 +120,7 @@
 		3A06B39B263D86D800E8C56E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3A06B3CE263E892F00E8C56E /* InputView */,
-				3A06B3A5263DA2F400E8C56E /* TextFieldContainerView.swift */,
-				3AF7B281263ED1EE007233A4 /* PhoneTextFieldView.swift */,
+				3A06B3CE263E892F00E8C56E /* InputViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,15 +169,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		3A06B3CE263E892F00E8C56E /* InputView */ = {
+		3A06B3CE263E892F00E8C56E /* InputViews */ = {
 			isa = PBXGroup;
 			children = (
-				3A06B39C263D870F00E8C56E /* InputView.swift */,
 				3A06B3C7263E839100E8C56E /* InputViewType.swift */,
-				3A47B92D263E9C9E0085477E /* PhoneInputView.swift */,
-				3A47B930263EA04B0085477E /* PasswordInputView.swift */,
+				3AF7B285263EE1BB007233A4 /* PhoneView.swift */,
+				3AF7B28A263EE711007233A4 /* PasswordView.swift */,
 			);
-			path = InputView;
+			path = InputViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,16 +256,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A06B3BC263DE64800E8C56E /* CodePayButtonDTO.swift in Sources */,
-				3AF7B282263ED1EE007233A4 /* PhoneTextFieldView.swift in Sources */,
-				3A47B931263EA04B0085477E /* PasswordInputView.swift in Sources */,
+				3AF7B28B263EE711007233A4 /* PasswordView.swift in Sources */,
 				3A06B386263D3DAB00E8C56E /* LoginViewController+Constraints.swift in Sources */,
 				3A06B3C4263DF04B00E8C56E /* Localizations.swift in Sources */,
 				3A06B3B9263DE60500E8C56E /* CodePayButton.swift in Sources */,
 				3A06B3B5263DD75900E8C56E /* Colors.swift in Sources */,
-				3A06B39D263D870F00E8C56E /* InputView.swift in Sources */,
-				3A06B3A6263DA2F400E8C56E /* TextFieldContainerView.swift in Sources */,
+				3AF7B286263EE1BB007233A4 /* PhoneView.swift in Sources */,
 				3A06B35D263C80B100E8C56E /* LoginViewController.swift in Sources */,
-				3A47B92E263E9C9E0085477E /* PhoneInputView.swift in Sources */,
 				3A06B3B2263DD67A00E8C56E /* CodePayLabelDTO.swift in Sources */,
 				3A06B345263C7B9400E8C56E /* AppDelegate.swift in Sources */,
 				3A06B3C8263E839100E8C56E /* InputViewType.swift in Sources */,

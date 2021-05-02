@@ -31,7 +31,6 @@ extension LoginViewController {
             make.top.equalTo(loginLabel.snp.bottom).offset(70)
             make.centerX.equalToSuperview()
         }
-        
         phoneView.setupConstraints()
         
         passwordView.snp.makeConstraints { make in
@@ -40,7 +39,6 @@ extension LoginViewController {
             make.top.equalTo(phoneView.snp.bottom).offset(25)
             make.centerX.equalToSuperview()
         }
-        
         passwordView.setupConstraints()
         
         submitButton.snp.makeConstraints { make in
@@ -58,24 +56,3 @@ extension LoginViewController {
         }
     }
 }
-
-// MARK:  - SnapKit Constraints Examples
-/*
- make.width.equalToSuperview().multipliedBy(0.45)
- 
- make.width.equalTo(90)
- 
- make.height.equalTo(45)
- 
- make.top.equalTo(viewProgress.snp.bottom).offset(32)
- 
- make.centerX.equalToSuperview()
- 
- make.top.bottom.equalTo(view.safeAreaLayoutGuide).inset(16)
- 
- make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
- 
- make.edges.equalToSuperview().inset(16)
- 
- make.edges.equalTo(imageContainerView).inset(16)
- */
