@@ -13,9 +13,7 @@ class LoginViewController: UIViewController {
     }()
     
     lazy var personImage: UIImageView = {
-        let imageName = "person.png"
-        let image = UIImage(named: imageName)
-        let imageView = UIImageView(image: image!)
+        let imageView = UIImageView(image: UIImage(imageLiteralResourceName: "person"))
         
         imageContainerView.addSubview(imageView)
         return imageView

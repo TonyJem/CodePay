@@ -20,8 +20,7 @@ class InputView: UIView {
     }()
     
     lazy var iconImageView: UIImageView = {
-        let image = UIImage(named: type.imageName)
-        let imageView = UIImageView(image: image!)
+        let imageView = UIImageView(image: UIImage(imageLiteralResourceName: type.imageName))
         
         iconContainerView.addSubview(imageView)
         return imageView
