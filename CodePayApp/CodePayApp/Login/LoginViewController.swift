@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
     
     lazy var submitButton: CodePayButton = {
         let btn = CodePayButton(type: .custom)
-        btn.setup(title: "Login", dto: CodePayButtonDTO.submit)
+        btn.setup(title: __("login_btn"), dto: CodePayButtonDTO.submit)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(submitButtonDidTap(_:)), for: .touchUpInside)
         
@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
     
     lazy var registerButton: CodePayButton = {
         let btn = CodePayButton(type: .custom)
-        btn.setup(title: "Create a New Account", dto: CodePayButtonDTO.secondary)
+        btn.setup(title: __("create_new_account_btn"), dto: CodePayButtonDTO.secondary)
         btn.addTarget(self, action: #selector(registerButtonDidTap(_:)), for: .touchUpInside)
         
         self.view.addSubview(btn)
