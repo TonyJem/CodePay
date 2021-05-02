@@ -3,7 +3,17 @@ import UIKit
 class PasswordView: UIView {
     
     private var type: InputViewType = .password
-    private var isVisible = false
+    private var passwordIsVisible = false {
+        didSet {
+            if passwordIsVisible {
+                let image = UIImage(named: "passwordHide")
+                visibilityButton.setImage(image, for: .normal)
+            } else {
+                let image = UIImage(named: "passwordShow")
+                visibilityButton.setImage(image, for: .normal)
+            }
+        }
+    }
     
     lazy var titleLabel: CodePayLabel = {
         let lbl = CodePayLabel(frame: .zero)
@@ -47,9 +57,8 @@ class PasswordView: UIView {
     
     lazy var visibilityButton: UIButton = {
         let btn = UIButton(type: .custom)
-        let image = UIImage(named: "passwordShow")
         btn.addTarget(self, action: #selector(visibilityButtonDidTap(_:)), for: .touchUpInside)
-        btn.setImage(image, for: .normal)
+        btn.setImage(UIImage(named: "passwordShow"), for: .normal)
         
         textFieldContainer.addSubview(btn)
         return btn
@@ -64,18 +73,7 @@ class PasswordView: UIView {
     }()
     
     @objc func visibilityButtonDidTap(_ sender: UIButton) {
-        print("🟢👁‍🗨🟢 'visibilityButtonDidTap' button in Login Scene did Tap")
-        print("isVisible =  \(isVisible)")
-        isVisible = !isVisible
-        
-        if isVisible {
-            let image = UIImage(named: "passwordHide")
-            visibilityButton.setImage(image, for: .normal)
-            
-        } else {
-            let image = UIImage(named: "passwordShow")
-            visibilityButton.setImage(image, for: .normal)
-        }
+        passwordIsVisible = !passwordIsVisible
     }
 }
 
