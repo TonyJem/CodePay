@@ -50,6 +50,7 @@ class LoginViewController: UIViewController {
     
     lazy var submitButton: UIButton = {
         let btn = UIButton(type: .custom)
+        
         btn.setTitle("Login", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 22, weight: .semibold)
