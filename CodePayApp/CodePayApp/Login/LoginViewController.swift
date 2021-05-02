@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
         return imageView
     }()
     
-    lazy var loginLabel: CodePayLabel = {
+    lazy var titleLabel: CodePayLabel = {
         let lbl = CodePayLabel(frame: .zero)
         lbl.setup(title: __("login_heading"), dto: CodePayLabelDTO.heading)
         lbl.textAlignment = .center
@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
         return btn
     }()
     
-    lazy var registerButton: CodePayButton = {
+    lazy var secondaryButton: CodePayButton = {
         let btn = CodePayButton(type: .custom)
         btn.setup(title: __("create_new_account_btn"), dto: CodePayButtonDTO.secondary)
         btn.addTarget(self, action: #selector(registerButtonDidTap(_:)), for: .touchUpInside)

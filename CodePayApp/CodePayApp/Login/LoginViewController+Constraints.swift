@@ -4,54 +4,71 @@ import SnapKit
 extension LoginViewController {
     
     func setupConstraints() {
+        let viewWidth = view.frame.size.width
+        let imageContainerViewWidth = 90
+        let imageSizeMultiplier = 0.8889
+        let elementWidth: CGFloat = viewWidth * 0.7143
+        
+        let viewHeight = view.frame.size.height
+        let topInset: CGFloat = viewHeight * 0.1199
+        let imageContainerViewHeight = imageContainerViewWidth
+        let spaceBetweenTitleAndImageContainerView: CGFloat = 20
+        let titleHeight: CGFloat = 25
+        let spaceBetweenInputViewAndTitle: CGFloat = 35
+        let inputViewHeight: CGFloat = 70
+        let spaceBetweenInputViews: CGFloat = viewHeight * 0.0267
+        let spaceBetweenSubmitButtonAndSecondary: CGFloat = spaceBetweenTitleAndImageContainerView
+        let submitButtonHeight: CGFloat = 60
+        let secondaryButtonHeight: CGFloat = 40
+        let bottomInset: CGFloat = viewHeight * 0.1651
+        
         imageContainerView.snp.makeConstraints { make in
-            make.height.equalTo(90)
-            make.width.equalTo(90)
-            make.top.equalTo(view.safeAreaLayoutGuide).inset(100)
+            make.width.equalTo(imageContainerViewWidth)
+            make.height.equalTo(imageContainerViewHeight)
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(topInset)
             make.centerX.equalToSuperview()
         }
         
         personImage.snp.makeConstraints { make in
-            make.height.equalTo(80)
-            make.width.equalTo(80)
+            make.width.height.equalToSuperview().multipliedBy(imageSizeMultiplier)
             make.top.equalToSuperview()
             make.centerX.equalToSuperview()
         }
-            
-        loginLabel.snp.makeConstraints { make in
-            make.height.equalTo(25)
-            make.width.equalTo(300)
-            make.top.equalTo(imageContainerView.snp.bottom).offset(20)
+        
+        titleLabel.snp.makeConstraints { make in
+            make.width.equalTo(elementWidth)
+            make.height.equalTo(titleHeight)
+            make.top.equalTo(imageContainerView.snp.bottom).offset(spaceBetweenTitleAndImageContainerView)
             make.centerX.equalToSuperview()
         }
         
         phoneView.snp.makeConstraints { make in
-            make.width.equalTo(300)
-            make.height.equalTo(70)
-            make.top.equalTo(loginLabel.snp.bottom).offset(70)
+            make.width.equalTo(elementWidth)
+            make.height.equalTo(inputViewHeight)
+            make.top.equalTo(titleLabel.snp.bottom).offset(spaceBetweenInputViewAndTitle)
             make.centerX.equalToSuperview()
         }
         phoneView.setupConstraints()
         
         passwordView.snp.makeConstraints { make in
-            make.width.equalTo(300)
-            make.height.equalTo(70)
-            make.top.equalTo(phoneView.snp.bottom).offset(25)
+            make.width.equalTo(elementWidth)
+            make.height.equalTo(inputViewHeight)
+            make.top.equalTo(phoneView.snp.bottom).offset(spaceBetweenInputViews)
             make.centerX.equalToSuperview()
         }
         passwordView.setupConstraints()
         
         submitButton.snp.makeConstraints { make in
-            make.height.equalTo(60)
-            make.width.equalTo(300)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(100)
+            make.width.equalTo(elementWidth)
+            make.height.equalTo(submitButtonHeight)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(bottomInset)
             make.centerX.equalToSuperview()
         }
         
-        registerButton.snp.makeConstraints { make in
-            make.height.equalTo(40)
-            make.width.lessThanOrEqualTo(300)
-            make.top.equalTo(submitButton.snp.bottom).offset(20)
+        secondaryButton.snp.makeConstraints { make in
+            make.width.lessThanOrEqualTo(elementWidth)
+            make.height.equalTo(secondaryButtonHeight)
+            make.top.equalTo(submitButton.snp.bottom).offset(spaceBetweenSubmitButtonAndSecondary)
             make.centerX.equalToSuperview()
         }
     }
