@@ -71,11 +71,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .systemGray6
+        self.view.backgroundColor = Colors.loginSceneBackground
         
         setupConstraints()
     }
-    
     
     @objc func submitButtonDidTap(_ sender: UIButton) {
         print("🟢 'Submit' button in Login Scene did Tap")
