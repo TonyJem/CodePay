@@ -34,6 +34,7 @@ class LoginViewController: UIViewController {
         let view = InputView()
         view.imageName = "phone"
         view.labelTitle = __("phone_title")
+        view.textFieldContainer.placeholderText = __("phone_placeholder")
         
         self.view.addSubview(view)
         return view
@@ -43,6 +44,8 @@ class LoginViewController: UIViewController {
         let view = InputView()
         view.imageName = "lock"
         view.labelTitle = __("password_title")
+        view.textFieldContainer.placeholderText = __("password_placeholder")
+        view.textFieldContainer.imageName = "passwordShow"
         
         self.view.addSubview(view)
         return view

@@ -1,9 +1,11 @@
 // MARK: Login Scene
 "login_heading" = "Login";
+
 "phone_title" = "Phone number";
+"phone_placeholder" = "Enter Phone Number";
+
 "password_title" = "Password";
+"password_placeholder" = "Enter Password";
 
 "login_btn" = "Login";
 "create_new_account_btn" = "Create a New Account";
-
-

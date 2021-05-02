@@ -2,8 +2,8 @@ import UIKit
 
 class TextFieldContainerView: UIView {
     
-    var imageName = "passwordShow"
-    var placeholderText = "Enter Password"
+    var imageName = ""
+    var placeholderText = ""
     
     lazy var inputTextField: UITextField = {
         let textField = UITextField(frame: .zero)
