@@ -48,14 +48,9 @@ class LoginViewController: UIViewController {
         return view
     }()
     
-    lazy var submitButton: UIButton = {
-        let btn = UIButton(type: .custom)
-        
-        btn.setTitle("Login", for: .normal)
-        btn.setTitleColor(.white, for: .normal)
-        btn.titleLabel?.font = .systemFont(ofSize: 22, weight: .semibold)
-        btn.layer.cornerRadius = 30
-        btn.backgroundColor = Colors.lightBlue
+    lazy var submitButton: CodePayButton = {
+        let btn = CodePayButton(type: .custom)
+        btn.setup(title: "Login", dto: CodePayButtonDTO.submit)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(submitButtonDidTap(_:)), for: .touchUpInside)
         
@@ -63,11 +58,9 @@ class LoginViewController: UIViewController {
         return btn
     }()
     
-    lazy var registerButton: UIButton = {
-        let btn = UIButton(type: .custom)
-        btn.setTitle("Create a New Account", for: .normal)
-        btn.setTitleColor(.systemGray, for: .normal)
-        btn.titleLabel?.font = .systemFont(ofSize: 15, weight: .medium)
+    lazy var registerButton: CodePayButton = {
+        let btn = CodePayButton(type: .custom)
+        btn.setup(title: "Create a New Account", dto: CodePayButtonDTO.secondary)
         btn.addTarget(self, action: #selector(registerButtonDidTap(_:)), for: .touchUpInside)
         
         self.view.addSubview(btn)
