@@ -24,6 +24,7 @@
 		3A06B3C0263DEEB700E8C56E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A06B3BF263DEEB700E8C56E /* Localizable.strings */; };
 		3A06B3C4263DF04B00E8C56E /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3C3263DF04B00E8C56E /* Localizations.swift */; };
 		3A06B3C8263E839100E8C56E /* InputViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3C7263E839100E8C56E /* InputViewType.swift */; };
+		3A47B92E263E9C9E0085477E /* PhoneInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47B92D263E9C9E0085477E /* PhoneInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		3A06B3BF263DEEB700E8C56E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		3A06B3C3263DF04B00E8C56E /* Localizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizations.swift; sourceTree = "<group>"; };
 		3A06B3C7263E839100E8C56E /* InputViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewType.swift; sourceTree = "<group>"; };
+		3A47B92D263E9C9E0085477E /* PhoneInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			children = (
 				3A06B39C263D870F00E8C56E /* InputView.swift */,
 				3A06B3C7263E839100E8C56E /* InputViewType.swift */,
+				3A47B92D263E9C9E0085477E /* PhoneInputView.swift */,
 			);
 			path = InputView;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				3A06B39D263D870F00E8C56E /* InputView.swift in Sources */,
 				3A06B3A6263DA2F400E8C56E /* TextFieldContainerView.swift in Sources */,
 				3A06B35D263C80B100E8C56E /* LoginViewController.swift in Sources */,
+				3A47B92E263E9C9E0085477E /* PhoneInputView.swift in Sources */,
 				3A06B3B2263DD67A00E8C56E /* CodePayLabelDTO.swift in Sources */,
 				3A06B345263C7B9400E8C56E /* AppDelegate.swift in Sources */,
 				3A06B3C8263E839100E8C56E /* InputViewType.swift in Sources */,

@@ -28,9 +28,8 @@ class LoginViewController: UIViewController {
         return lbl
     }()
     
-    lazy var phoneView: InputView = {
-        let view = InputView()
-        view.type = .phone
+    lazy var phoneView: PhoneInputView = {
+        let view = PhoneInputView()
         view.textFieldContainer.placeholderText = __("phone_placeholder")
         
         self.view.addSubview(view)
@@ -75,6 +74,7 @@ class LoginViewController: UIViewController {
         setupConstraints()
     }
     
+    // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {
         print("🟢 'Submit' button in Login Scene did Tap")
     }
