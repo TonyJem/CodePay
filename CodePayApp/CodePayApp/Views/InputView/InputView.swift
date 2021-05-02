@@ -2,12 +2,11 @@ import UIKit
 
 class InputView: UIView {
     
-    var imageName = ""
-    var labelTitle = ""
+    var type: InputViewType = .empty
     
     lazy var titleLabel: CodePayLabel = {
         let lbl = CodePayLabel(frame: .zero)
-        lbl.setup(title: labelTitle, dto: CodePayLabelDTO.title)
+        lbl.setup(title: type.labelTitle, dto: CodePayLabelDTO.title)
         
         self.addSubview(lbl)
         return lbl
@@ -21,7 +20,7 @@ class InputView: UIView {
     }()
     
     lazy var iconImageView: UIImageView = {
-        let image = UIImage(named: imageName)
+        let image = UIImage(named: type.imageName)
         let imageView = UIImageView(image: image!)
         
         iconContainerView.addSubview(imageView)

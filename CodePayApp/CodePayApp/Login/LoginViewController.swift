@@ -32,8 +32,7 @@ class LoginViewController: UIViewController {
     
     lazy var phoneView: InputView = {
         let view = InputView()
-        view.imageName = "phone"
-        view.labelTitle = __("phone_title")
+        view.type = .phone
         view.textFieldContainer.placeholderText = __("phone_placeholder")
         
         self.view.addSubview(view)
@@ -42,8 +41,7 @@ class LoginViewController: UIViewController {
     
     lazy var passwordView: InputView = {
         let view = InputView()
-        view.imageName = "lock"
-        view.labelTitle = __("password_title")
+        view.type = .password
         view.textFieldContainer.placeholderText = __("password_placeholder")
         view.textFieldContainer.imageName = "passwordShow"
         

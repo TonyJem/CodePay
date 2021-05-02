@@ -23,6 +23,7 @@
 		3A06B3BC263DE64800E8C56E /* CodePayButtonDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3BB263DE64800E8C56E /* CodePayButtonDTO.swift */; };
 		3A06B3C0263DEEB700E8C56E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A06B3BF263DEEB700E8C56E /* Localizable.strings */; };
 		3A06B3C4263DF04B00E8C56E /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3C3263DF04B00E8C56E /* Localizations.swift */; };
+		3A06B3C8263E839100E8C56E /* InputViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3C7263E839100E8C56E /* InputViewType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		3A06B3BB263DE64800E8C56E /* CodePayButtonDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayButtonDTO.swift; sourceTree = "<group>"; };
 		3A06B3BF263DEEB700E8C56E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		3A06B3C3263DF04B00E8C56E /* Localizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizations.swift; sourceTree = "<group>"; };
+		3A06B3C7263E839100E8C56E /* InputViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				3A06B3C2263DEFD400E8C56E /* Helpers */,
+				3A06B3A9263DD3E800E8C56E /* UIElements */,
 				3A06B39B263D86D800E8C56E /* Views */,
 				3A06B390263D423B00E8C56E /* Login */,
 				3A06B38A263D415600E8C56E /* Resources */,
@@ -117,8 +120,7 @@
 		3A06B39B263D86D800E8C56E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3A06B3A9263DD3E800E8C56E /* UIElements */,
-				3A06B39C263D870F00E8C56E /* InputView.swift */,
+				3A06B3CE263E892F00E8C56E /* InputView */,
 				3A06B3A5263DA2F400E8C56E /* TextFieldContainerView.swift */,
 			);
 			path = Views;
@@ -166,6 +168,15 @@
 				3A06B3C3263DF04B00E8C56E /* Localizations.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3A06B3CE263E892F00E8C56E /* InputView */ = {
+			isa = PBXGroup;
+			children = (
+				3A06B39C263D870F00E8C56E /* InputView.swift */,
+				3A06B3C7263E839100E8C56E /* InputViewType.swift */,
+			);
+			path = InputView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +265,7 @@
 				3A06B35D263C80B100E8C56E /* LoginViewController.swift in Sources */,
 				3A06B3B2263DD67A00E8C56E /* CodePayLabelDTO.swift in Sources */,
 				3A06B345263C7B9400E8C56E /* AppDelegate.swift in Sources */,
+				3A06B3C8263E839100E8C56E /* InputViewType.swift in Sources */,
 				3A06B3AE263DD5F900E8C56E /* CodePayLabel.swift in Sources */,
 				3A06B347263C7B9400E8C56E /* SceneDelegate.swift in Sources */,
 			);
