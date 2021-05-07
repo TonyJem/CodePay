@@ -10,7 +10,7 @@ extension LoginViewController {
         let elementWidth: CGFloat = viewWidth * 0.7143
         
         let viewHeight = view.frame.size.height
-        let topInset: CGFloat = viewHeight * 0.1199
+        let topInset: CGFloat = 30
         let imageContainerViewHeight = imageContainerViewWidth
         let spaceBetweenTitleAndImageContainerView: CGFloat = 20
         let titleHeight: CGFloat = 25

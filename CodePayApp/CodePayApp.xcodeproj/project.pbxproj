@@ -91,7 +91,7 @@
 				3A06B3C2263DEFD400E8C56E /* Helpers */,
 				3A06B3A9263DD3E800E8C56E /* UIElements */,
 				3A06B39B263D86D800E8C56E /* Views */,
-				3A06B390263D423B00E8C56E /* Login */,
+				3A06B390263D423B00E8C56E /* LoginAndRegisterScene */,
 				3A06B38A263D415600E8C56E /* Resources */,
 				3A06B388263D411A00E8C56E /* Delegate */,
 				3A06B34F263C7B9600E8C56E /* LaunchScreen.storyboard */,
@@ -118,13 +118,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		3A06B390263D423B00E8C56E /* Login */ = {
+		3A06B390263D423B00E8C56E /* LoginAndRegisterScene */ = {
 			isa = PBXGroup;
 			children = (
 				3A06B35C263C80B100E8C56E /* LoginViewController.swift */,
 				3A06B385263D3DAB00E8C56E /* LoginViewController+Constraints.swift */,
 			);
-			path = Login;
+			path = LoginAndRegisterScene;
 			sourceTree = "<group>";
 		};
 		3A06B39B263D86D800E8C56E /* Views */ = {
