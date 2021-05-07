@@ -2,13 +2,6 @@ import UIKit
 
 class PasswordContainer: Container {
     
-    lazy var textFieldContainerView: UIView = {
-        let view = UIView()
-        
-        self.addSubview(view)
-        return view
-    }()
-    
     lazy var textField: CodePayTextField = {
         let textField = CodePayTextField(frame: .zero)
         textField.setup(title: "", dto: CodePayTextFieldDTO.regular)
@@ -19,10 +12,8 @@ class PasswordContainer: Container {
     }()
     
     override func setupContainerConstraints() {
-        textFieldContainerView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        
+        super.setupContainerConstraints()
+
         textField.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

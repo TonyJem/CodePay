@@ -1,17 +1,22 @@
 import UIKit
 
 class Container: UIView {
-    func setupContainerConstraints() {}
-}
-
-class PhoneContainer: Container {
-    
     lazy var textFieldContainerView: UIView = {
         let view = UIView()
         
         self.addSubview(view)
         return view
     }()
+    
+    
+    func setupContainerConstraints() {
+        textFieldContainerView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+}
+
+class PhoneContainer: Container {
     
     lazy var textField: CodePayTextField = {
         let textField = CodePayTextField(frame: .zero)
@@ -23,10 +28,8 @@ class PhoneContainer: Container {
     }()
     
     override func setupContainerConstraints() {
-        textFieldContainerView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        
+        super.setupContainerConstraints()
+
         textField.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

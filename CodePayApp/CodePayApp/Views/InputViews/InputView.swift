@@ -71,7 +71,7 @@ extension InputView {
             make.trailing.equalToSuperview()
             make.bottom.equalTo(bottomLineView.snp.top).inset(-4)
         }
-        
+
         textFieldContainer.setupContainerConstraints()
     }
 }
