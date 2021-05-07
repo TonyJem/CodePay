@@ -24,6 +24,7 @@
 		3A06B3C8263E839100E8C56E /* InputViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3C7263E839100E8C56E /* InputViewType.swift */; };
 		3A8313D5263F0A31000D79D9 /* CodePayTextFieldDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313D4263F0A31000D79D9 /* CodePayTextFieldDTO.swift */; };
 		3A8313D8263F0CB9000D79D9 /* CodePayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313D7263F0CB9000D79D9 /* CodePayTextField.swift */; };
+		3A8313E52645813B000D79D9 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313E42645813B000D79D9 /* InputView.swift */; };
 		3AF7B286263EE1BB007233A4 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7B285263EE1BB007233A4 /* PhoneView.swift */; };
 		3AF7B28B263EE711007233A4 /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7B28A263EE711007233A4 /* PasswordView.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 		3A06B3C7263E839100E8C56E /* InputViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewType.swift; sourceTree = "<group>"; };
 		3A8313D4263F0A31000D79D9 /* CodePayTextFieldDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayTextFieldDTO.swift; sourceTree = "<group>"; };
 		3A8313D7263F0CB9000D79D9 /* CodePayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayTextField.swift; sourceTree = "<group>"; };
+		3A8313E42645813B000D79D9 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		3AF7B285263EE1BB007233A4 /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
 		3AF7B28A263EE711007233A4 /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +180,7 @@
 		3A06B3CE263E892F00E8C56E /* InputViews */ = {
 			isa = PBXGroup;
 			children = (
+				3A8313E42645813B000D79D9 /* InputView.swift */,
 				3A06B3C7263E839100E8C56E /* InputViewType.swift */,
 				3AF7B285263EE1BB007233A4 /* PhoneView.swift */,
 				3AF7B28A263EE711007233A4 /* PasswordView.swift */,
@@ -266,6 +269,7 @@
 				3A8313D5263F0A31000D79D9 /* CodePayTextFieldDTO.swift in Sources */,
 				3AF7B28B263EE711007233A4 /* PasswordView.swift in Sources */,
 				3A06B386263D3DAB00E8C56E /* LoginViewController+Constraints.swift in Sources */,
+				3A8313E52645813B000D79D9 /* InputView.swift in Sources */,
 				3A06B3C4263DF04B00E8C56E /* Localizations.swift in Sources */,
 				3A06B3B9263DE60500E8C56E /* CodePayButton.swift in Sources */,
 				3A06B3B5263DD75900E8C56E /* Colors.swift in Sources */,
