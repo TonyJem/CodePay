@@ -14,7 +14,7 @@ extension LoginViewController {
         let imageContainerViewHeight = imageContainerViewWidth
         let spaceBetweenTitleAndImageContainerView: CGFloat = 20
         let titleHeight: CGFloat = 25
-        let spaceBetweenInputViewAndTitle: CGFloat = 35
+        let spaceBetweenStackViewAndTitle: CGFloat = 35
         let inputViewHeight: CGFloat = 70
         let spaceBetweenInputViews: CGFloat = viewHeight * 0.0267
         let spaceBetweenSubmitButtonAndSecondary: CGFloat = spaceBetweenTitleAndImageContainerView
@@ -43,19 +43,22 @@ extension LoginViewController {
             make.centerX.equalToSuperview()
         }
         
-        phoneView.snp.makeConstraints { make in
+        stackView.snp.makeConstraints { make in
             make.width.equalTo(elementWidth)
-            make.height.equalTo(inputViewHeight)
-            make.top.equalTo(titleLabel.snp.bottom).offset(spaceBetweenInputViewAndTitle)
+            make.top.equalTo(titleLabel.snp.bottom).offset(spaceBetweenStackViewAndTitle)
             make.centerX.equalToSuperview()
+        }
+        stackView.spacing = spaceBetweenInputViews
+        
+        phoneView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalTo(inputViewHeight)
         }
         phoneView.setupConstraints()
         
         passwordView.snp.makeConstraints { make in
-            make.width.equalTo(elementWidth)
+            make.width.equalToSuperview()
             make.height.equalTo(inputViewHeight)
-            make.top.equalTo(phoneView.snp.bottom).offset(spaceBetweenInputViews)
-            make.centerX.equalToSuperview()
         }
         passwordView.setupConstraints()
         

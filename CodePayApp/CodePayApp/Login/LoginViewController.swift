@@ -28,19 +28,23 @@ class LoginViewController: UIViewController {
         return lbl
     }()
     
+    lazy var stackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [phoneView, passwordView])
+        stackView.axis = .vertical
+        
+        view.addSubview(stackView)
+        return stackView
+    }()
+    
     lazy var phoneView: InputView = {
         let view = InputView()
         view.type = .phone
-        
-        self.view.addSubview(view)
         return view
     }()
     
     lazy var passwordView: InputView = {
         let view = InputView()
         view.type = .password
-        
-        self.view.addSubview(view)
         return view
     }()
     
