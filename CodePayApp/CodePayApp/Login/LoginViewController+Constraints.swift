@@ -68,6 +68,12 @@ extension LoginViewController {
         }
         confirmPasswordView.setupConstraints()
         
+        currencyView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalTo(inputViewHeight)
+        }
+        currencyView.setupConstraints()
+        
         submitButton.snp.makeConstraints { make in
             make.width.equalTo(elementWidth)
             make.height.equalTo(submitButtonHeight)

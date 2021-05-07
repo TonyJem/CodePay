@@ -4,6 +4,7 @@ enum InputViewType {
     case phone
     case password
     case confirmPassword
+    case currency
     
     var imageName: String {
         switch self {
@@ -11,6 +12,8 @@ enum InputViewType {
             return "phone"
         case .password, .confirmPassword:
             return "lock"
+        case .currency:
+            return "currency"
         }
     }
     
@@ -22,6 +25,8 @@ enum InputViewType {
             return __("password_title")
         case .confirmPassword:
             return __("confirm_password_title")
+        case .currency:
+            return __("currency_title")
         }
     }
     
@@ -33,6 +38,8 @@ enum InputViewType {
             return __("password_placeholder")
         case .confirmPassword:
             return __("confirm_password_placeholder")
+        case .currency:
+            return __("currency_placeholder")
         }
     }
     
@@ -42,6 +49,8 @@ enum InputViewType {
             return PhoneTextFieldContainer()
         case .password, .confirmPassword:
             return PasswordTextFieldContainer()
+        case .currency:
+            return CurrencyTextFieldContainer()
         }
     }
 }

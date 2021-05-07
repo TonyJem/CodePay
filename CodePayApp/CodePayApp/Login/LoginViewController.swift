@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
     }()
     
     lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [phoneView, passwordView, confirmPasswordView])
+        let stackView = UIStackView(arrangedSubviews: [phoneView, passwordView, confirmPasswordView, currencyView])
         stackView.axis = .vertical
         
         view.addSubview(stackView)
@@ -51,6 +51,12 @@ class LoginViewController: UIViewController {
     lazy var confirmPasswordView: InputView = {
         let view = InputView()
         view.type = .confirmPassword
+        return view
+    }()
+    
+    lazy var currencyView: InputView = {
+        let view = InputView()
+        view.type = .currency
         return view
     }()
     
