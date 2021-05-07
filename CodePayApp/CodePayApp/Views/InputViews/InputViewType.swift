@@ -30,4 +30,13 @@ enum InputViewType {
             return __("password_placeholder")
         }
     }
+    
+    var container: Container {
+        switch self {
+        case .phone:
+            return PhoneContainer()
+        case .password:
+            return PasswordContainer()
+        }
+    }
 }

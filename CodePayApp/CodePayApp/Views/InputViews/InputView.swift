@@ -2,21 +2,8 @@ import UIKit
 
 class InputView: UIView {
     
-    private var type: InputViewType = .password
-    
-    private var passwordIsVisible = false {
-        didSet {
-            if passwordIsVisible {
-                let image = UIImage(named: "passwordHide")
-                visibilityButton.setImage(image, for: .normal)
-            } else {
-                let image = UIImage(named: "passwordShow")
-                visibilityButton.setImage(image, for: .normal)
-            }
-            textField.isSecureTextEntry = !passwordIsVisible
-        }
-    }
-    
+    var type: InputViewType = .password
+
     lazy var titleLabel: CodePayLabel = {
         let lbl = CodePayLabel(frame: .zero)
         lbl.setup(title: type.title, dto: CodePayLabelDTO.title)
@@ -39,30 +26,11 @@ class InputView: UIView {
         return imageView
     }()
     
-    lazy var textFieldContainer: UIView = {
-        let view = UIView()
+    lazy var textFieldContainer: Container = {
+        let view = type.container
         
         self.addSubview(view)
         return view
-    }()
-    
-    lazy var textField: CodePayTextField = {
-        let textField = CodePayTextField(frame: .zero)
-        textField.setup(title: "", dto: CodePayTextFieldDTO.regular)
-        textField.placeholder = type.placeholder
-        textField.isSecureTextEntry = true
-        
-        textFieldContainer.addSubview(textField)
-        return textField
-    }()
-    
-    lazy var visibilityButton: UIButton = {
-        let btn = UIButton(type: .custom)
-        btn.addTarget(self, action: #selector(visibilityButtonDidTap(_:)), for: .touchUpInside)
-        btn.setImage(UIImage(named: "passwordShow"), for: .normal)
-        
-        textFieldContainer.addSubview(btn)
-        return btn
     }()
     
     lazy var bottomLineView: UIView = {
@@ -72,10 +40,6 @@ class InputView: UIView {
         self.addSubview(view)
         return view
     }()
-    
-    @objc func visibilityButtonDidTap(_ sender: UIButton) {
-        passwordIsVisible = !passwordIsVisible
-    }
 }
 
 extension InputView {
@@ -108,15 +72,6 @@ extension InputView {
             make.bottom.equalTo(bottomLineView.snp.top).inset(-4)
         }
         
-        visibilityButton.snp.makeConstraints { make in
-            make.height.equalTo(35)
-            make.width.equalTo(35)
-            make.bottom.trailing.equalToSuperview()
-        }
-        
-        textField.snp.makeConstraints { make in
-            make.top.bottom.leading.equalToSuperview()
-            make.trailing.equalTo(visibilityButton.snp.leading)
-        }
+        textFieldContainer.setupContainerConstraints()
     }
 }

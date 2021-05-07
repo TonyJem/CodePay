@@ -28,15 +28,17 @@ class LoginViewController: UIViewController {
         return lbl
     }()
     
-    lazy var phoneView: PhoneView = {
-        let view = PhoneView()
+    lazy var phoneView: InputView = {
+        let view = InputView()
+        view.type = .phone
         
         self.view.addSubview(view)
         return view
     }()
     
-    lazy var passwordView: PasswordView = {
-        let view = PasswordView()
+    lazy var passwordView: InputView = {
+        let view = InputView()
+        view.type = .password
         
         self.view.addSubview(view)
         return view
