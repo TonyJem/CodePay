@@ -2,7 +2,7 @@ import UIKit
 
 class InputView: UIView {
     
-    var type: InputViewType = .password
+    var type: InputViewType = .phone
 
     lazy var titleLabel: CodePayLabel = {
         let lbl = CodePayLabel(frame: .zero)
@@ -27,10 +27,11 @@ class InputView: UIView {
     }()
     
     lazy var textFieldContainer: TextFieldContainer = {
-        let view = type.container
+        let container = type.container
+        container.setPlaceHolder(placeholder: type.placeholder)
         
-        self.addSubview(view)
-        return view
+        self.addSubview(container)
+        return container
     }()
     
     lazy var bottomLineView: UIView = {

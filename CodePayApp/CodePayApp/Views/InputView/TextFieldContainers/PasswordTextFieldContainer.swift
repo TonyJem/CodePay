@@ -5,7 +5,6 @@ class PasswordTextFieldContainer: TextFieldContainer {
     lazy var textField: CodePayTextField = {
         let textField = CodePayTextField(frame: .zero)
         textField.setup(title: "", dto: CodePayTextFieldDTO.regular)
-        textField.placeholder = "placeholder Password"
         
         textFieldContainerView.addSubview(textField)
         return textField
@@ -17,5 +16,9 @@ class PasswordTextFieldContainer: TextFieldContainer {
         textField.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+    
+    override func setPlaceHolder(placeholder: String) {
+        textField.placeholder = placeholder
     }
 }

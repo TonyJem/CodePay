@@ -5,7 +5,6 @@ final class PhoneTextFieldContainer: TextFieldContainer {
     lazy var textField: CodePayTextField = {
         let textField = CodePayTextField(frame: .zero)
         textField.setup(title: "", dto: CodePayTextFieldDTO.regular)
-        textField.placeholder = "placeholder Phone"
         
         textFieldContainerView.addSubview(textField)
         return textField
@@ -17,5 +16,9 @@ final class PhoneTextFieldContainer: TextFieldContainer {
         textField.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+    
+    override func setPlaceHolder(placeholder: String) {
+        textField.placeholder = placeholder
     }
 }

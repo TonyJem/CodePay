@@ -13,4 +13,6 @@ class TextFieldContainer: UIView {
             make.edges.equalToSuperview()
         }
     }
+    
+    func setPlaceHolder(placeholder: String) {}
 }
