@@ -26,7 +26,7 @@ class InputView: UIView {
         return imageView
     }()
     
-    lazy var textFieldContainer: Container = {
+    lazy var textFieldContainer: TextFieldContainer = {
         let view = type.container
         
         self.addSubview(view)

@@ -31,7 +31,7 @@ enum InputViewType {
         }
     }
     
-    var container: Container {
+    var container: TextFieldContainer {
         switch self {
         case .phone:
             return PhoneContainer()

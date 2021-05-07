@@ -1,6 +1,6 @@
 import UIKit
 
-class Container: UIView {
+class TextFieldContainer: UIView {
     lazy var textFieldContainerView: UIView = {
         let view = UIView()
         
@@ -16,7 +16,7 @@ class Container: UIView {
     }
 }
 
-class PhoneContainer: Container {
+class PhoneContainer: TextFieldContainer {
     
     lazy var textField: CodePayTextField = {
         let textField = CodePayTextField(frame: .zero)
