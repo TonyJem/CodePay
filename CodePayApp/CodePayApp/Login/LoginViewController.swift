@@ -2,6 +2,34 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    private var sceneTitle = "" {
+        didSet {
+            titleLabel.setup(title: sceneTitle, dto: CodePayLabelDTO.heading)
+        }
+    }
+    
+    private var submitButtonTitle = "" {
+        didSet {
+            submitButton.setup(title: submitButtonTitle, dto: CodePayButtonDTO.submit)
+        }
+    }
+    
+    private var secondaryButtonTitle = "" {
+        didSet {
+            secondaryButton.setup(title: secondaryButtonTitle, dto: CodePayButtonDTO.secondary)
+        }
+    }
+    
+    private var onLogin: Bool = true {
+        didSet {
+            confirmPasswordView.isHidden = onLogin
+            currencyView.isHidden = onLogin
+            sceneTitle = onLogin ? __("login_heading") : __("register_heading")
+            submitButtonTitle = onLogin ? __("login_submit_btn") : __("create_account_submit_btn")
+            secondaryButtonTitle = onLogin ? __("create_account_secondary_btn") : __("login_secondary_btn")
+        }
+    }
+    
     // MARK: - Views
     lazy var imageContainerView: UIView = {
         let view = UIView()
@@ -21,7 +49,6 @@ class LoginViewController: UIViewController {
     
     lazy var titleLabel: CodePayLabel = {
         let lbl = CodePayLabel(frame: .zero)
-        lbl.setup(title: __("login_heading"), dto: CodePayLabelDTO.heading)
         lbl.textAlignment = .center
         
         self.view.addSubview(lbl)
@@ -62,7 +89,6 @@ class LoginViewController: UIViewController {
     
     lazy var submitButton: CodePayButton = {
         let btn = CodePayButton(type: .custom)
-        btn.setup(title: __("login_btn"), dto: CodePayButtonDTO.submit)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(submitButtonDidTap(_:)), for: .touchUpInside)
         
@@ -72,8 +98,7 @@ class LoginViewController: UIViewController {
     
     lazy var secondaryButton: CodePayButton = {
         let btn = CodePayButton(type: .custom)
-        btn.setup(title: __("create_new_account_btn"), dto: CodePayButtonDTO.secondary)
-        btn.addTarget(self, action: #selector(registerButtonDidTap(_:)), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(secondaryButtonDidTap(_:)), for: .touchUpInside)
         
         self.view.addSubview(btn)
         return btn
@@ -86,8 +111,11 @@ class LoginViewController: UIViewController {
         self.view.backgroundColor = Colors.loginSceneBackground
         
         setupConstraints()
-        
         observeKeyboardNotifications()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        onLogin = true
     }
     
     // MARK:  - Actions
@@ -95,7 +123,7 @@ class LoginViewController: UIViewController {
         print("🟢 'Submit' button in Login Scene did Tap")
     }
     
-    @objc func registerButtonDidTap(_ sender: UIButton) {
-        print("🟣 'SignIn' button in Login Scene did Tap")
+    @objc func secondaryButtonDidTap(_ sender: UIButton) {
+        onLogin = !onLogin
     }
 }

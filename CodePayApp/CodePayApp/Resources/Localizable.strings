@@ -1,5 +1,7 @@
 // MARK: Login Scene
 "login_heading" = "Login";
+"register_heading" = "Create New Account";
+
 
 "phone_title" = "Phone number";
 "phone_placeholder" = "Enter Phone Number";
@@ -8,10 +10,13 @@
 "password_placeholder" = "Enter Password";
 
 "confirm_password_title" = "Confirm Password";
-"confirm_password_placeholder" = "Enter Confirm Password";
+"confirm_password_placeholder" = "Repeat Entering Password";
 
 "currency_title"= "Currency";
 "currency_placeholder" = "Choose Currency";
 
-"login_btn" = "Login";
-"create_new_account_btn" = "Create a New Account";
+"login_submit_btn" = "Login";
+"create_account_submit_btn" = "Create Account";
+
+"create_account_secondary_btn" = "Create a New Account";
+"login_secondary_btn" = "Login With Existing Account";
