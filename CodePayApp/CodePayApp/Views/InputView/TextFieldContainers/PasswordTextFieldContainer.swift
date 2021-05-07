@@ -1,27 +1,11 @@
 import UIKit
 
-class TextFieldContainer: UIView {
-    lazy var textFieldContainerView: UIView = {
-        let view = UIView()
-        
-        self.addSubview(view)
-        return view
-    }()
-    
-    
-    func setupContainerConstraints() {
-        textFieldContainerView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-    }
-}
-
-class PhoneContainer: TextFieldContainer {
+class PasswordTextFieldContainer: TextFieldContainer {
     
     lazy var textField: CodePayTextField = {
         let textField = CodePayTextField(frame: .zero)
         textField.setup(title: "", dto: CodePayTextFieldDTO.regular)
-        textField.placeholder = "placeholder Phone"
+        textField.placeholder = "placeholder Password"
         
         textFieldContainerView.addSubview(textField)
         return textField

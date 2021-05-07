@@ -1,11 +1,11 @@
 import UIKit
 
-class PasswordContainer: TextFieldContainer {
+final class PhoneTextFieldContainer: TextFieldContainer {
     
     lazy var textField: CodePayTextField = {
         let textField = CodePayTextField(frame: .zero)
         textField.setup(title: "", dto: CodePayTextFieldDTO.regular)
-        textField.placeholder = "placeholder Password"
+        textField.placeholder = "placeholder Phone"
         
         textFieldContainerView.addSubview(textField)
         return textField
