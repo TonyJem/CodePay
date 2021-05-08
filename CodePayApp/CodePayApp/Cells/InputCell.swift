@@ -6,19 +6,19 @@ class InputCell: BaseTableViewCell {
     
     private let inputContainer: InputView = {
         let view = InputView()
-        view.type = .phone
-       return view
+        return view
     }()
     
     override func setupView() {
         super.setupView()
         
+        inputContainer.type = .phone
         contentView.addSubview(inputContainer)
     }
     
     override func setupConstraints() {
         super.setupConstraints()
-
+        
         inputContainer.snp.makeConstraints { make in
             make.width.equalTo(Core.elementWidth)
             make.height.equalTo(inputViewHeight)
