@@ -2,6 +2,8 @@ import UIKit
 
 class LoginRegisterVC: UIViewController {
     
+    private let secondaryButtonHeight: CGFloat = 40
+    private let submitButtonHeight: CGFloat = 60
     private let tableView = UITableView()
     private let identifieres = [PersonImageCell.cellID,
                                 TitleCell.cellID,
@@ -9,11 +11,25 @@ class LoginRegisterVC: UIViewController {
                                 PasswordInputCell.cellID,
                                 ConfirmPasswordInputCell.cellID,
                                 CurrencyInputCell.cellID]
+    
+    private let submitButton: CodePayButton = {
+        let btn = CodePayButton(type: .custom)
+        btn.showsTouchWhenHighlighted = true
+        btn.addTarget(self, action: #selector(submitButtonDidTap(_:)), for: .touchUpInside)
+        return btn
+    }()
+    
+    private let secondaryButton: CodePayButton = {
+        let btn = CodePayButton(type: .custom)
+        btn.addTarget(self, action: #selector(secondaryButtonDidTap(_:)), for: .touchUpInside)
+        return btn
+    }()
+    
     // MARK:  - Setup
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = Colors.mainBackground
+        view.backgroundColor = Colors.mainBackground
         
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = Colors.mainBackground
@@ -28,15 +44,48 @@ class LoginRegisterVC: UIViewController {
         tableView.register(ConfirmPasswordInputCell.self, forCellReuseIdentifier: ConfirmPasswordInputCell.cellID)
         tableView.register(CurrencyInputCell.self, forCellReuseIdentifier: CurrencyInputCell.cellID)
         
-        self.view.addSubview(tableView)
-        setupTableConstraints()
+        view.addSubview(tableView)
+        
+        view.addSubview(submitButton)
+        view.addSubview(secondaryButton)
+        
+        setupConstraints()
+        
+        submitButton.setup(title: "SubmitBTNString", dto: CodePayButtonDTO.submit)
+        secondaryButton.setup(title: "SecondaryBTNString", dto: CodePayButtonDTO.secondary)
     }
     
-    private func setupTableConstraints() {
+    // MARK:  - Actions
+    @objc func submitButtonDidTap(_ sender: UIButton) {
+        print("🟢 'Submit' button in Login Scene did Tap")
+    }
+
+    @objc func secondaryButtonDidTap(_ sender: UIButton) {
+        print("🟢🟢 'secondaryButton' button in Login Scene did Tap")
+    }
+}
+
+// MARK:  - Constraints
+private extension LoginRegisterVC {
+    func setupConstraints() {
         tableView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.width.equalTo(300)
             make.height.equalTo(500)
+            make.centerX.equalToSuperview()
+        }
+        
+        secondaryButton.snp.makeConstraints { make in
+            make.width.lessThanOrEqualTo(Core.elementWidth)
+            make.height.equalTo(secondaryButtonHeight)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(15)
+            make.centerX.equalToSuperview()
+        }
+        
+        submitButton.snp.makeConstraints { make in
+            make.width.equalTo(Core.elementWidth)
+            make.height.equalTo(submitButtonHeight)
+            make.bottom.equalTo(secondaryButton.snp.top).inset(-20)
             make.centerX.equalToSuperview()
         }
     }
