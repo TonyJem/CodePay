@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-class LoginInTableVC: UIViewController {
+class LoginRegisterVC: UIViewController {
     
     private let tableView = UITableView()
 
@@ -30,18 +30,18 @@ class LoginInTableVC: UIViewController {
     }
 }
 
-extension LoginInTableVC: UITableViewDataSource {
+extension LoginRegisterVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        NSLog("get cell")
+        NSLog("🟢 get cell")
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "Cell")
         cell.textLabel!.text = "Test line \(indexPath.row)"
         return cell
     }
 }
 
-extension LoginInTableVC: UITableViewDelegate {
+extension LoginRegisterVC: UITableViewDelegate {
 }

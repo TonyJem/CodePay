@@ -24,6 +24,11 @@
 		3A06B3C8263E839100E8C56E /* InputViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3C7263E839100E8C56E /* InputViewType.swift */; };
 		3A0D66E92645AFE3003BC448 /* CurrencyTextFieldContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D66E82645AFE3003BC448 /* CurrencyTextFieldContainer.swift */; };
 		3A6F86C72646ACC200E0EC92 /* LoginInTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F86C62646ACC200E0EC92 /* LoginInTable.swift */; };
+		3A6F86CA2646B60400E0EC92 /* LoginRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F86C92646B60400E0EC92 /* LoginRegisterVC.swift */; };
+		3A6F86CE2646BBA400E0EC92 /* LogoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F86CD2646BBA400E0EC92 /* LogoImageView.swift */; };
+		3A6F86D12646BBBE00E0EC92 /* LogoImageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F86D02646BBBE00E0EC92 /* LogoImageDTO.swift */; };
+		3A6F86D42646BCA300E0EC92 /* CellPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F86D32646BCA300E0EC92 /* CellPresentable.swift */; };
+		3A6F86D72646BE1E00E0EC92 /* CellPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F86D62646BE1E00E0EC92 /* CellPresenting.swift */; };
 		3A8313D5263F0A31000D79D9 /* CodePayTextFieldDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313D4263F0A31000D79D9 /* CodePayTextFieldDTO.swift */; };
 		3A8313D8263F0CB9000D79D9 /* CodePayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313D7263F0CB9000D79D9 /* CodePayTextField.swift */; };
 		3A8313E52645813B000D79D9 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313E42645813B000D79D9 /* InputView.swift */; };
@@ -51,6 +56,11 @@
 		3A06B3C7263E839100E8C56E /* InputViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewType.swift; sourceTree = "<group>"; };
 		3A0D66E82645AFE3003BC448 /* CurrencyTextFieldContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextFieldContainer.swift; sourceTree = "<group>"; };
 		3A6F86C62646ACC200E0EC92 /* LoginInTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInTable.swift; sourceTree = "<group>"; };
+		3A6F86C92646B60400E0EC92 /* LoginRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterVC.swift; sourceTree = "<group>"; };
+		3A6F86CD2646BBA400E0EC92 /* LogoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoImageView.swift; sourceTree = "<group>"; };
+		3A6F86D02646BBBE00E0EC92 /* LogoImageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoImageDTO.swift; sourceTree = "<group>"; };
+		3A6F86D32646BCA300E0EC92 /* CellPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellPresentable.swift; sourceTree = "<group>"; };
+		3A6F86D62646BE1E00E0EC92 /* CellPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellPresenting.swift; sourceTree = "<group>"; };
 		3A8313D4263F0A31000D79D9 /* CodePayTextFieldDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayTextFieldDTO.swift; sourceTree = "<group>"; };
 		3A8313D7263F0CB9000D79D9 /* CodePayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayTextField.swift; sourceTree = "<group>"; };
 		3A8313E42645813B000D79D9 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
@@ -93,6 +103,7 @@
 				3A06B3C2263DEFD400E8C56E /* Helpers */,
 				3A06B3A9263DD3E800E8C56E /* UIElements */,
 				3A06B39B263D86D800E8C56E /* Views */,
+				3A6F86D92646BEB200E0EC92 /* Cells */,
 				3A06B390263D423B00E8C56E /* LoginAndRegisterScene */,
 				3A06B38A263D415600E8C56E /* Resources */,
 				3A06B388263D411A00E8C56E /* Delegate */,
@@ -123,6 +134,7 @@
 		3A06B390263D423B00E8C56E /* LoginAndRegisterScene */ = {
 			isa = PBXGroup;
 			children = (
+				3A6F86C92646B60400E0EC92 /* LoginRegisterVC.swift */,
 				3A06B35C263C80B100E8C56E /* LoginViewController.swift */,
 				3A6F86C62646ACC200E0EC92 /* LoginInTable.swift */,
 				3A06B385263D3DAB00E8C56E /* LoginViewController+Constraints.swift */,
@@ -192,6 +204,25 @@
 				3A8313FB26459502000D79D9 /* TextFieldContainers */,
 			);
 			path = InputView;
+			sourceTree = "<group>";
+		};
+		3A6F86D92646BEB200E0EC92 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3A6F86DA2646BEC400E0EC92 /* LogoImage */,
+				3A6F86D32646BCA300E0EC92 /* CellPresentable.swift */,
+				3A6F86D62646BE1E00E0EC92 /* CellPresenting.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3A6F86DA2646BEC400E0EC92 /* LogoImage */ = {
+			isa = PBXGroup;
+			children = (
+				3A6F86CD2646BBA400E0EC92 /* LogoImageView.swift */,
+				3A6F86D02646BBBE00E0EC92 /* LogoImageDTO.swift */,
+			);
+			path = LogoImage;
 			sourceTree = "<group>";
 		};
 		3A8313FB26459502000D79D9 /* TextFieldContainers */ = {
@@ -283,9 +314,13 @@
 			files = (
 				3A0D66E92645AFE3003BC448 /* CurrencyTextFieldContainer.swift in Sources */,
 				3A8313D8263F0CB9000D79D9 /* CodePayTextField.swift in Sources */,
+				3A6F86D12646BBBE00E0EC92 /* LogoImageDTO.swift in Sources */,
 				3A06B3BC263DE64800E8C56E /* CodePayButtonDTO.swift in Sources */,
+				3A6F86CA2646B60400E0EC92 /* LoginRegisterVC.swift in Sources */,
 				3A8313D5263F0A31000D79D9 /* CodePayTextFieldDTO.swift in Sources */,
+				3A6F86D72646BE1E00E0EC92 /* CellPresenting.swift in Sources */,
 				3A8313EC264589B8000D79D9 /* PasswordTextFieldContainer.swift in Sources */,
+				3A6F86CE2646BBA400E0EC92 /* LogoImageView.swift in Sources */,
 				3A8313E8264583CA000D79D9 /* PhoneTextFieldContainer.swift in Sources */,
 				3A06B386263D3DAB00E8C56E /* LoginViewController+Constraints.swift in Sources */,
 				3A8313E52645813B000D79D9 /* InputView.swift in Sources */,
@@ -296,6 +331,7 @@
 				3A06B35D263C80B100E8C56E /* LoginViewController.swift in Sources */,
 				3A8313F726459494000D79D9 /* TextFieldContainer.swift in Sources */,
 				3A06B3B2263DD67A00E8C56E /* CodePayLabelDTO.swift in Sources */,
+				3A6F86D42646BCA300E0EC92 /* CellPresentable.swift in Sources */,
 				3A06B345263C7B9400E8C56E /* AppDelegate.swift in Sources */,
 				3A06B3C8263E839100E8C56E /* InputViewType.swift in Sources */,
 				3A06B3AE263DD5F900E8C56E /* CodePayLabel.swift in Sources */,
