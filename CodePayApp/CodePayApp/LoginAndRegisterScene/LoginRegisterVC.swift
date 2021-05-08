@@ -4,7 +4,7 @@ class LoginRegisterVC: UIViewController {
     
     private let secondaryButtonHeight: CGFloat = 40
     private let submitButtonHeight: CGFloat = 60
-    private let tableView = UITableView()
+    private let tableView = SelfSizingTableView()
     private let identifieres = [PersonImageCell.cellID,
                                 TitleCell.cellID,
                                 PhoneInputCell.cellID,
@@ -86,7 +86,6 @@ private extension LoginRegisterVC {
         tableView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.width.equalTo(Core.elementWidth)
-            make.height.equalTo(500)
             make.centerX.equalToSuperview()
         }
         
