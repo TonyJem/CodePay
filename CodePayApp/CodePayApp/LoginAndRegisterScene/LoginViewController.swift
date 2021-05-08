@@ -1,13 +1,14 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    
-    var viewWidth: CGFloat {
-        return view.frame.size.width
+    var contentWidth: CGFloat {
+        return viewWidth * contentWidthMultiplier
     }
     
-    var contentWidth: CGFloat {
-        return viewWidth * 0.7143
+    private let contentWidthMultiplier: CGFloat = 0.7143
+    
+    private var viewWidth: CGFloat {
+        return view.frame.size.width
     }
 
     private var sceneTitle = "" {
