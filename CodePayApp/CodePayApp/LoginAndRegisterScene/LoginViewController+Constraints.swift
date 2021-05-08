@@ -8,8 +8,10 @@ extension LoginViewController {
         let imageSizeMultiplier = 0.8889
         
         let viewHeight = view.frame.size.height
+//        let topInset: CGFloat = 30
         let imageContainerViewHeight = imageContainerViewWidth
         let spaceBetweenTitleAndImageContainerView: CGFloat = 20
+        let titleHeight: CGFloat = 25
         let spaceBetweenStackViewAndTitle: CGFloat = 35
         let inputViewHeight: CGFloat = 70
         let spaceBetweenInputViews: CGFloat = viewHeight * 0.0267
@@ -17,6 +19,7 @@ extension LoginViewController {
         let submitButtonHeight: CGFloat = 60
         let secondaryButtonHeight: CGFloat = 40
         let bottomInset: CGFloat = 90
+//        let bottomInset: CGFloat = viewHeight * 0.1651
         
         submitButton.snp.makeConstraints { make in
             make.width.equalTo(contentWidth)
@@ -52,9 +55,16 @@ extension LoginViewController {
             make.centerX.equalToSuperview()
         }
         
+        titleLabel.snp.makeConstraints { make in
+            make.width.equalTo(contentWidth)
+            make.height.equalTo(titleHeight)
+            make.top.equalTo(imageContainerView.snp.bottom).offset(spaceBetweenTitleAndImageContainerView)
+            make.centerX.equalToSuperview()
+        }
+        
         stackView.snp.makeConstraints { make in
             make.width.equalTo(contentWidth)
-            make.top.equalTo(imageContainerView.snp.bottom).offset(spaceBetweenStackViewAndTitle)
+            make.top.equalTo(titleLabel.snp.bottom).offset(spaceBetweenStackViewAndTitle)
             make.centerX.equalToSuperview()
         }
         stackView.spacing = spaceBetweenInputViews
@@ -104,7 +114,7 @@ extension LoginViewController {
     
     func keyboardWillAppear(_ keyboardHeight: CGFloat) {
         mainScrollView.snp.updateConstraints { make in
-            make.bottom.equalTo(submitButton.snp.top).offset(-100)
+            make.bottom.equalTo(submitButton.snp.top).offset(-60)
         }
         
 //        mainScrollView.snp.makeConstraints { make in
