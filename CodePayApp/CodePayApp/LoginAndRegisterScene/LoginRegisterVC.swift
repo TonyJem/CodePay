@@ -16,6 +16,7 @@ class LoginRegisterVC: UIViewController {
         tableView.dataSource = self
         
         tableView.register(BaseTableViewCell.self, forCellReuseIdentifier: BaseTableViewCell.reuseID)
+        tableView.register(LogoImageCell.self, forCellReuseIdentifier: LogoImageCell.reuseID)
 
         self.view.addSubview(tableView)
         setupTableConstraints()
@@ -37,7 +38,7 @@ extension LoginRegisterVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let newReminderCell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.reuseID, for: indexPath) as? BaseTableViewCell else {
+        guard let newReminderCell = tableView.dequeueReusableCell(withIdentifier: LogoImageCell.reuseID, for: indexPath) as? BaseTableViewCell else {
             return UITableViewCell()
         }
         return newReminderCell
