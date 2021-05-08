@@ -17,14 +17,9 @@ class LoginRegisterVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
         tableView.register(BaseTableViewCell.self, forCellReuseIdentifier: BaseTableViewCell.reuseID)
         tableView.register(PersonImageCell.self, forCellReuseIdentifier: PersonImageCell.reuseID)
         tableView.register(TestCell.self, forCellReuseIdentifier: TestCell.reuseID)
-        
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 150
         
         self.view.addSubview(tableView)
         setupTableConstraints()
@@ -54,15 +49,12 @@ extension LoginRegisterVC: UITableViewDataSource {
 }
 
 extension LoginRegisterVC: UITableViewDelegate {
-    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    //
-    ////        guard let cell = tableView.dequeueReusableCell(withIdentifier: LogoImageCell.reuseID, for: indexPath) as? BaseTableViewCell else {
-    ////            print("🔴 RowHeght will be set to 50")
-    ////            return 50
-    ////        }
-    ////        print("🟡 RowHeght will be set to height")
-    ////        return cell.height()
-    //
-    //        return 50
-    //    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 0:
+            return 110
+        default:
+            return 50
+        }
+    }
 }
