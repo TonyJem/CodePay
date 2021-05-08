@@ -1,20 +1,15 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-        
-    /*
-     let imageContainerHeight = imageContainerView.frame.height
-     let titleLabelHeight = titleLabel.frame.height
-     let stackViewHeight = stackView.frame.height
-     
-     let scrollContentHeight = imageContainerHeight +
-         spaceBetweenTitleAndImageContainerView +
-         titleLabelHeight +
-         spaceBetweenStackViewAndTitle + stackViewHeight
-         
-     mainScrollView.contentSize = CGSize(width: elementWidth, height: scrollContentHeight + 180)
-     */
     
+    var viewWidth: CGFloat {
+        return view.frame.size.width
+    }
+    
+    var contentWidth: CGFloat {
+        return viewWidth * 0.7143
+    }
+
     private var sceneTitle = "" {
         didSet {
             titleLabel.setup(title: sceneTitle, dto: CodePayLabelDTO.heading)
@@ -46,7 +41,8 @@ class LoginViewController: UIViewController {
     // MARK: - Views
     lazy var mainScrollView: UIScrollView = {
         let scroll = UIScrollView()
-        scroll.backgroundColor = .systemPink
+        scroll.backgroundColor = .gray
+        scroll.contentSize = CGSize(width: contentWidth, height: 800)
         
         self.view.addSubview(scroll)
         return scroll

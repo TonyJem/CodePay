@@ -4,10 +4,8 @@ import SnapKit
 extension LoginViewController {
     
     func setupConstraints() {
-        let viewWidth = view.frame.size.width
         let imageContainerViewWidth = 90
         let imageSizeMultiplier = 0.8889
-        let elementWidth: CGFloat = viewWidth * 0.7143
         
         let viewHeight = view.frame.size.height
 //        let topInset: CGFloat = 30
@@ -24,24 +22,24 @@ extension LoginViewController {
 //        let bottomInset: CGFloat = viewHeight * 0.1651
         
         submitButton.snp.makeConstraints { make in
-            make.width.equalTo(elementWidth)
+            make.width.equalTo(contentWidth)
             make.height.equalTo(submitButtonHeight)
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(bottomInset)
             make.centerX.equalToSuperview()
         }
         
         secondaryButton.snp.makeConstraints { make in
-            make.width.lessThanOrEqualTo(elementWidth)
+            make.width.lessThanOrEqualTo(contentWidth)
             make.height.equalTo(secondaryButtonHeight)
             make.top.equalTo(submitButton.snp.bottom).offset(spaceBetweenSubmitButtonAndSecondary)
             make.centerX.equalToSuperview()
         }
         
         mainScrollView.snp.makeConstraints { make in
-            make.width.equalTo(elementWidth)
+            make.width.equalTo(contentWidth)
             make.centerX.equalToSuperview()
-            make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
-            make.bottom.equalTo(submitButton.snp.top).offset(-30)
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(10)
+            make.bottom.equalTo(submitButton.snp.top).offset(-5)
         }
     
         imageContainerView.snp.makeConstraints { make in
@@ -58,14 +56,14 @@ extension LoginViewController {
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.width.equalTo(elementWidth)
+            make.width.equalTo(contentWidth)
             make.height.equalTo(titleHeight)
             make.top.equalTo(imageContainerView.snp.bottom).offset(spaceBetweenTitleAndImageContainerView)
             make.centerX.equalToSuperview()
         }
         
         stackView.snp.makeConstraints { make in
-            make.width.equalTo(elementWidth)
+            make.width.equalTo(contentWidth)
             make.top.equalTo(titleLabel.snp.bottom).offset(spaceBetweenStackViewAndTitle)
             make.centerX.equalToSuperview()
         }
@@ -120,7 +118,7 @@ extension LoginViewController {
         }
         
         mainScrollView.snp.updateConstraints { make in
-            make.bottom.equalTo(submitButton.snp.top).offset(-30)
+            make.bottom.equalTo(submitButton.snp.top).offset(-5)
         }
         
         UIView.animate(withDuration: 1.5, animations: view.layoutIfNeeded)
@@ -132,7 +130,7 @@ extension LoginViewController {
         }
         
         mainScrollView.snp.updateConstraints { make in
-            make.bottom.equalTo(submitButton.snp.top).offset(-30)
+            make.bottom.equalTo(submitButton.snp.top).offset(-5)
         }
         
         UIView.animate(withDuration: 1.5, animations: view.layoutIfNeeded)
