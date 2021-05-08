@@ -2,15 +2,14 @@ import UIKit
 
 class LoginRegisterVC: UIViewController {
     
-    let identifieres = [PersonImageCell.cellID,
-                        TitleCell.cellID,
-                        PhoneInputCell.cellID,
-                        PasswordInputCell.cellID,
-                        ConfirmPasswordInputCell.cellID,
-                        CurrencyInputCell.cellID]
-    
     private let tableView = UITableView()
-    
+    private let identifieres = [PersonImageCell.cellID,
+                                TitleCell.cellID,
+                                PhoneInputCell.cellID,
+                                PasswordInputCell.cellID,
+                                ConfirmPasswordInputCell.cellID,
+                                CurrencyInputCell.cellID]
+    // MARK:  - Setup
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,6 +42,7 @@ class LoginRegisterVC: UIViewController {
     }
 }
 
+// MARK:  - tableView DataSource
 extension LoginRegisterVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         identifieres.count
@@ -56,6 +56,7 @@ extension LoginRegisterVC: UITableViewDataSource {
     }
 }
 
+// MARK:  - tableView Delegate
 extension LoginRegisterVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
