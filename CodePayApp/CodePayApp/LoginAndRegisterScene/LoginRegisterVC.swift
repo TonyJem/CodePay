@@ -25,34 +25,40 @@ class LoginRegisterVC: UIViewController {
         return btn
     }()
     
+    private var onLogin: Bool = true {
+        didSet {
+            submitButtonTitle = onLogin ? __("login_submit_btn") : __("create_account_submit_btn")
+            secondaryButtonTitle = onLogin ? __("create_account_secondary_btn") : __("login_secondary_btn")
+        }
+    }
+    
+    private var submitButtonTitle = "" {
+        didSet {
+            submitButton.setup(title: submitButtonTitle, dto: CodePayButtonDTO.submit)
+        }
+    }
+    
+    private var secondaryButtonTitle = "" {
+        didSet {
+            secondaryButton.setup(title: secondaryButtonTitle, dto: CodePayButtonDTO.secondary)
+        }
+    }
+    
     // MARK:  - Setup
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = Colors.mainBackground
-        
-        tableView.tableFooterView = UIView()
-        tableView.backgroundColor = Colors.mainBackground
-        
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        tableView.register(PersonImageCell.self, forCellReuseIdentifier: PersonImageCell.cellID)
-        tableView.register(TitleCell.self, forCellReuseIdentifier: TitleCell.cellID)
-        tableView.register(PhoneInputCell.self, forCellReuseIdentifier: PhoneInputCell.cellID)
-        tableView.register(PasswordInputCell.self, forCellReuseIdentifier: PasswordInputCell.cellID)
-        tableView.register(ConfirmPasswordInputCell.self, forCellReuseIdentifier: ConfirmPasswordInputCell.cellID)
-        tableView.register(CurrencyInputCell.self, forCellReuseIdentifier: CurrencyInputCell.cellID)
-        
+        setupTableView()
         view.addSubview(tableView)
-        
         view.addSubview(submitButton)
         view.addSubview(secondaryButton)
-        
         setupConstraints()
-        
-        submitButton.setup(title: "SubmitBTNString", dto: CodePayButtonDTO.submit)
-        secondaryButton.setup(title: "SecondaryBTNString", dto: CodePayButtonDTO.secondary)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        onLogin = true
+        title = __("login_heading")
     }
     
     // MARK:  - Actions
@@ -61,7 +67,7 @@ class LoginRegisterVC: UIViewController {
     }
 
     @objc func secondaryButtonDidTap(_ sender: UIButton) {
-        print("🟢🟢 'secondaryButton' button in Login Scene did Tap")
+        onLogin = !onLogin
     }
 }
 
@@ -88,6 +94,24 @@ private extension LoginRegisterVC {
             make.bottom.equalTo(secondaryButton.snp.top).inset(-20)
             make.centerX.equalToSuperview()
         }
+    }
+}
+
+// MARK:  - tableView Setup
+private extension LoginRegisterVC {
+    func setupTableView() {
+        tableView.tableFooterView = UIView()
+        tableView.backgroundColor = Colors.mainBackground
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        tableView.register(PersonImageCell.self, forCellReuseIdentifier: PersonImageCell.cellID)
+        tableView.register(TitleCell.self, forCellReuseIdentifier: TitleCell.cellID)
+        tableView.register(PhoneInputCell.self, forCellReuseIdentifier: PhoneInputCell.cellID)
+        tableView.register(PasswordInputCell.self, forCellReuseIdentifier: PasswordInputCell.cellID)
+        tableView.register(ConfirmPasswordInputCell.self, forCellReuseIdentifier: ConfirmPasswordInputCell.cellID)
+        tableView.register(CurrencyInputCell.self, forCellReuseIdentifier: CurrencyInputCell.cellID)
     }
 }
 
