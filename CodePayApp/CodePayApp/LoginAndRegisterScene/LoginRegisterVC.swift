@@ -12,8 +12,8 @@ class LoginRegisterVC: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = Colors.mainBackground
         
-        tableView.rowHeight = 50
         tableView.dataSource = self
+        tableView.delegate = self
         
         tableView.register(BaseTableViewCell.self, forCellReuseIdentifier: BaseTableViewCell.reuseID)
         tableView.register(LogoImageCell.self, forCellReuseIdentifier: LogoImageCell.reuseID)
@@ -24,23 +24,37 @@ class LoginRegisterVC: UIViewController {
     
     private func setupTableConstraints() {
         tableView.snp.makeConstraints { make in
-            make.leading.equalTo(view.safeAreaLayoutGuide).inset(20)
-            make.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
-            make.top.equalTo(view.safeAreaLayoutGuide).inset(20)
-            make.height.equalTo(200)
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.width.equalTo(300)
+            make.height.equalTo(500)
+            make.centerX.equalToSuperview()
         }
     }
 }
 
 extension LoginRegisterVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        6
+        4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let newReminderCell = tableView.dequeueReusableCell(withIdentifier: LogoImageCell.reuseID, for: indexPath) as? BaseTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: LogoImageCell.reuseID, for: indexPath) as? BaseTableViewCell else {
             return UITableViewCell()
         }
-        return newReminderCell
+        return cell
+    }
+}
+
+extension LoginRegisterVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: LogoImageCell.reuseID, for: indexPath) as? BaseTableViewCell else {
+//            print("🔴 RowHeght will be set to 50")
+//            return 50
+//        }
+//        print("🟡 RowHeght will be set to height")
+//        return cell.height()
+        
+        return 100
     }
 }
