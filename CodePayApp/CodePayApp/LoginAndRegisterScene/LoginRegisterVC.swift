@@ -54,6 +54,7 @@ class LoginRegisterVC: UIViewController {
         view.addSubview(submitButton)
         view.addSubview(secondaryButton)
         setupConstraints()
+        initializeHideKeyboard()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,6 +68,15 @@ class LoginRegisterVC: UIViewController {
 
     @objc func secondaryButtonDidTap(_ sender: UIButton) {
         onLogin = !onLogin
+    }
+    
+    @objc func dismissMyKeyboard(){
+        view.endEditing(true)
+    }
+    
+    private func initializeHideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissMyKeyboard))
+        view.addGestureRecognizer(tap)
     }
 }
 

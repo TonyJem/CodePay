@@ -35,6 +35,7 @@
 		3A70F60826470EEA0090DABB /* PasswordInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F60726470EEA0090DABB /* PasswordInputCell.swift */; };
 		3A70F60B26470F400090DABB /* ConfirmPasswordInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F60A26470F400090DABB /* ConfirmPasswordInputCell.swift */; };
 		3A70F60E26470F5E0090DABB /* CurrencyInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F60D26470F5E0090DABB /* CurrencyInputCell.swift */; };
+		3A70F61426471C7E0090DABB /* SelfSizingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F61326471C7E0090DABB /* SelfSizingTableView.swift */; };
 		3A8313D5263F0A31000D79D9 /* CodePayTextFieldDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313D4263F0A31000D79D9 /* CodePayTextFieldDTO.swift */; };
 		3A8313D8263F0CB9000D79D9 /* CodePayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313D7263F0CB9000D79D9 /* CodePayTextField.swift */; };
 		3A8313E52645813B000D79D9 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313E42645813B000D79D9 /* InputView.swift */; };
@@ -73,6 +74,7 @@
 		3A70F60726470EEA0090DABB /* PasswordInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputCell.swift; sourceTree = "<group>"; };
 		3A70F60A26470F400090DABB /* ConfirmPasswordInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordInputCell.swift; sourceTree = "<group>"; };
 		3A70F60D26470F5E0090DABB /* CurrencyInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyInputCell.swift; sourceTree = "<group>"; };
+		3A70F61326471C7E0090DABB /* SelfSizingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizingTableView.swift; sourceTree = "<group>"; };
 		3A8313D4263F0A31000D79D9 /* CodePayTextFieldDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayTextFieldDTO.swift; sourceTree = "<group>"; };
 		3A8313D7263F0CB9000D79D9 /* CodePayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayTextField.swift; sourceTree = "<group>"; };
 		3A8313E42645813B000D79D9 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				3A06B3AC263DD54B00E8C56E /* Label */,
 				3A06B3AA263DD40200E8C56E /* TextField */,
 				3A06B3B4263DD75900E8C56E /* Colors.swift */,
+				3A70F61326471C7E0090DABB /* SelfSizingTableView.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				3A70F60826470EEA0090DABB /* PasswordInputCell.swift in Sources */,
 				3A06B3B9263DE60500E8C56E /* CodePayButton.swift in Sources */,
 				3A06B3B5263DD75900E8C56E /* Colors.swift in Sources */,
+				3A70F61426471C7E0090DABB /* SelfSizingTableView.swift in Sources */,
 				3A70F602264700480090DABB /* InputCell.swift in Sources */,
 				3A06B35D263C80B100E8C56E /* LoginViewController.swift in Sources */,
 				3A8313F726459494000D79D9 /* TextFieldContainer.swift in Sources */,
