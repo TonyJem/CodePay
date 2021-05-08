@@ -11,6 +11,12 @@ class LoginViewController: UIViewController {
         return view.frame.size.width
     }
 
+//    private var sceneTitle = "" {
+//        didSet {
+//            titleLabel.setup(title: sceneTitle, dto: CodePayLabelDTO.heading)
+//        }
+//    }
+    
     private var submitButtonTitle = "" {
         didSet {
             submitButton.setup(title: submitButtonTitle, dto: CodePayButtonDTO.submit)
@@ -27,6 +33,7 @@ class LoginViewController: UIViewController {
         didSet {
             confirmPasswordView.isHidden = onLogin
             currencyView.isHidden = onLogin
+//            sceneTitle = onLogin ? __("login_heading") : __("register_heading")
             title = onLogin ? __("login_heading") : __("register_heading")
             submitButtonTitle = onLogin ? __("login_submit_btn") : __("create_account_submit_btn")
             secondaryButtonTitle = onLogin ? __("create_account_secondary_btn") : __("login_secondary_btn")
@@ -58,6 +65,14 @@ class LoginViewController: UIViewController {
         imageContainerView.addSubview(imageView)
         return imageView
     }()
+    
+//    lazy var titleLabel: CodePayLabel = {
+//        let lbl = CodePayLabel(frame: .zero)
+//        lbl.textAlignment = .center
+//
+//        mainScrollView.addSubview(lbl)
+//        return lbl
+//    }()
     
     lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [phoneView, passwordView, confirmPasswordView, currencyView])
