@@ -113,21 +113,21 @@ extension LoginViewController {
     }
     
     func keyboardWillAppear(_ keyboardHeight: CGFloat) {
-        submitButton.snp.updateConstraints { make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(20 + keyboardHeight)
+        mainScrollView.snp.updateConstraints { make in
+            make.bottom.equalTo(submitButton.snp.top).offset(-60)
         }
         
-        mainScrollView.snp.updateConstraints { make in
-            make.bottom.equalTo(submitButton.snp.top).offset(-5)
-        }
+//        mainScrollView.snp.makeConstraints { make in
+//            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(20 + keyboardHeight)
+//        }
         
         UIView.animate(withDuration: 1.5, animations: view.layoutIfNeeded)
     }
     
     func keyboardWillDisappear() {
-        submitButton.snp.updateConstraints { make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(90)
-        }
+//        submitButton.snp.updateConstraints { make in
+//            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(90)
+//        }
         
         mainScrollView.snp.updateConstraints { make in
             make.bottom.equalTo(submitButton.snp.top).offset(-5)

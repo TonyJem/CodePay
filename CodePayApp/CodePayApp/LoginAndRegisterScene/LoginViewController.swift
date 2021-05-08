@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
     // MARK: - Views
     lazy var mainScrollView: UIScrollView = {
         let scroll = UIScrollView()
-        scroll.backgroundColor = .gray
+        scroll.backgroundColor = .systemGray5
         scroll.contentSize = CGSize(width: contentWidth, height: 800)
         
         self.view.addSubview(scroll)
