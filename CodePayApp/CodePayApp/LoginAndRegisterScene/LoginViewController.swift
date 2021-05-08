@@ -1,6 +1,19 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+        
+    /*
+     let imageContainerHeight = imageContainerView.frame.height
+     let titleLabelHeight = titleLabel.frame.height
+     let stackViewHeight = stackView.frame.height
+     
+     let scrollContentHeight = imageContainerHeight +
+         spaceBetweenTitleAndImageContainerView +
+         titleLabelHeight +
+         spaceBetweenStackViewAndTitle + stackViewHeight
+         
+     mainScrollView.contentSize = CGSize(width: elementWidth, height: scrollContentHeight + 180)
+     */
     
     private var sceneTitle = "" {
         didSet {
@@ -31,12 +44,20 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Views
+    lazy var mainScrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        scroll.backgroundColor = .systemPink
+        
+        self.view.addSubview(scroll)
+        return scroll
+    }()
+    
     lazy var imageContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = Colors.lightBlue
         view.layer.cornerRadius = 45
         
-        self.view.addSubview(view)
+        mainScrollView.addSubview(view)
         return view
     }()
     
@@ -51,7 +72,7 @@ class LoginViewController: UIViewController {
         let lbl = CodePayLabel(frame: .zero)
         lbl.textAlignment = .center
         
-        self.view.addSubview(lbl)
+        mainScrollView.addSubview(lbl)
         return lbl
     }()
     
@@ -59,7 +80,7 @@ class LoginViewController: UIViewController {
         let stackView = UIStackView(arrangedSubviews: [phoneView, passwordView, confirmPasswordView, currencyView])
         stackView.axis = .vertical
         
-        view.addSubview(stackView)
+        mainScrollView.addSubview(stackView)
         return stackView
     }()
     

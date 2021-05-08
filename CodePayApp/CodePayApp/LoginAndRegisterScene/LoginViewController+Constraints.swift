@@ -10,7 +10,7 @@ extension LoginViewController {
         let elementWidth: CGFloat = viewWidth * 0.7143
         
         let viewHeight = view.frame.size.height
-        let topInset: CGFloat = 30
+//        let topInset: CGFloat = 30
         let imageContainerViewHeight = imageContainerViewWidth
         let spaceBetweenTitleAndImageContainerView: CGFloat = 20
         let titleHeight: CGFloat = 25
@@ -23,10 +23,31 @@ extension LoginViewController {
         let bottomInset: CGFloat = 90
 //        let bottomInset: CGFloat = viewHeight * 0.1651
         
+        submitButton.snp.makeConstraints { make in
+            make.width.equalTo(elementWidth)
+            make.height.equalTo(submitButtonHeight)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(bottomInset)
+            make.centerX.equalToSuperview()
+        }
+        
+        secondaryButton.snp.makeConstraints { make in
+            make.width.lessThanOrEqualTo(elementWidth)
+            make.height.equalTo(secondaryButtonHeight)
+            make.top.equalTo(submitButton.snp.bottom).offset(spaceBetweenSubmitButtonAndSecondary)
+            make.centerX.equalToSuperview()
+        }
+        
+        mainScrollView.snp.makeConstraints { make in
+            make.width.equalTo(elementWidth)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
+            make.bottom.equalTo(submitButton.snp.top).offset(-30)
+        }
+    
         imageContainerView.snp.makeConstraints { make in
             make.width.equalTo(imageContainerViewWidth)
             make.height.equalTo(imageContainerViewHeight)
-            make.top.equalTo(view.safeAreaLayoutGuide).inset(topInset)
+            make.top.equalToSuperview()
             make.centerX.equalToSuperview()
         }
         
@@ -73,20 +94,6 @@ extension LoginViewController {
             make.height.equalTo(inputViewHeight)
         }
         currencyView.setupConstraints()
-        
-        submitButton.snp.makeConstraints { make in
-            make.width.equalTo(elementWidth)
-            make.height.equalTo(submitButtonHeight)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(bottomInset)
-            make.centerX.equalToSuperview()
-        }
-        
-        secondaryButton.snp.makeConstraints { make in
-            make.width.lessThanOrEqualTo(elementWidth)
-            make.height.equalTo(secondaryButtonHeight)
-            make.top.equalTo(submitButton.snp.bottom).offset(spaceBetweenSubmitButtonAndSecondary)
-            make.centerX.equalToSuperview()
-        }
     }
 }
 
@@ -111,6 +118,11 @@ extension LoginViewController {
         submitButton.snp.updateConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(20 + keyboardHeight)
         }
+        
+        mainScrollView.snp.updateConstraints { make in
+            make.bottom.equalTo(submitButton.snp.top).offset(-30)
+        }
+        
         UIView.animate(withDuration: 1.5, animations: view.layoutIfNeeded)
     }
     
@@ -118,6 +130,11 @@ extension LoginViewController {
         submitButton.snp.updateConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(90)
         }
+        
+        mainScrollView.snp.updateConstraints { make in
+            make.bottom.equalTo(submitButton.snp.top).offset(-30)
+        }
+        
         UIView.animate(withDuration: 1.5, animations: view.layoutIfNeeded)
     }
     
