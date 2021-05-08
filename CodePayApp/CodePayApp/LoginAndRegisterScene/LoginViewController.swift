@@ -1,14 +1,46 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    let imageContainerViewWidth: CGFloat = 90
+    let imageSizeMultiplier: CGFloat = 0.8889
+    
+    let spaceBetweenTitleAndImageContainerView: CGFloat = 20
+    let titleHeight: CGFloat = 25
+    let spaceBetweenStackViewAndTitle: CGFloat = 35
+    let inputViewHeight: CGFloat = 70
+    
+    
+    var spaceBetweenInputViews: CGFloat {
+        viewHeight * 0.0267
+    }
+    
+    let spaceBetweenSubmitButtonAndSecondary: CGFloat = 20
+    
+    let submitButtonHeight: CGFloat = 60
+    let secondaryButtonHeight: CGFloat = 40
+    let bottomInset: CGFloat = 90
+    
     var contentWidth: CGFloat {
         return viewWidth * contentWidthMultiplier
     }
     
+    var imageContainerViewHeight: CGFloat {
+        return imageContainerViewWidth
+    }
+    
     private let contentWidthMultiplier: CGFloat = 0.7143
+    
+    var scrollViewContentHeight: CGFloat {
+        return 500
+    }
     
     private var viewWidth: CGFloat {
         return view.frame.size.width
+    }
+    
+    var viewHeight: CGFloat {
+        return view.frame.size.height
     }
 
     private var sceneTitle = "" {
@@ -44,7 +76,7 @@ class LoginViewController: UIViewController {
     lazy var mainScrollView: UIScrollView = {
         let scroll = UIScrollView()
         scroll.backgroundColor = .systemGray5
-        scroll.contentSize = CGSize(width: contentWidth, height: 650)
+        scroll.contentSize = CGSize(width: contentWidth, height: scrollViewContentHeight)
         
         self.view.addSubview(scroll)
         return scroll
@@ -146,6 +178,7 @@ class LoginViewController: UIViewController {
     
     @objc func secondaryButtonDidTap(_ sender: UIButton) {
         onLogin = !onLogin
+        
     }
     
     @objc func dismissMyKeyboard(){
