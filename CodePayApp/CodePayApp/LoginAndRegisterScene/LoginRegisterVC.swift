@@ -2,7 +2,12 @@ import UIKit
 
 class LoginRegisterVC: UIViewController {
     
-    let identifieres = [PersonImageCell.reuseID, TitleCell.reuseID, TestCell.reuseID, TestCell.reuseID]
+    let identifieres = [PersonImageCell.reuseID,
+                        TitleCell.reuseID,
+                        InputCell.reuseID,
+                        InputCell.reuseID,
+                        InputCell.reuseID,
+                        InputCell.reuseID]
     
     private let tableView = UITableView()
     
@@ -19,6 +24,7 @@ class LoginRegisterVC: UIViewController {
         
         tableView.register(PersonImageCell.self, forCellReuseIdentifier: PersonImageCell.reuseID)
         tableView.register(TitleCell.self, forCellReuseIdentifier: TitleCell.reuseID)
+        tableView.register(InputCell.self, forCellReuseIdentifier: InputCell.reuseID)
         
         tableView.register(TestCell.self, forCellReuseIdentifier: TestCell.reuseID)
         
@@ -57,7 +63,7 @@ extension LoginRegisterVC: UITableViewDelegate {
         case 1:
             return 40
         default:
-            return 50
+            return 90
         }
     }
 }
