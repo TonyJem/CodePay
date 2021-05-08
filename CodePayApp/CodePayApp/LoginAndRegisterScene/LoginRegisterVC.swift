@@ -58,7 +58,6 @@ class LoginRegisterVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         onLogin = true
-        title = __("login_heading")
     }
     
     // MARK:  - Actions
@@ -76,7 +75,7 @@ private extension LoginRegisterVC {
     func setupConstraints() {
         tableView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
-            make.width.equalTo(300)
+            make.width.equalTo(Core.elementWidth)
             make.height.equalTo(500)
             make.centerX.equalToSuperview()
         }
