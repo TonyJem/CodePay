@@ -2,12 +2,12 @@ import UIKit
 
 class LoginRegisterVC: UIViewController {
     
-    let identifieres = [PersonImageCell.reuseID,
-                        TitleCell.reuseID,
-                        PhoneInputCell.reuseID,
-                        PasswordInputCell.reuseID,
-                        ConfirmPasswordInputCell.reuseID,
-                        CurrencyInputCell.reuseID]
+    let identifieres = [PersonImageCell.cellID,
+                        TitleCell.cellID,
+                        PhoneInputCell.cellID,
+                        PasswordInputCell.cellID,
+                        ConfirmPasswordInputCell.cellID,
+                        CurrencyInputCell.cellID]
     
     private let tableView = UITableView()
     
@@ -22,12 +22,12 @@ class LoginRegisterVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.register(PersonImageCell.self, forCellReuseIdentifier: PersonImageCell.reuseID)
-        tableView.register(TitleCell.self, forCellReuseIdentifier: TitleCell.reuseID)
-        tableView.register(PhoneInputCell.self, forCellReuseIdentifier: PhoneInputCell.reuseID)
-        tableView.register(PasswordInputCell.self, forCellReuseIdentifier: PasswordInputCell.reuseID)
-        tableView.register(ConfirmPasswordInputCell.self, forCellReuseIdentifier: ConfirmPasswordInputCell.reuseID)
-        tableView.register(CurrencyInputCell.self, forCellReuseIdentifier: CurrencyInputCell.reuseID)
+        tableView.register(PersonImageCell.self, forCellReuseIdentifier: PersonImageCell.cellID)
+        tableView.register(TitleCell.self, forCellReuseIdentifier: TitleCell.cellID)
+        tableView.register(PhoneInputCell.self, forCellReuseIdentifier: PhoneInputCell.cellID)
+        tableView.register(PasswordInputCell.self, forCellReuseIdentifier: PasswordInputCell.cellID)
+        tableView.register(ConfirmPasswordInputCell.self, forCellReuseIdentifier: ConfirmPasswordInputCell.cellID)
+        tableView.register(CurrencyInputCell.self, forCellReuseIdentifier: CurrencyInputCell.cellID)
         
         self.view.addSubview(tableView)
         setupTableConstraints()

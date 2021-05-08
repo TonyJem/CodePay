@@ -1,6 +1,6 @@
 import UIKit
 
-class BaseTableViewCell: UITableViewCell, ReusableView {
+class BaseTableViewCell: UITableViewCell, CellPresentable {
     
     private let defaultCellHeight: CGFloat = 60
     

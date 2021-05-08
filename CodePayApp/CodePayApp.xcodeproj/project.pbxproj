@@ -26,7 +26,7 @@
 		3A6F86CA2646B60400E0EC92 /* LoginRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F86C92646B60400E0EC92 /* LoginRegisterVC.swift */; };
 		3A6F86CE2646BBA400E0EC92 /* PersonImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F86CD2646BBA400E0EC92 /* PersonImageCell.swift */; };
 		3A6F86DE2646C4DC00E0EC92 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F86DD2646C4DC00E0EC92 /* BaseTableViewCell.swift */; };
-		3A6F86E12646CB3B00E0EC92 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F86E02646CB3B00E0EC92 /* ReusableView.swift */; };
+		3A6F86E12646CB3B00E0EC92 /* CellPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F86E02646CB3B00E0EC92 /* CellPresentable.swift */; };
 		3A6F86E82646E06100E0EC92 /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F86E72646E06100E0EC92 /* TestCell.swift */; };
 		3A70F5FA2646F3690090DABB /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F5F92646F3690090DABB /* TitleCell.swift */; };
 		3A70F5FF2646F41D0090DABB /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F5FE2646F41D0090DABB /* Core.swift */; };
@@ -64,7 +64,7 @@
 		3A6F86C92646B60400E0EC92 /* LoginRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterVC.swift; sourceTree = "<group>"; };
 		3A6F86CD2646BBA400E0EC92 /* PersonImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonImageCell.swift; sourceTree = "<group>"; };
 		3A6F86DD2646C4DC00E0EC92 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
-		3A6F86E02646CB3B00E0EC92 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		3A6F86E02646CB3B00E0EC92 /* CellPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellPresentable.swift; sourceTree = "<group>"; };
 		3A6F86E72646E06100E0EC92 /* TestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
 		3A70F5F92646F3690090DABB /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		3A70F5FE2646F41D0090DABB /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
@@ -221,7 +221,7 @@
 		3A6F86D92646BEB200E0EC92 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				3A6F86E02646CB3B00E0EC92 /* ReusableView.swift */,
+				3A6F86E02646CB3B00E0EC92 /* CellPresentable.swift */,
 				3A6F86DD2646C4DC00E0EC92 /* BaseTableViewCell.swift */,
 				3A6F86E72646E06100E0EC92 /* TestCell.swift */,
 				3A6F86CD2646BBA400E0EC92 /* PersonImageCell.swift */,
@@ -337,7 +337,7 @@
 				3A06B3BC263DE64800E8C56E /* CodePayButtonDTO.swift in Sources */,
 				3A6F86CA2646B60400E0EC92 /* LoginRegisterVC.swift in Sources */,
 				3A8313D5263F0A31000D79D9 /* CodePayTextFieldDTO.swift in Sources */,
-				3A6F86E12646CB3B00E0EC92 /* ReusableView.swift in Sources */,
+				3A6F86E12646CB3B00E0EC92 /* CellPresentable.swift in Sources */,
 				3A70F5FA2646F3690090DABB /* TitleCell.swift in Sources */,
 				3A8313EC264589B8000D79D9 /* PasswordTextFieldContainer.swift in Sources */,
 				3A6F86CE2646BBA400E0EC92 /* PersonImageCell.swift in Sources */,
