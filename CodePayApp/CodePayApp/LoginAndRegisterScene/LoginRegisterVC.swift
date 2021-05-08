@@ -4,10 +4,10 @@ class LoginRegisterVC: UIViewController {
     
     let identifieres = [PersonImageCell.reuseID,
                         TitleCell.reuseID,
-                        InputCell.reuseID,
-                        InputCell.reuseID,
-                        InputCell.reuseID,
-                        InputCell.reuseID]
+                        PhoneInputCell.reuseID,
+                        PasswordInputCell.reuseID,
+                        ConfirmPasswordInputCell.reuseID,
+                        CurrencyInputCell.reuseID]
     
     private let tableView = UITableView()
     
@@ -24,9 +24,10 @@ class LoginRegisterVC: UIViewController {
         
         tableView.register(PersonImageCell.self, forCellReuseIdentifier: PersonImageCell.reuseID)
         tableView.register(TitleCell.self, forCellReuseIdentifier: TitleCell.reuseID)
-        tableView.register(InputCell.self, forCellReuseIdentifier: InputCell.reuseID)
-        
-        tableView.register(TestCell.self, forCellReuseIdentifier: TestCell.reuseID)
+        tableView.register(PhoneInputCell.self, forCellReuseIdentifier: PhoneInputCell.reuseID)
+        tableView.register(PasswordInputCell.self, forCellReuseIdentifier: PasswordInputCell.reuseID)
+        tableView.register(ConfirmPasswordInputCell.self, forCellReuseIdentifier: ConfirmPasswordInputCell.reuseID)
+        tableView.register(CurrencyInputCell.self, forCellReuseIdentifier: CurrencyInputCell.reuseID)
         
         self.view.addSubview(tableView)
         setupTableConstraints()

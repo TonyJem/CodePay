@@ -12,7 +12,7 @@ class InputCell: BaseTableViewCell {
     override func setupView() {
         super.setupView()
         
-        inputContainer.type = .phone
+        inputContainer.type = inputType()
         contentView.addSubview(inputContainer)
     }
     
@@ -25,5 +25,9 @@ class InputCell: BaseTableViewCell {
             make.centerX.centerY.equalTo(contentView)
         }
         inputContainer.setupConstraints()
+    }
+    
+    func inputType() -> InputViewType {
+        return .phone
     }
 }
