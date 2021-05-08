@@ -174,8 +174,6 @@ class LoginViewController: UIViewController {
     // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {
         print("🟢 'Submit' button in Login Scene did Tap")
-        let newViewController = LoginInTableVC()
-        self.navigationController?.pushViewController(newViewController, animated: true)
     }
     
     @objc func secondaryButtonDidTap(_ sender: UIButton) {
