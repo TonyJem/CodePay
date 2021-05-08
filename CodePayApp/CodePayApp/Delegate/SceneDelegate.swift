@@ -5,12 +5,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
         
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        
+        guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         let navController = UINavigationController()
         let viewController = LoginViewController()
         navController.viewControllers = [viewController]
+        navController.navigationBar.barTintColor = Colors.mainBackground
         
         window.rootViewController = navController
         self.window = window

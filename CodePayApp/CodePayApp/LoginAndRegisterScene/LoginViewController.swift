@@ -33,6 +33,7 @@ class LoginViewController: UIViewController {
             confirmPasswordView.isHidden = onLogin
             currencyView.isHidden = onLogin
             sceneTitle = onLogin ? __("login_heading") : __("register_heading")
+            title = onLogin ? __("login_heading") : __("register_heading")
             submitButtonTitle = onLogin ? __("login_submit_btn") : __("create_account_submit_btn")
             secondaryButtonTitle = onLogin ? __("create_account_secondary_btn") : __("login_secondary_btn")
         }
@@ -125,7 +126,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = Colors.loginSceneBackground
+        self.view.backgroundColor = Colors.mainBackground
         
         setupConstraints()
         observeKeyboardNotifications()
@@ -134,6 +135,7 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         onLogin = true
+        title = __("login_heading")
     }
     
     // MARK:  - Actions
