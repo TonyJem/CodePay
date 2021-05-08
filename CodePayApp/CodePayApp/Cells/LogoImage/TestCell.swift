@@ -1,6 +1,6 @@
 import UIKit
 
-class LogoImageCell: BaseTableViewCell {
+class TestCell: BaseTableViewCell {
 
     private let testLabel: UILabel = {
         let label = UILabel()
@@ -22,9 +22,5 @@ class LogoImageCell: BaseTableViewCell {
         }
     }
     
-    override func height() -> CGFloat {
-        super.height()
-        
-        return 200
-    }
+
 }

@@ -9,6 +9,10 @@ class BaseTableViewCell: UITableViewCell, ReusableView {
         
         setupView()
         setupConstraints()
+        
+//        TODO: REmove separator or make it clear or same as background color
+        separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//        backgroundColor = Colors.mainBackground
     }
     
     required init?(coder: NSCoder) {

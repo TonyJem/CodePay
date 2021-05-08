@@ -2,8 +2,10 @@ import UIKit
 
 class LoginRegisterVC: UIViewController {
     
+    let identifieres = [PersonImageCell.reuseID, TestCell.reuseID, TestCell.reuseID, TestCell.reuseID]
+    
     private let tableView = UITableView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -15,9 +17,15 @@ class LoginRegisterVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
         tableView.register(BaseTableViewCell.self, forCellReuseIdentifier: BaseTableViewCell.reuseID)
-        tableView.register(LogoImageCell.self, forCellReuseIdentifier: LogoImageCell.reuseID)
-
+        tableView.register(PersonImageCell.self, forCellReuseIdentifier: PersonImageCell.reuseID)
+        tableView.register(TestCell.self, forCellReuseIdentifier: TestCell.reuseID)
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 150
+        
         self.view.addSubview(tableView)
         setupTableConstraints()
     }
@@ -34,11 +42,11 @@ class LoginRegisterVC: UIViewController {
 
 extension LoginRegisterVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        4
+        identifieres.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: LogoImageCell.reuseID, for: indexPath) as? BaseTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifieres[indexPath.row], for: indexPath) as? BaseTableViewCell else {
             return UITableViewCell()
         }
         return cell
@@ -46,15 +54,15 @@ extension LoginRegisterVC: UITableViewDataSource {
 }
 
 extension LoginRegisterVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: LogoImageCell.reuseID, for: indexPath) as? BaseTableViewCell else {
-//            print("🔴 RowHeght will be set to 50")
-//            return 50
-//        }
-//        print("🟡 RowHeght will be set to height")
-//        return cell.height()
-        
-        return 100
-    }
+    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    //
+    ////        guard let cell = tableView.dequeueReusableCell(withIdentifier: LogoImageCell.reuseID, for: indexPath) as? BaseTableViewCell else {
+    ////            print("🔴 RowHeght will be set to 50")
+    ////            return 50
+    ////        }
+    ////        print("🟡 RowHeght will be set to height")
+    ////        return cell.height()
+    //
+    //        return 50
+    //    }
 }
