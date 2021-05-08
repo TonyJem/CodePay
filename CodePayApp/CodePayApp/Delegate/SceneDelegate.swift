@@ -16,6 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navController.viewControllers = [viewController]
         navController.navigationBar.barTintColor = Colors.mainBackground
         
+        let titleDTO = CodePayLabelDTO.heading
+        let attributes = [.foregroundColor: titleDTO.fontColor,
+                           NSAttributedString.Key.font: UIFont.systemFont(ofSize: titleDTO.fontSize,
+                                                           weight: titleDTO.weight)]
+        navController.navigationBar.titleTextAttributes = attributes
         window.rootViewController = navController
         self.window = window
         window.makeKeyAndVisible()
