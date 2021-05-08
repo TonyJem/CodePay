@@ -1,5 +1,4 @@
 import UIKit
-import SnapKit
 
 class LoginRegisterVC: UIViewController {
     
@@ -13,8 +12,10 @@ class LoginRegisterVC: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = Colors.mainBackground
         
+        tableView.rowHeight = 50
         tableView.dataSource = self
-        tableView.delegate = self
+        
+        tableView.register(BaseTableViewCell.self, forCellReuseIdentifier: BaseTableViewCell.reuseID)
 
         self.view.addSubview(tableView)
         setupTableConstraints()
@@ -36,12 +37,9 @@ extension LoginRegisterVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        NSLog("🟢 get cell")
-        let cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "Cell")
-        cell.textLabel!.text = "Test line \(indexPath.row)"
-        return cell
+        guard let newReminderCell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.reuseID, for: indexPath) as? BaseTableViewCell else {
+            return UITableViewCell()
+        }
+        return newReminderCell
     }
-}
-
-extension LoginRegisterVC: UITableViewDelegate {
 }
