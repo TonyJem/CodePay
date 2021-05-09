@@ -96,6 +96,7 @@ class LoginVC: UIViewController {
         
         view.backgroundColor = Colors.mainBackground
         setupConstraints()
+        initializeHideKeyboard()
     }
     
     // MARK:  - Actions
@@ -105,7 +106,15 @@ class LoginVC: UIViewController {
     
     @objc func secondaryButtonDidTap(_ sender: UIButton) {
         print("🟢🟢 'Secondary' button in Login Scene did Tap")
-        
+    }
+    
+    @objc func dismissMyKeyboard(){
+        view.endEditing(true)
+    }
+    
+    private func initializeHideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissMyKeyboard))
+        view.addGestureRecognizer(tap)
     }
 }
 
