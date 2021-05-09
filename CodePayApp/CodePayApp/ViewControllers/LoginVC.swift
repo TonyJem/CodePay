@@ -2,9 +2,9 @@ import UIKit
 import SnapKit
 
 class LoginVC: UIViewController {
-
     private let imageContainerMultiplier: CGFloat = 0.2778
     private let imageResizeMultiplier: CGFloat = 0.8888
+    private let mainContainerViewHeight: CGFloat = 350
     private let titleHeight: CGFloat = 70
     private let inputViewHeight: CGFloat = 70
     private let inputViewSpace: CGFloat = -20
@@ -16,7 +16,7 @@ class LoginVC: UIViewController {
     // MARK: - Views
     lazy var mainContainerView: UIView = {
         let view = UIView()
-//        view.backgroundColor = .systemPink
+        view.backgroundColor = .systemGray5
         
         self.view.addSubview(view)
         return view
@@ -78,8 +78,9 @@ private extension LoginVC {
         
         mainContainerView.snp.makeConstraints { make in
             make.width.equalTo(Core.itemWidth)
-            make.height.equalTo(400)
-            make.centerX.centerY.equalToSuperview()
+            make.height.equalTo(mainContainerViewHeight)
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().offset(-60)
         }
         
         personImageContainer.snp.makeConstraints { make in
