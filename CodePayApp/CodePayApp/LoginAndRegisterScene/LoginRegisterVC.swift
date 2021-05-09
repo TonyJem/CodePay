@@ -86,6 +86,7 @@ private extension LoginRegisterVC {
         tableView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.width.equalTo(Core.elementWidth)
+            make.height.equalTo(240)
             make.centerX.equalToSuperview()
         }
         
@@ -108,12 +109,13 @@ private extension LoginRegisterVC {
 // MARK:  - tableView Setup
 private extension LoginRegisterVC {
     func setupTableView() {
-        tableView.tableFooterView = UIView()
-        tableView.backgroundColor = Colors.mainBackground
-        
         tableView.dataSource = self
         tableView.delegate = self
         
+        tableView.tableFooterView = UIView()
+        tableView.backgroundColor = Colors.mainBackground
+        tableView.allowsSelection = false
+                
         tableView.register(PersonImageCell.self, forCellReuseIdentifier: PersonImageCell.cellID)
         tableView.register(TitleCell.self, forCellReuseIdentifier: TitleCell.cellID)
         tableView.register(PhoneInputCell.self, forCellReuseIdentifier: PhoneInputCell.cellID)
