@@ -4,7 +4,10 @@ import SnapKit
 class LoginVC: UIViewController {
 
     private let imageContainerMultiplier: CGFloat = 0.2778
-    private let imageSizeMultiplier: CGFloat = 0.8888
+    private let imageResizeMultiplier: CGFloat = 0.8888
+    
+    let titleHeight: CGFloat = 25
+    let spaceBetweenTitleAndImageContainerView: CGFloat = 35
     
     private var imageContainerWidth: CGFloat {
         return UIScreen.main.bounds.width * imageContainerMultiplier
@@ -28,6 +31,15 @@ class LoginVC: UIViewController {
         return imageView
     }()
     
+    lazy var titleLabel: CodePayLabel = {
+        let lbl = CodePayLabel(frame: .zero)
+        lbl.setup(title: __("login_title"), dto: CodePayLabelDTO.heading)
+        lbl.textAlignment = .center
+        
+        view.addSubview(lbl)
+        return lbl
+    }()
+    
     // MARK:  - Setup
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +58,15 @@ private extension LoginVC {
         }
         
         personImage.snp.makeConstraints { make in
-            make.width.height.equalToSuperview().multipliedBy(imageSizeMultiplier)
+            make.width.height.equalToSuperview().multipliedBy(imageResizeMultiplier)
             make.top.equalToSuperview()
+            make.centerX.equalToSuperview()
+        }
+        
+        titleLabel.snp.makeConstraints { make in
+            make.width.equalTo(Core.itemWidth)
+            make.height.equalTo(titleHeight)
+            make.top.equalTo(personImageContainer.snp.bottom).offset(spaceBetweenTitleAndImageContainerView)
             make.centerX.equalToSuperview()
         }
     }
