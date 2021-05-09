@@ -5,8 +5,8 @@ class LoginVC: UIViewController {
     private let imageContainerMultiplier: CGFloat = 0.2778
     private let imageResizeMultiplier: CGFloat = 0.8888
     
-    private let mainContainerCenterOffset: CGFloat = -120
-    private let mainContainerViewHeight: CGFloat = 390
+    private var mainContainerViewHeight: CGFloat = 340
+    private var mainContainerCenterOffset: CGFloat = -90
     private let titleHeight: CGFloat = 70
     private let inputViewHeight: CGFloat = 70
     private let inputViewSpace: CGFloat = -30
@@ -93,6 +93,9 @@ class LoginVC: UIViewController {
     // MARK:  - Setup
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mainContainerViewHeight = Core.mainContainerViewHeight
+        mainContainerCenterOffset = Core.mainContainerCenterOffset * -1
         
         view.backgroundColor = Colors.mainBackground
         setupConstraints()
@@ -202,8 +205,8 @@ private extension LoginVC {
         }
         
         mainContainerView.snp.updateConstraints { make in
-            make.height.equalTo(mainContainerViewHeight-30)
-            make.centerY.equalToSuperview().offset(-200)
+            make.height.equalTo(mainContainerViewHeight-Core.deltaMainContainerViewHeight)
+            make.centerY.equalToSuperview().offset(-1*Core.deltaMainContainerCenterOffset)
         }
         
         UIView.animate(withDuration: 1.5, animations: view.layoutIfNeeded)
