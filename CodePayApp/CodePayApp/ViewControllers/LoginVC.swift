@@ -24,7 +24,7 @@ class LoginVC: UIViewController {
     // MARK: - Views
     lazy var mainContainerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemGray5
+//        view.backgroundColor = .systemGray5
         
         self.view.addSubview(view)
         return view
@@ -196,6 +196,7 @@ private extension LoginVC {
     }
     
     func keyboardWillAppear(_ keyboardHeight: CGFloat) {
+        secondaryButton.isHidden = true
         submitButton.snp.updateConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(10 + keyboardHeight)
         }
@@ -209,6 +210,7 @@ private extension LoginVC {
     }
     
     func keyboardWillDisappear() {
+        secondaryButton.isHidden = false
         submitButton.snp.updateConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(submitButtonBottomInset)
         }
