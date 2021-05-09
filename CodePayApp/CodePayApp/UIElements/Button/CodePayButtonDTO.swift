@@ -19,7 +19,7 @@
     }
     
     static var placeholder: CodePayButtonDTO {
-        return CodePayButtonDTO(fontSize: 17, fontColor: Colors.gray, weight: .medium, titleAlignment: .left)
+        return CodePayButtonDTO(fontSize: 17, fontColor: .systemGray2, weight: .medium, titleAlignment: .left)
     }
     
     init(fontSize: CGFloat, fontColor: UIColor, weight: UIFont.Weight,
