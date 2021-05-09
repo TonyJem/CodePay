@@ -1,6 +1,6 @@
 import UIKit
 
-final class PhoneInputContainer: InputContainer {
+final class PhoneTextFieldContainer: TextFieldContainer {
     
     lazy var textField: CodePayTextField = {
         let textField = CodePayTextField(frame: .zero)

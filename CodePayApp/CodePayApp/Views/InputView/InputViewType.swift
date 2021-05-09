@@ -43,14 +43,14 @@ enum InputViewType {
         }
     }
     
-    var container: InputContainer {
+    var container: TextFieldContainer {
         switch self {
         case .phone:
-            return PhoneInputContainer()
+            return PhoneTextFieldContainer()
         case .password, .confirmPassword:
-            return PasswordInputContainer()
+            return PasswordTextFieldContainer()
         case .currency:
-            return CurrencyInputContainer()
+            return CurrencyTextFieldContainer()
         }
     }
 }

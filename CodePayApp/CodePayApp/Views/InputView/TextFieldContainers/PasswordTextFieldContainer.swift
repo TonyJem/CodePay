@@ -1,6 +1,6 @@
 import UIKit
 
-final class CurrencyInputContainer: InputContainer {
+final class PasswordTextFieldContainer: TextFieldContainer {
     
     lazy var textField: CodePayTextField = {
         let textField = CodePayTextField(frame: .zero)
