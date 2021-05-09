@@ -6,6 +6,8 @@ class LoginVC: UIViewController {
     private let imageContainerMultiplier: CGFloat = 0.2778
     private let imageResizeMultiplier: CGFloat = 0.8888
     private let titleHeight: CGFloat = 70
+    private let inputViewHeight: CGFloat = 70
+    private let inputViewSpace: CGFloat = -20
     
     private var imageContainerWidth: CGFloat {
         return UIScreen.main.bounds.width * imageContainerMultiplier
@@ -14,6 +16,7 @@ class LoginVC: UIViewController {
     // MARK: - Views
     lazy var mainContainerView: UIView = {
         let view = UIView()
+//        view.backgroundColor = .systemPink
         
         self.view.addSubview(view)
         return view
@@ -42,6 +45,22 @@ class LoginVC: UIViewController {
         
         mainContainerView.addSubview(lbl)
         return lbl
+    }()
+    
+    lazy var phoneView: InputView = {
+        let view = InputView()
+        view.type = .phone
+        
+        mainContainerView.addSubview(view)
+        return view
+    }()
+    
+    lazy var passwordView: InputView = {
+        let view = InputView()
+        view.type = .password
+        
+        mainContainerView.addSubview(view)
+        return view
     }()
     
     // MARK:  - Setup
@@ -80,5 +99,18 @@ private extension LoginVC {
             make.top.equalTo(personImageContainer.snp.bottom)
             make.centerX.equalToSuperview()
         }
+        
+        passwordView.snp.makeConstraints { make in
+            make.width.bottom.equalToSuperview()
+            make.height.equalTo(inputViewHeight)
+        }
+        passwordView.setupConstraints()
+        
+        phoneView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalTo(inputViewHeight)
+            make.bottom.equalTo(passwordView.snp.top).offset(inputViewSpace)
+        }
+        phoneView.setupConstraints()
     }
 }
