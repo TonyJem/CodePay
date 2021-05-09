@@ -1,6 +1,6 @@
 import UIKit
 
-final class CurrencyTextFieldContainer: TextFieldContainer {
+final class CurrencyInputContainer: InputContainer {
     
     lazy var pickerView: UIPickerView = {
         let picker = UIPickerView()
@@ -18,6 +18,6 @@ final class CurrencyTextFieldContainer: TextFieldContainer {
     }
 }
 
-extension CurrencyTextFieldContainer {
+extension CurrencyInputContainer {
     
 }

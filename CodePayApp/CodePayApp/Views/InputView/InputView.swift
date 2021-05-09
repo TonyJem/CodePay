@@ -26,7 +26,7 @@ class InputView: UIView {
         return imageView
     }()
     
-    lazy var textFieldContainer: TextFieldContainer = {
+    lazy var textFieldContainer: InputContainer = {
         let container = type.container
         container.setPlaceHolder(placeholder: type.placeholder)
         

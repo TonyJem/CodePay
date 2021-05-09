@@ -1,6 +1,6 @@
 import UIKit
 
-class TextFieldContainer: UIView {
+class InputContainer: UIView {
     lazy var textFieldContainerView: UIView = {
         let view = UIView()
         
