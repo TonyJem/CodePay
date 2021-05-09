@@ -2,7 +2,7 @@ import UIKit
 
 class InputCell: BaseTableViewCell {
     
-    private let inputViewHeight: CGFloat = 70
+    private let inputCellHeight: CGFloat = 70
     
     private let inputContainer: InputView = {
         let view = InputView()
@@ -21,7 +21,7 @@ class InputCell: BaseTableViewCell {
         
         inputContainer.snp.makeConstraints { make in
             make.width.equalTo(Core.elementWidth)
-            make.height.equalTo(inputViewHeight)
+            make.height.equalTo(inputCellHeight)
             make.centerX.centerY.equalTo(contentView)
         }
         inputContainer.setupConstraints()
