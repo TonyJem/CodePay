@@ -96,6 +96,7 @@ class LoginVC: UIViewController {
         
         view.backgroundColor = Colors.mainBackground
         setupConstraints()
+        observeKeyboardNotifications()
         initializeHideKeyboard()
     }
     
@@ -173,5 +174,52 @@ private extension LoginVC {
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(secondaryButtonBottomInset)
             make.centerX.equalToSuperview()
         }
+    }
+}
+
+// MARK:  - LoginVC Handle Keyboard
+private extension LoginVC {
+    func observeKeyboardNotifications() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+    
+    func keyboardWillAppear(_ keyboardHeight: CGFloat) {
+        submitButton.snp.updateConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(10 + keyboardHeight)
+        }
+        
+        UIView.animate(withDuration: 1.5, animations: view.layoutIfNeeded)
+    }
+    
+    func keyboardWillDisappear() {
+        submitButton.snp.updateConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(120)
+        }
+        
+        UIView.animate(withDuration: 1.5, animations: view.layoutIfNeeded)
+    }
+    
+    @objc private func keyboardWillShow(notifaction: NSNotification) {
+        guard let keyboardFrame = (notifaction.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        
+        self.keyboardWillAppear(keyboardFrame.height)
+    }
+    
+    @objc private func keyboardWillHide() {
+        keyboardWillDisappear()
     }
 }
