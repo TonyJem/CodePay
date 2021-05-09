@@ -184,8 +184,8 @@
 		3A50F55C26482804007820B0 /* InputView */ = {
 			isa = PBXGroup;
 			children = (
-				3A50F54B26481473007820B0 /* InputView.swift */,
 				3A50F54E264814A5007820B0 /* InputViewType.swift */,
+				3A50F54B26481473007820B0 /* InputView.swift */,
 				3A50F55B264827DD007820B0 /* InputContainers */,
 			);
 			path = InputView;

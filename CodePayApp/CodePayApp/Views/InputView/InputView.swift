@@ -34,14 +34,6 @@ class InputView: UIView {
         return container
     }()
     
-//    lazy var inputContainer: UIView = {
-//        let container = UIView()
-//        container.backgroundColor = .green
-//
-//        self.addSubview(container)
-//        return container
-//    }()
-    
     lazy var bottomLineView: UIView = {
         let view = UIView()
         view.backgroundColor = Colors.lightBlue
