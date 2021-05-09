@@ -1,8 +1,10 @@
 import UIKit
 
 struct Core {
-    static private let widthMultiplier: CGFloat = 0.7143
     
+    static let navController = UINavigationController()
+    
+    static private let widthMultiplier: CGFloat = 0.7143
     static private let screenWidth = UIScreen.main.bounds.width
     static private let screenHeigh = UIScreen.main.bounds.height
     

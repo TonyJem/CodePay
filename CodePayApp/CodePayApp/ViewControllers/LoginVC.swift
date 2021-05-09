@@ -112,6 +112,12 @@ class LoginVC: UIViewController {
     
     @objc func secondaryButtonDidTap(_ sender: UIButton) {
         print("🟢🟢 'Secondary' button in Login Scene did Tap")
+        
+        let nextViewController = EnterPhoneVC()
+        
+//        self.navigationController!.pushViewController(nextViewController, animated: false)
+        
+        self.present(nextViewController, animated:true, completion:nil)
     }
     
     @objc func dismissMyKeyboard(){
