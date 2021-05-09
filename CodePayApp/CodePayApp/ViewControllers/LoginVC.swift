@@ -4,10 +4,13 @@ import SnapKit
 class LoginVC: UIViewController {
     private let imageContainerMultiplier: CGFloat = 0.2778
     private let imageResizeMultiplier: CGFloat = 0.8888
-    private let mainContainerViewHeight: CGFloat = 350
+    private let mainContainerViewHeight: CGFloat = 390
     private let titleHeight: CGFloat = 70
     private let inputViewHeight: CGFloat = 70
-    private let inputViewSpace: CGFloat = -20
+    private let inputViewSpace: CGFloat = -30
+    
+    private let submitButtonHeight: CGFloat = 60
+    private let secondaryButtonHeight: CGFloat = 40
     
     private var imageContainerWidth: CGFloat {
         return UIScreen.main.bounds.width * imageContainerMultiplier
@@ -16,7 +19,7 @@ class LoginVC: UIViewController {
     // MARK: - Views
     lazy var mainContainerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemGray5
+//        view.backgroundColor = .systemGray5
         
         self.view.addSubview(view)
         return view
@@ -63,12 +66,41 @@ class LoginVC: UIViewController {
         return view
     }()
     
+    lazy var submitButton: CodePayButton = {
+        let btn = CodePayButton(type: .custom)
+        btn.showsTouchWhenHighlighted = true
+        btn.addTarget(self, action: #selector(submitButtonDidTap(_:)), for: .touchUpInside)
+        btn.setup(title: __("login_submit_btn"), dto: CodePayButtonDTO.submit)
+        
+        view.addSubview(btn)
+        return btn
+    }()
+    
+    lazy var secondaryButton: CodePayButton = {
+        let btn = CodePayButton(type: .custom)
+        btn.addTarget(self, action: #selector(secondaryButtonDidTap(_:)), for: .touchUpInside)
+        btn.setup(title: __("create_account_secondary_btn"), dto: CodePayButtonDTO.secondary)
+        
+        view.addSubview(btn)
+        return btn
+    }()
+    
     // MARK:  - Setup
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = Colors.mainBackground
         setupConstraints()
+    }
+    
+    // MARK:  - Actions
+    @objc func submitButtonDidTap(_ sender: UIButton) {
+        print("🟢 'Submit' button in Login Scene did Tap")
+    }
+    
+    @objc func secondaryButtonDidTap(_ sender: UIButton) {
+        print("🟢🟢 'Secondary' button in Login Scene did Tap")
+        
     }
 }
 
@@ -80,7 +112,7 @@ private extension LoginVC {
             make.width.equalTo(Core.itemWidth)
             make.height.equalTo(mainContainerViewHeight)
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-60)
+            make.centerY.equalToSuperview().offset(-120)
         }
         
         personImageContainer.snp.makeConstraints { make in
@@ -113,5 +145,19 @@ private extension LoginVC {
             make.bottom.equalTo(passwordView.snp.top).offset(inputViewSpace)
         }
         phoneView.setupConstraints()
+        
+        submitButton.snp.makeConstraints { make in
+            make.width.equalTo(Core.itemWidth)
+            make.height.equalTo(submitButtonHeight)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(120)
+            make.centerX.equalToSuperview()
+        }
+        
+        secondaryButton.snp.makeConstraints { make in
+            make.width.lessThanOrEqualTo(Core.itemWidth)
+            make.height.equalTo(secondaryButtonHeight)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(50)
+            make.centerX.equalToSuperview()
+        }
     }
 }
