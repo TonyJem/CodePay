@@ -1,5 +1,5 @@
 // MARK: Login Scene
-"login_heading" = "Login";
+"login_title" = "Login";
 "register_heading" = "Create New Account";
 
 

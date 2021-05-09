@@ -19,6 +19,12 @@
 		3A06B3BC263DE64800E8C56E /* CodePayButtonDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3BB263DE64800E8C56E /* CodePayButtonDTO.swift */; };
 		3A06B3C0263DEEB700E8C56E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A06B3BF263DEEB700E8C56E /* Localizable.strings */; };
 		3A06B3C4263DF04B00E8C56E /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3C3263DF04B00E8C56E /* Localizations.swift */; };
+		3A50F54926480838007820B0 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50F54826480838007820B0 /* Core.swift */; };
+		3A50F54C26481473007820B0 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50F54B26481473007820B0 /* InputView.swift */; };
+		3A50F54F264814A5007820B0 /* InputViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50F54E264814A5007820B0 /* InputViewType.swift */; };
+		3A50F552264814D9007820B0 /* InputContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50F551264814D9007820B0 /* InputContainer.swift */; };
+		3A50F55526482672007820B0 /* PasswordInputContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50F55426482672007820B0 /* PasswordInputContainer.swift */; };
+		3A50F558264826B4007820B0 /* PhoneInputContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50F557264826B4007820B0 /* PhoneInputContainer.swift */; };
 		3A6F86CA2646B60400E0EC92 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F86C92646B60400E0EC92 /* LoginVC.swift */; };
 		3A8313D5263F0A31000D79D9 /* CodePayTextFieldDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313D4263F0A31000D79D9 /* CodePayTextFieldDTO.swift */; };
 		3A8313D8263F0CB9000D79D9 /* CodePayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313D7263F0CB9000D79D9 /* CodePayTextField.swift */; };
@@ -38,6 +44,12 @@
 		3A06B3BB263DE64800E8C56E /* CodePayButtonDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayButtonDTO.swift; sourceTree = "<group>"; };
 		3A06B3BF263DEEB700E8C56E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		3A06B3C3263DF04B00E8C56E /* Localizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizations.swift; sourceTree = "<group>"; };
+		3A50F54826480838007820B0 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
+		3A50F54B26481473007820B0 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		3A50F54E264814A5007820B0 /* InputViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewType.swift; sourceTree = "<group>"; };
+		3A50F551264814D9007820B0 /* InputContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainer.swift; sourceTree = "<group>"; };
+		3A50F55426482672007820B0 /* PasswordInputContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputContainer.swift; sourceTree = "<group>"; };
+		3A50F557264826B4007820B0 /* PhoneInputContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInputContainer.swift; sourceTree = "<group>"; };
 		3A6F86C92646B60400E0EC92 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		3A8313D4263F0A31000D79D9 /* CodePayTextFieldDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayTextFieldDTO.swift; sourceTree = "<group>"; };
 		3A8313D7263F0CB9000D79D9 /* CodePayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayTextField.swift; sourceTree = "<group>"; };
@@ -76,6 +88,7 @@
 			children = (
 				3A06B3C2263DEFD400E8C56E /* Helpers */,
 				3A06B3A9263DD3E800E8C56E /* UIElements */,
+				3A50F55E2648282C007820B0 /* Views */,
 				3A06B390263D423B00E8C56E /* ViewControllers */,
 				3A06B38A263D415600E8C56E /* Resources */,
 				3A06B388263D411A00E8C56E /* Delegate */,
@@ -153,8 +166,37 @@
 			isa = PBXGroup;
 			children = (
 				3A06B3C3263DF04B00E8C56E /* Localizations.swift */,
+				3A50F54826480838007820B0 /* Core.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3A50F55B264827DD007820B0 /* InputContainers */ = {
+			isa = PBXGroup;
+			children = (
+				3A50F551264814D9007820B0 /* InputContainer.swift */,
+				3A50F557264826B4007820B0 /* PhoneInputContainer.swift */,
+				3A50F55426482672007820B0 /* PasswordInputContainer.swift */,
+			);
+			path = InputContainers;
+			sourceTree = "<group>";
+		};
+		3A50F55C26482804007820B0 /* InputView */ = {
+			isa = PBXGroup;
+			children = (
+				3A50F54E264814A5007820B0 /* InputViewType.swift */,
+				3A50F54B26481473007820B0 /* InputView.swift */,
+				3A50F55B264827DD007820B0 /* InputContainers */,
+			);
+			path = InputView;
+			sourceTree = "<group>";
+		};
+		3A50F55E2648282C007820B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A50F55C26482804007820B0 /* InputView */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,15 +275,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A50F54C26481473007820B0 /* InputView.swift in Sources */,
 				3A8313D8263F0CB9000D79D9 /* CodePayTextField.swift in Sources */,
 				3A06B3BC263DE64800E8C56E /* CodePayButtonDTO.swift in Sources */,
 				3A6F86CA2646B60400E0EC92 /* LoginVC.swift in Sources */,
 				3A8313D5263F0A31000D79D9 /* CodePayTextFieldDTO.swift in Sources */,
+				3A50F552264814D9007820B0 /* InputContainer.swift in Sources */,
+				3A50F54F264814A5007820B0 /* InputViewType.swift in Sources */,
 				3A06B3C4263DF04B00E8C56E /* Localizations.swift in Sources */,
 				3A06B3B9263DE60500E8C56E /* CodePayButton.swift in Sources */,
+				3A50F54926480838007820B0 /* Core.swift in Sources */,
 				3A06B3B5263DD75900E8C56E /* Colors.swift in Sources */,
 				3A06B3B2263DD67A00E8C56E /* CodePayLabelDTO.swift in Sources */,
+				3A50F558264826B4007820B0 /* PhoneInputContainer.swift in Sources */,
 				3A06B345263C7B9400E8C56E /* AppDelegate.swift in Sources */,
+				3A50F55526482672007820B0 /* PasswordInputContainer.swift in Sources */,
 				3A06B3AE263DD5F900E8C56E /* CodePayLabel.swift in Sources */,
 				3A06B347263C7B9400E8C56E /* SceneDelegate.swift in Sources */,
 			);
