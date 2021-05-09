@@ -86,7 +86,7 @@ private extension LoginRegisterVC {
         tableView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.width.equalTo(Core.elementWidth)
-            make.height.equalTo(240)
+//            make.height.equalTo(240)
             make.centerX.equalToSuperview()
         }
         
