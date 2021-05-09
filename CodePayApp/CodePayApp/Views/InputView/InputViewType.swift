@@ -31,12 +31,12 @@ enum InputViewType {
         }
     }
     
-//    var container: InputContainer {
-//        switch self {
-//        case .phone:
-//            return PhoneInputContainer()
-//        case .password:
-//            return PasswordInputContainer()
-//        }
-//    }
+    var container: InputContainer {
+        switch self {
+        case .phone:
+            return PhoneInputContainer()
+        case .password:
+            return PasswordInputContainer()
+        }
+    }
 }

@@ -26,21 +26,21 @@ class InputView: UIView {
         return imageView
     }()
     
-//    lazy var textFieldContainer: InputContainer = {
-//        let container = type.container
-//        container.setPlaceHolder(placeholder: type.placeholder)
-//
-//        self.addSubview(container)
-//        return container
-//    }()
-    
-    lazy var inputContainer: UIView = {
-        let container = UIView()
-        container.backgroundColor = .green
+    lazy var inputContainer: InputContainer = {
+        let container = type.container
+        container.setPlaceHolder(placeholder: type.placeholder)
 
         self.addSubview(container)
         return container
     }()
+    
+//    lazy var inputContainer: UIView = {
+//        let container = UIView()
+//        container.backgroundColor = .green
+//
+//        self.addSubview(container)
+//        return container
+//    }()
     
     lazy var bottomLineView: UIView = {
         let view = UIView()
@@ -81,6 +81,6 @@ extension InputView {
             make.trailing.equalToSuperview()
             make.bottom.equalTo(bottomLineView.snp.top).inset(-4)
         }
-//        inputContainer.setupContainerConstraints()
+        inputContainer.setupContainerConstraints()
     }
 }
