@@ -116,6 +116,7 @@ private extension LoginRegisterVC {
         tableView.backgroundColor = Colors.mainBackground
         tableView.alwaysBounceVertical = false
         tableView.allowsSelection = false
+        tableView.showsVerticalScrollIndicator = false
                 
         tableView.register(PersonImageCell.self, forCellReuseIdentifier: PersonImageCell.cellID)
         tableView.register(TitleCell.self, forCellReuseIdentifier: TitleCell.cellID)
