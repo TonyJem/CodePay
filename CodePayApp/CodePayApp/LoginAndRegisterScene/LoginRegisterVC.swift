@@ -114,6 +114,7 @@ private extension LoginRegisterVC {
         
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = Colors.mainBackground
+        tableView.alwaysBounceVertical = false
         tableView.allowsSelection = false
                 
         tableView.register(PersonImageCell.self, forCellReuseIdentifier: PersonImageCell.cellID)
