@@ -19,6 +19,7 @@
 		3A06B3BC263DE64800E8C56E /* CodePayButtonDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3BB263DE64800E8C56E /* CodePayButtonDTO.swift */; };
 		3A06B3C0263DEEB700E8C56E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A06B3BF263DEEB700E8C56E /* Localizable.strings */; };
 		3A06B3C4263DF04B00E8C56E /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B3C3263DF04B00E8C56E /* Localizations.swift */; };
+		3A50F54926480838007820B0 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50F54826480838007820B0 /* Core.swift */; };
 		3A6F86CA2646B60400E0EC92 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F86C92646B60400E0EC92 /* LoginVC.swift */; };
 		3A8313D5263F0A31000D79D9 /* CodePayTextFieldDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313D4263F0A31000D79D9 /* CodePayTextFieldDTO.swift */; };
 		3A8313D8263F0CB9000D79D9 /* CodePayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313D7263F0CB9000D79D9 /* CodePayTextField.swift */; };
@@ -38,6 +39,7 @@
 		3A06B3BB263DE64800E8C56E /* CodePayButtonDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayButtonDTO.swift; sourceTree = "<group>"; };
 		3A06B3BF263DEEB700E8C56E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		3A06B3C3263DF04B00E8C56E /* Localizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizations.swift; sourceTree = "<group>"; };
+		3A50F54826480838007820B0 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		3A6F86C92646B60400E0EC92 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		3A8313D4263F0A31000D79D9 /* CodePayTextFieldDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayTextFieldDTO.swift; sourceTree = "<group>"; };
 		3A8313D7263F0CB9000D79D9 /* CodePayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayTextField.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				3A06B3C3263DF04B00E8C56E /* Localizations.swift */,
+				3A50F54826480838007820B0 /* Core.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				3A8313D5263F0A31000D79D9 /* CodePayTextFieldDTO.swift in Sources */,
 				3A06B3C4263DF04B00E8C56E /* Localizations.swift in Sources */,
 				3A06B3B9263DE60500E8C56E /* CodePayButton.swift in Sources */,
+				3A50F54926480838007820B0 /* Core.swift in Sources */,
 				3A06B3B5263DD75900E8C56E /* Colors.swift in Sources */,
 				3A06B3B2263DD67A00E8C56E /* CodePayLabelDTO.swift in Sources */,
 				3A06B345263C7B9400E8C56E /* AppDelegate.swift in Sources */,

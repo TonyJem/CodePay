@@ -2,15 +2,20 @@ import UIKit
 import SnapKit
 
 class LoginVC: UIViewController {
-    
+
+    private let imageContainerMultiplier: CGFloat = 0.2778
     private let imageSizeMultiplier: CGFloat = 0.8888
+    
+    private var imageContainerWidth: CGFloat {
+        return UIScreen.main.bounds.width * imageContainerMultiplier
+    }
     
     lazy var personImageContainer: UIView = {
         let view = UIView()
         
         view.backgroundColor = Colors.lightBlue
         
-        view.layer.cornerRadius = 45
+        view.layer.cornerRadius = imageContainerWidth/2
         
         self.view.addSubview(view)
         return view
@@ -36,8 +41,7 @@ class LoginVC: UIViewController {
 private extension LoginVC {
     private func setupConstraints() {
         personImageContainer.snp.makeConstraints { make in
-            make.height.equalTo(90)
-            make.width.equalTo(90)
+            make.width.height.equalTo(imageContainerWidth)
             make.centerX.centerY.equalToSuperview()
         }
         
