@@ -4,13 +4,18 @@ import SnapKit
 class LoginVC: UIViewController {
     private let imageContainerMultiplier: CGFloat = 0.2778
     private let imageResizeMultiplier: CGFloat = 0.8888
+    
+    private let mainContainerCenterOffset: CGFloat = -120
     private let mainContainerViewHeight: CGFloat = 390
     private let titleHeight: CGFloat = 70
     private let inputViewHeight: CGFloat = 70
     private let inputViewSpace: CGFloat = -30
     
     private let submitButtonHeight: CGFloat = 60
+    private let submitButtonBottomInset = 120
+    
     private let secondaryButtonHeight: CGFloat = 40
+    private let secondaryButtonBottomInset = 50
     
     private var imageContainerWidth: CGFloat {
         return UIScreen.main.bounds.width * imageContainerMultiplier
@@ -112,7 +117,7 @@ private extension LoginVC {
             make.width.equalTo(Core.itemWidth)
             make.height.equalTo(mainContainerViewHeight)
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-120)
+            make.centerY.equalToSuperview().offset(mainContainerCenterOffset)
         }
         
         personImageContainer.snp.makeConstraints { make in
@@ -149,14 +154,14 @@ private extension LoginVC {
         submitButton.snp.makeConstraints { make in
             make.width.equalTo(Core.itemWidth)
             make.height.equalTo(submitButtonHeight)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(120)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(submitButtonBottomInset)
             make.centerX.equalToSuperview()
         }
         
         secondaryButton.snp.makeConstraints { make in
             make.width.lessThanOrEqualTo(Core.itemWidth)
             make.height.equalTo(secondaryButtonHeight)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(50)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(secondaryButtonBottomInset)
             make.centerX.equalToSuperview()
         }
     }
