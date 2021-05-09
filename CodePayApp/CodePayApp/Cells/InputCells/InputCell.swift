@@ -4,7 +4,7 @@ class InputCell: BaseTableViewCell {
     
     private let edgeInset: CGFloat = 10
     
-    lazy var containerView: UIView = {
+    lazy var cellMainView: UIView = {
         let view = UIView()
         
         self.addSubview(view)
@@ -15,14 +15,14 @@ class InputCell: BaseTableViewCell {
         let lbl = CodePayLabel(frame: .zero)
         lbl.setup(title: inputType().title, dto: CodePayLabelDTO.title)
         
-        containerView.addSubview(lbl)
+        cellMainView.addSubview(lbl)
         return lbl
     }()
     
     lazy var iconContainerView: UIView = {
         let view = UIView()
         
-        containerView.addSubview(view)
+        cellMainView.addSubview(view)
         return view
     }()
     
@@ -33,11 +33,11 @@ class InputCell: BaseTableViewCell {
         return imageView
     }()
     
-    lazy var inputContainer: TextFieldContainer = {
+    lazy var inputContainer: InputContainer = {
         let container = inputType().container
         container.setPlaceHolder(placeholder: inputType().placeholder)
         
-        containerView.addSubview(container)
+        cellMainView.addSubview(container)
         return container
     }()
     
@@ -45,7 +45,7 @@ class InputCell: BaseTableViewCell {
         let view = UIView()
         view.backgroundColor = Colors.lightBlue
         
-        containerView.addSubview(view)
+        cellMainView.addSubview(view)
         return view
     }()
     
@@ -56,7 +56,7 @@ class InputCell: BaseTableViewCell {
     override func setupConstraints() {
         super.setupConstraints()
         
-        containerView.snp.makeConstraints { make in
+        cellMainView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(edgeInset)
             make.leading.trailing.equalToSuperview()
         }
