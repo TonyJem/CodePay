@@ -34,6 +34,14 @@ class InputView: UIView {
 //        return container
 //    }()
     
+    lazy var inputContainer: UIView = {
+        let container = UIView()
+        container.backgroundColor = .green
+
+        self.addSubview(container)
+        return container
+    }()
+    
     lazy var bottomLineView: UIView = {
         let view = UIView()
         view.backgroundColor = Colors.lightBlue
@@ -46,6 +54,7 @@ class InputView: UIView {
 extension InputView {
     func setupConstraints() {
         titleLabel.snp.makeConstraints { make in
+            make.width.lessThanOrEqualToSuperview()
             make.height.equalTo(20)
             make.top.leading.equalToSuperview()
         }
@@ -66,12 +75,12 @@ extension InputView {
             make.edges.equalTo(iconContainerView)
         }
         
-//        textFieldContainer.snp.makeConstraints { make in
-//            make.height.equalTo(35)
-//            make.leading.equalTo(iconContainerView.snp.trailing).offset(10)
-//            make.trailing.equalToSuperview()
-//            make.bottom.equalTo(bottomLineView.snp.top).inset(-4)
-//        }
-//        textFieldContainer.setupContainerConstraints()
+        inputContainer.snp.makeConstraints { make in
+            make.height.equalTo(35)
+            make.leading.equalTo(iconContainerView.snp.trailing).offset(10)
+            make.trailing.equalToSuperview()
+            make.bottom.equalTo(bottomLineView.snp.top).inset(-4)
+        }
+//        inputContainer.setupContainerConstraints()
     }
 }
