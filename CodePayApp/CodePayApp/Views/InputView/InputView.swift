@@ -28,7 +28,7 @@ class InputView: UIView {
     
     lazy var inputContainer: InputContainer = {
         let container = type.container
-        container.setPlaceHolder(placeholder: type.placeholder)
+        container.setPlaceholder(placeholder: type.placeholder)
 
         self.addSubview(container)
         return container

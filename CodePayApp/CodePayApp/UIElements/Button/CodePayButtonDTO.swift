@@ -17,6 +17,10 @@
         return CodePayButtonDTO(fontSize: 15, fontColor: Colors.gray, weight: .medium)
     }
     
+    static var placeholder: CodePayButtonDTO {
+        return CodePayButtonDTO(fontSize: 15, fontColor: Colors.gray, weight: .medium)
+    }
+    
     init(fontSize: CGFloat, fontColor: UIColor, weight: UIFont.Weight,
          backgroundColor: UIColor? = nil, cornerRadius: CGFloat? = nil) {
         self.fontSize = fontSize

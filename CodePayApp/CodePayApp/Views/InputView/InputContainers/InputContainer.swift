@@ -1,7 +1,7 @@
 import UIKit
 
 class InputContainer: UIView {
-    lazy var textFieldContainerView: UIView = {
+    lazy var inputViewContainer: UIView = {
         let view = UIView()
         
         self.addSubview(view)
@@ -9,10 +9,10 @@ class InputContainer: UIView {
     }()
     
     func setupContainerConstraints() {
-        textFieldContainerView.snp.makeConstraints { make in
+        inputViewContainer.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
     
-    func setPlaceHolder(placeholder: String) {}
+    func setPlaceholder(placeholder: String) {}
 }

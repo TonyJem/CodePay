@@ -2,23 +2,30 @@ import UIKit
 
 final class PhoneInputContainer: InputContainer {
     
-    lazy var textField: CodePayTextField = {
-        let textField = CodePayTextField(frame: .zero)
-        textField.setup(title: "", dto: CodePayTextFieldDTO.regular)
+    private var buttonTitle = ""
+    
+    lazy var phoneButton: CodePayButton = {
+        let btn = CodePayButton(type: .custom)
+        btn.addTarget(self, action: #selector(phoneButtonDidTap(_:)), for: .touchUpInside)
+        btn.setup(title: buttonTitle, dto: CodePayButtonDTO.secondary)
         
-        textFieldContainerView.addSubview(textField)
-        return textField
+        inputViewContainer.addSubview(btn)
+        return btn
     }()
+    
+    @objc func phoneButtonDidTap(_ sender: UIButton) {
+        print("🟢 phoneButton DidTap")
+    }
     
     override func setupContainerConstraints() {
         super.setupContainerConstraints()
 
-        textField.snp.makeConstraints { make in
+        phoneButton.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
     
-    override func setPlaceHolder(placeholder: String) {
-        textField.placeholder = placeholder
+    override func setPlaceholder(placeholder: String) {
+        buttonTitle = placeholder
     }
 }
