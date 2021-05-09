@@ -5,22 +5,26 @@ class LoginVC: UIViewController {
 
     private let imageContainerMultiplier: CGFloat = 0.2778
     private let imageResizeMultiplier: CGFloat = 0.8888
-    
-    let titleHeight: CGFloat = 25
-    let spaceBetweenTitleAndImageContainerView: CGFloat = 35
+    private let titleHeight: CGFloat = 70
     
     private var imageContainerWidth: CGFloat {
         return UIScreen.main.bounds.width * imageContainerMultiplier
     }
     
-    lazy var personImageContainer: UIView = {
+    // MARK: - Views
+    lazy var mainContainerView: UIView = {
         let view = UIView()
         
+        self.view.addSubview(view)
+        return view
+    }()
+    
+    lazy var personImageContainer: UIView = {
+        let view = UIView()
         view.backgroundColor = Colors.lightBlue
-        
         view.layer.cornerRadius = imageContainerWidth/2
         
-        self.view.addSubview(view)
+        mainContainerView.addSubview(view)
         return view
     }()
     
@@ -36,7 +40,7 @@ class LoginVC: UIViewController {
         lbl.setup(title: __("login_title"), dto: CodePayLabelDTO.heading)
         lbl.textAlignment = .center
         
-        view.addSubview(lbl)
+        mainContainerView.addSubview(lbl)
         return lbl
     }()
     
@@ -52,9 +56,16 @@ class LoginVC: UIViewController {
 // MARK:  - LoginVC constraints
 private extension LoginVC {
     private func setupConstraints() {
+        
+        mainContainerView.snp.makeConstraints { make in
+            make.width.equalTo(Core.itemWidth)
+            make.height.equalTo(400)
+            make.centerX.centerY.equalToSuperview()
+        }
+        
         personImageContainer.snp.makeConstraints { make in
             make.width.height.equalTo(imageContainerWidth)
-            make.centerX.centerY.equalToSuperview()
+            make.top.centerX.equalToSuperview()
         }
         
         personImage.snp.makeConstraints { make in
@@ -64,9 +75,9 @@ private extension LoginVC {
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.width.equalTo(Core.itemWidth)
+            make.width.lessThanOrEqualToSuperview()
             make.height.equalTo(titleHeight)
-            make.top.equalTo(personImageContainer.snp.bottom).offset(spaceBetweenTitleAndImageContainerView)
+            make.top.equalTo(personImageContainer.snp.bottom)
             make.centerX.equalToSuperview()
         }
     }
