@@ -2,23 +2,22 @@ import UIKit
 
 final class CurrencyTextFieldContainer: TextFieldContainer {
     
-    lazy var textField: CodePayTextField = {
-        let textField = CodePayTextField(frame: .zero)
-        textField.setup(title: "", dto: CodePayTextFieldDTO.regular)
+    lazy var pickerView: UIPickerView = {
+        let picker = UIPickerView()
         
-        textFieldContainerView.addSubview(textField)
-        return textField
+        textFieldContainerView.addSubview(picker)
+        return picker
     }()
     
     override func setupContainerConstraints() {
         super.setupContainerConstraints()
 
-        textField.snp.makeConstraints { make in
+        pickerView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
+}
+
+extension CurrencyTextFieldContainer {
     
-    override func setPlaceHolder(placeholder: String) {
-        textField.placeholder = placeholder
-    }
 }
