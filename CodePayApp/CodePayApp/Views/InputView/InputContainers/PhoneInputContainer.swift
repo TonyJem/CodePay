@@ -7,7 +7,7 @@ final class PhoneInputContainer: InputContainer {
     lazy var phoneButton: CodePayButton = {
         let btn = CodePayButton(type: .custom)
         btn.addTarget(self, action: #selector(phoneButtonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: buttonTitle, dto: CodePayButtonDTO.secondary)
+        btn.setup(title: buttonTitle, dto: CodePayButtonDTO.placeholder)
         
         inputViewContainer.addSubview(btn)
         return btn
