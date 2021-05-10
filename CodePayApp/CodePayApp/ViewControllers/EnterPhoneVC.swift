@@ -185,7 +185,7 @@ class EnterPhoneVC: UIViewController {
     lazy var buttonPlus: CodePayButton = {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
-        btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(buttonPlus(_:)), for: .touchUpInside)
         btn.setup(title: "+", dto: CodePayButtonDTO.phone)
         return btn
     }()
@@ -201,17 +201,16 @@ class EnterPhoneVC: UIViewController {
     lazy var buttonBack: CodePayButton = {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
-        btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: "B", dto: CodePayButtonDTO.phone)
+        btn.addTarget(self, action: #selector(buttonBackDidTap(_:)), for: .touchUpInside)
+        btn.setImage(UIImage(named: "backSpace"), for: .normal)
         return btn
     }()
     
     lazy var buttonOk: CodePayButton = {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
-        btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(buttonOkDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "OK", dto: CodePayButtonDTO.phoneOK)
-        btn.isHidden = true
         return btn
     }()
     
@@ -225,7 +224,18 @@ class EnterPhoneVC: UIViewController {
     
     @objc func buttonDidTap(_ sender: UIButton) {
         print("🟢 button did Tap!")
-        buttonOk.isHidden = false
+    }
+    
+    @objc func buttonPlus(_ sender: UIButton) {
+        print("🟢 buttonPlus !")
+    }
+    
+    @objc func buttonBackDidTap(_ sender: UIButton) {
+        print("🟢 buttonBackDidTap !")
+    }
+    
+    @objc func buttonOkDidTap(_ sender: UIButton) {
+        print("🟢 buttonOkDidTap !")
     }
 }
 
