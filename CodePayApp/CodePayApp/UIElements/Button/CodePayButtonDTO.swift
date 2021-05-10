@@ -22,6 +22,11 @@
         return CodePayButtonDTO(fontSize: 17, fontColor: .systemGray2, weight: .medium, titleAlignment: .left)
     }
     
+    static var phone: CodePayButtonDTO {
+        return CodePayButtonDTO(fontSize: 32, fontColor: .black, weight: .semibold,
+                                backgroundColor: Colors.lightBlue, cornerRadius: 35)
+    }
+    
     init(fontSize: CGFloat, fontColor: UIColor, weight: UIFont.Weight,
          backgroundColor: UIColor? = nil, cornerRadius: CGFloat? = nil, titleAlignment: NSTextAlignment? = nil) {
         self.fontSize = fontSize

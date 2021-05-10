@@ -2,6 +2,8 @@ import UIKit
 
 class EnterPhoneVC: UIViewController {
     
+    private let buttonWidth: CGFloat = 80
+    
     lazy var mainContainer: UIView = {
         let view = UIView()
         view.backgroundColor = .systemGray5
@@ -14,6 +16,7 @@ class EnterPhoneVC: UIViewController {
         let lbl = CodePayLabel(frame: .zero)
         lbl.setup(title: "+370 601 90090", dto: CodePayLabelDTO.heading)
         lbl.textAlignment = .center
+        lbl.backgroundColor = .orange
         
         mainContainer.addSubview(lbl)
         return lbl
@@ -23,6 +26,7 @@ class EnterPhoneVC: UIViewController {
         let lbl = CodePayLabel(frame: .zero)
         lbl.setup(title: "notes label", dto: CodePayLabelDTO.title)
         lbl.textAlignment = .left
+        lbl.backgroundColor = .systemPink
         
         mainContainer.addSubview(lbl)
         return lbl
@@ -40,6 +44,7 @@ class EnterPhoneVC: UIViewController {
         stack.addArrangedSubview(row2Stack)
         stack.addArrangedSubview(row3Stack)
         stack.addArrangedSubview(row4Stack)
+        stack.addArrangedSubview(row5Stack)
         
         mainContainer.addSubview(stack)
         return stack
@@ -101,11 +106,23 @@ class EnterPhoneVC: UIViewController {
         return stack
     }()
     
+    lazy var row5Stack: UIStackView = {
+        let stack = UIStackView()
+        stack.backgroundColor = .purple
+        stack.axis = .horizontal
+        stack.distribution = .equalSpacing
+        stack.alignment = .center
+        stack.spacing = 20;
+        
+        stack.addArrangedSubview(buttonOk)
+        return stack
+    }()
+    
     lazy var button1: CodePayButton = {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: "1", dto: CodePayButtonDTO.submit)
+        btn.setup(title: "1", dto: CodePayButtonDTO.phone)
         
         btn.backgroundColor = .red
         return btn
@@ -115,7 +132,7 @@ class EnterPhoneVC: UIViewController {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: "2", dto: CodePayButtonDTO.submit)
+        btn.setup(title: "2", dto: CodePayButtonDTO.phone)
         
         btn.backgroundColor = .purple
         return btn
@@ -125,7 +142,7 @@ class EnterPhoneVC: UIViewController {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: "3", dto: CodePayButtonDTO.submit)
+        btn.setup(title: "3", dto: CodePayButtonDTO.phone)
         
         btn.backgroundColor = .blue
         return btn
@@ -135,7 +152,7 @@ class EnterPhoneVC: UIViewController {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: "4", dto: CodePayButtonDTO.submit)
+        btn.setup(title: "4", dto: CodePayButtonDTO.phone)
         
         btn.backgroundColor = .blue
         return btn
@@ -145,7 +162,7 @@ class EnterPhoneVC: UIViewController {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: "5", dto: CodePayButtonDTO.submit)
+        btn.setup(title: "5", dto: CodePayButtonDTO.phone)
         
         btn.backgroundColor = .blue
         return btn
@@ -155,7 +172,7 @@ class EnterPhoneVC: UIViewController {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: "6", dto: CodePayButtonDTO.submit)
+        btn.setup(title: "6", dto: CodePayButtonDTO.phone)
         
         btn.backgroundColor = .blue
         return btn
@@ -165,7 +182,7 @@ class EnterPhoneVC: UIViewController {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: "7", dto: CodePayButtonDTO.submit)
+        btn.setup(title: "7", dto: CodePayButtonDTO.phone)
         
         btn.backgroundColor = .blue
         return btn
@@ -175,7 +192,7 @@ class EnterPhoneVC: UIViewController {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: "8", dto: CodePayButtonDTO.submit)
+        btn.setup(title: "8", dto: CodePayButtonDTO.phone)
         
         btn.backgroundColor = .blue
         return btn
@@ -185,7 +202,7 @@ class EnterPhoneVC: UIViewController {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: "9", dto: CodePayButtonDTO.submit)
+        btn.setup(title: "9", dto: CodePayButtonDTO.phone)
         
         btn.backgroundColor = .blue
         return btn
@@ -195,7 +212,7 @@ class EnterPhoneVC: UIViewController {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: "+", dto: CodePayButtonDTO.submit)
+        btn.setup(title: "+", dto: CodePayButtonDTO.phone)
         
         btn.backgroundColor = .blue
         return btn
@@ -205,7 +222,7 @@ class EnterPhoneVC: UIViewController {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: "0", dto: CodePayButtonDTO.submit)
+        btn.setup(title: "0", dto: CodePayButtonDTO.phone)
         
         btn.backgroundColor = .blue
         return btn
@@ -215,17 +232,17 @@ class EnterPhoneVC: UIViewController {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: "B", dto: CodePayButtonDTO.submit)
+        btn.setup(title: "B", dto: CodePayButtonDTO.phone)
         
         btn.backgroundColor = .blue
         return btn
     }()
     
-    lazy var okButton: CodePayButton = {
+    lazy var buttonOk: CodePayButton = {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: "Ok", dto: CodePayButtonDTO.submit)
+        btn.setup(title: "Ok", dto: CodePayButtonDTO.phone)
         
         view.addSubview(btn)
         return btn
@@ -253,82 +270,70 @@ private extension EnterPhoneVC {
         
         phoneLabel.snp.makeConstraints { make in
             make.leading.top.trailing.equalToSuperview()
-            make.height.equalTo(60)
+            make.height.equalTo(30)
         }
         
         noteLabel.snp.makeConstraints { make in
-            make.top.equalTo(phoneLabel.snp.bottom).inset(-30)
+            make.top.equalTo(phoneLabel.snp.bottom).inset(-10)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(60)
+            make.height.equalTo(40)
         }
         
         buttonStackView.snp.makeConstraints { make in
-            make.top.equalTo(noteLabel.snp.bottom).inset(-30)
+            make.top.equalTo(noteLabel.snp.bottom).inset(-10)
             make.leading.trailing.equalToSuperview()
         }
         
-        row1Stack.snp.makeConstraints { make in
-            make.height.equalTo(90)
-        }
-        
-        row2Stack.snp.makeConstraints { make in
-            make.height.equalTo(90)
-        }
-        
-        row3Stack.snp.makeConstraints { make in
-            make.height.equalTo(90)
-        }
-        
-        row4Stack.snp.makeConstraints { make in
-            make.height.equalTo(90)
-        }
-        
         button1.snp.makeConstraints { make in
-            make.height.width.equalTo(80)
+            make.height.width.equalTo(buttonWidth)
         }
         
         button2.snp.makeConstraints { make in
-            make.height.width.equalTo(80)
+            make.height.width.equalTo(buttonWidth)
         }
         
         button3.snp.makeConstraints { make in
-            make.height.width.equalTo(80)
+            make.height.width.equalTo(buttonWidth)
         }
         
         button4.snp.makeConstraints { make in
-            make.height.width.equalTo(80)
+            make.height.width.equalTo(buttonWidth)
         }
         
         button5.snp.makeConstraints { make in
-            make.height.width.equalTo(80)
+            make.height.width.equalTo(buttonWidth)
         }
         
         button6.snp.makeConstraints { make in
-            make.height.width.equalTo(80)
+            make.height.width.equalTo(buttonWidth)
         }
         
         button7.snp.makeConstraints { make in
-            make.height.width.equalTo(80)
+            make.height.width.equalTo(buttonWidth)
         }
         
         button8.snp.makeConstraints { make in
-            make.height.width.equalTo(80)
+            make.height.width.equalTo(buttonWidth)
         }
         
         button9.snp.makeConstraints { make in
-            make.height.width.equalTo(80)
+            make.height.width.equalTo(buttonWidth)
         }
         
         buttonPlus.snp.makeConstraints { make in
-            make.height.width.equalTo(80)
+            make.height.width.equalTo(buttonWidth)
         }
         
         button0.snp.makeConstraints { make in
-            make.height.width.equalTo(80)
+            make.height.width.equalTo(buttonWidth)
         }
         
         buttonBack.snp.makeConstraints { make in
-            make.height.width.equalTo(80)
+            make.height.width.equalTo(buttonWidth)
+        }
+        
+        buttonOk.snp.makeConstraints { make in
+            make.height.width.equalTo(buttonWidth)
         }
     }
 }
