@@ -23,8 +23,13 @@
     }
     
     static var phone: CodePayButtonDTO {
-        return CodePayButtonDTO(fontSize: 32, fontColor: .black, weight: .semibold,
-                                backgroundColor: Colors.lightBlue, cornerRadius: 35)
+        return CodePayButtonDTO(fontSize: 36, fontColor: .black, weight: .medium,
+                                backgroundColor: .systemGray4, cornerRadius: 40)
+    }
+    
+    static var phoneOK: CodePayButtonDTO {
+        return CodePayButtonDTO(fontSize: 32, fontColor: .white, weight: .medium,
+                                backgroundColor: Colors.lightBlue, cornerRadius: 40)
     }
     
     init(fontSize: CGFloat, fontColor: UIColor, weight: UIFont.Weight,

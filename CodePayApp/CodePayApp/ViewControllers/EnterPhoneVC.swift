@@ -3,10 +3,10 @@ import UIKit
 class EnterPhoneVC: UIViewController {
     
     private let buttonWidth: CGFloat = 80
+    private let spacing: CGFloat = 30
     
     lazy var mainContainer: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemGray5
         
         self.view.addSubview(view)
         return view
@@ -16,7 +16,6 @@ class EnterPhoneVC: UIViewController {
         let lbl = CodePayLabel(frame: .zero)
         lbl.setup(title: "+370 601 90090", dto: CodePayLabelDTO.heading)
         lbl.textAlignment = .center
-        lbl.backgroundColor = .orange
         
         mainContainer.addSubview(lbl)
         return lbl
@@ -25,8 +24,7 @@ class EnterPhoneVC: UIViewController {
     lazy var noteLabel: CodePayLabel = {
         let lbl = CodePayLabel(frame: .zero)
         lbl.setup(title: "notes label", dto: CodePayLabelDTO.title)
-        lbl.textAlignment = .left
-        lbl.backgroundColor = .systemPink
+        lbl.textAlignment = .center
         
         mainContainer.addSubview(lbl)
         return lbl
@@ -34,11 +32,10 @@ class EnterPhoneVC: UIViewController {
     
     lazy var buttonStackView: UIStackView = {
         let stack = UIStackView()
-        stack.backgroundColor = .systemGray4
         stack.axis = .vertical
         stack.distribution = .equalSpacing
         stack.alignment = .center
-        stack.spacing = 20;
+        stack.spacing = spacing;
         
         stack.addArrangedSubview(row1Stack)
         stack.addArrangedSubview(row2Stack)
@@ -52,11 +49,10 @@ class EnterPhoneVC: UIViewController {
     
     lazy var row1Stack: UIStackView = {
         let stack = UIStackView()
-        stack.backgroundColor = .green
         stack.axis = .horizontal
         stack.distribution = .equalSpacing
         stack.alignment = .center
-        stack.spacing = 20;
+        stack.spacing = spacing;
         
         stack.addArrangedSubview(button1)
         stack.addArrangedSubview(button2)
@@ -66,11 +62,10 @@ class EnterPhoneVC: UIViewController {
     
     lazy var row2Stack: UIStackView = {
         let stack = UIStackView()
-        stack.backgroundColor = .yellow
         stack.axis = .horizontal
         stack.distribution = .equalSpacing
         stack.alignment = .center
-        stack.spacing = 20;
+        stack.spacing = spacing;
         
         stack.addArrangedSubview(button4)
         stack.addArrangedSubview(button5)
@@ -80,11 +75,10 @@ class EnterPhoneVC: UIViewController {
     
     lazy var row3Stack: UIStackView = {
         let stack = UIStackView()
-        stack.backgroundColor = .systemPink
         stack.axis = .horizontal
         stack.distribution = .equalSpacing
         stack.alignment = .center
-        stack.spacing = 20;
+        stack.spacing = spacing;
         
         stack.addArrangedSubview(button7)
         stack.addArrangedSubview(button8)
@@ -94,11 +88,10 @@ class EnterPhoneVC: UIViewController {
     
     lazy var row4Stack: UIStackView = {
         let stack = UIStackView()
-        stack.backgroundColor = .purple
         stack.axis = .horizontal
         stack.distribution = .equalSpacing
         stack.alignment = .center
-        stack.spacing = 20;
+        stack.spacing = spacing;
         
         stack.addArrangedSubview(buttonPlus)
         stack.addArrangedSubview(button0)
@@ -108,11 +101,10 @@ class EnterPhoneVC: UIViewController {
     
     lazy var row5Stack: UIStackView = {
         let stack = UIStackView()
-        stack.backgroundColor = .purple
         stack.axis = .horizontal
         stack.distribution = .equalSpacing
         stack.alignment = .center
-        stack.spacing = 20;
+        stack.spacing = spacing;
         
         stack.addArrangedSubview(buttonOk)
         return stack
@@ -123,8 +115,6 @@ class EnterPhoneVC: UIViewController {
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "1", dto: CodePayButtonDTO.phone)
-        
-        btn.backgroundColor = .red
         return btn
     }()
     
@@ -133,8 +123,6 @@ class EnterPhoneVC: UIViewController {
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "2", dto: CodePayButtonDTO.phone)
-        
-        btn.backgroundColor = .purple
         return btn
     }()
     
@@ -143,8 +131,6 @@ class EnterPhoneVC: UIViewController {
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "3", dto: CodePayButtonDTO.phone)
-        
-        btn.backgroundColor = .blue
         return btn
     }()
     
@@ -153,8 +139,6 @@ class EnterPhoneVC: UIViewController {
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "4", dto: CodePayButtonDTO.phone)
-        
-        btn.backgroundColor = .blue
         return btn
     }()
     
@@ -163,8 +147,6 @@ class EnterPhoneVC: UIViewController {
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "5", dto: CodePayButtonDTO.phone)
-        
-        btn.backgroundColor = .blue
         return btn
     }()
     
@@ -173,8 +155,6 @@ class EnterPhoneVC: UIViewController {
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "6", dto: CodePayButtonDTO.phone)
-        
-        btn.backgroundColor = .blue
         return btn
     }()
     
@@ -183,8 +163,6 @@ class EnterPhoneVC: UIViewController {
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "7", dto: CodePayButtonDTO.phone)
-        
-        btn.backgroundColor = .blue
         return btn
     }()
     
@@ -193,8 +171,6 @@ class EnterPhoneVC: UIViewController {
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "8", dto: CodePayButtonDTO.phone)
-        
-        btn.backgroundColor = .blue
         return btn
     }()
     
@@ -203,8 +179,6 @@ class EnterPhoneVC: UIViewController {
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "9", dto: CodePayButtonDTO.phone)
-        
-        btn.backgroundColor = .blue
         return btn
     }()
     
@@ -213,8 +187,6 @@ class EnterPhoneVC: UIViewController {
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "+", dto: CodePayButtonDTO.phone)
-        
-        btn.backgroundColor = .blue
         return btn
     }()
     
@@ -223,8 +195,6 @@ class EnterPhoneVC: UIViewController {
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "0", dto: CodePayButtonDTO.phone)
-        
-        btn.backgroundColor = .blue
         return btn
     }()
     
@@ -233,8 +203,6 @@ class EnterPhoneVC: UIViewController {
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "B", dto: CodePayButtonDTO.phone)
-        
-        btn.backgroundColor = .blue
         return btn
     }()
     
@@ -242,9 +210,8 @@ class EnterPhoneVC: UIViewController {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: "Ok", dto: CodePayButtonDTO.phone)
-        
-        view.addSubview(btn)
+        btn.setup(title: "OK", dto: CodePayButtonDTO.phoneOK)
+        btn.isHidden = true
         return btn
     }()
     
@@ -258,6 +225,7 @@ class EnterPhoneVC: UIViewController {
     
     @objc func buttonDidTap(_ sender: UIButton) {
         print("🟢 button did Tap!")
+        buttonOk.isHidden = false
     }
 }
 
@@ -265,7 +233,7 @@ class EnterPhoneVC: UIViewController {
 private extension EnterPhoneVC {
     private func setupConstraints() {
         mainContainer.snp.makeConstraints { make in
-            make.top.bottom.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(30)
+            make.top.leading.bottom.trailing.equalTo(view.safeAreaLayoutGuide).inset(30)
         }
         
         phoneLabel.snp.makeConstraints { make in
@@ -280,8 +248,8 @@ private extension EnterPhoneVC {
         }
         
         buttonStackView.snp.makeConstraints { make in
-            make.top.equalTo(noteLabel.snp.bottom).inset(-10)
-            make.leading.trailing.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(180)
         }
         
         button1.snp.makeConstraints { make in
