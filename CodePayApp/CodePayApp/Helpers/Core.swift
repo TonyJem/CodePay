@@ -1,9 +1,9 @@
 import UIKit
 
 struct Core {
-    
     static let navController = UINavigationController()
     
+    //    TODO: Refactor Core name, o may be remove calculations from here to special file
     static private let widthMultiplier: CGFloat = 0.7143
     static private let screenWidth = UIScreen.main.bounds.width
     static private let screenHeigh = UIScreen.main.bounds.height

@@ -5,9 +5,8 @@ class LoginVC: UIViewController {
     private let imageContainerMultiplier: CGFloat = 0.2778
     private let imageResizeMultiplier: CGFloat = 0.8888
     
-//    TODO: Refactor mainContainerViewHeight and mainContainerCenterOffset to be seted better + together Refactor Core
-    private var mainContainerViewHeight = CGFloat()
-    private var mainContainerCenterOffset = CGFloat()
+    private let mainContainerViewHeight = Core.mainContainerViewHeight
+    private let mainContainerCenterOffset = -1 * Core.mainContainerCenterOffset
     private let titleHeight: CGFloat = 70
     private let inputViewHeight: CGFloat = 70
     private let inputViewSpace: CGFloat = -30
@@ -93,9 +92,6 @@ class LoginVC: UIViewController {
     // MARK:  - Setup
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mainContainerViewHeight = Core.mainContainerViewHeight
-        mainContainerCenterOffset = Core.mainContainerCenterOffset * -1
         
         view.backgroundColor = Colors.mainBackground
         setupConstraints()
