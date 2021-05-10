@@ -236,6 +236,7 @@ class EnterPhoneVC: UIViewController {
     
     @objc func buttonOkDidTap(_ sender: UIButton) {
         print("🟢 buttonOkDidTap !")
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
