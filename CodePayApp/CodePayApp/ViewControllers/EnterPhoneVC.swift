@@ -14,7 +14,7 @@ class EnterPhoneVC: UIViewController {
     
     lazy var phoneLabel: CodePayLabel = {
         let lbl = CodePayLabel(frame: .zero)
-        lbl.setup(title: "+370 601 90090", dto: CodePayLabelDTO.heading)
+        lbl.setup(title: "+370 601 90090", dto: CodePayLabelDTO.label)
         lbl.textAlignment = .center
         
         mainContainer.addSubview(lbl)
@@ -23,7 +23,7 @@ class EnterPhoneVC: UIViewController {
     
     lazy var noteLabel: CodePayLabel = {
         let lbl = CodePayLabel(frame: .zero)
-        lbl.setup(title: "notes label", dto: CodePayLabelDTO.title)
+        lbl.setup(title: "notes label", dto: CodePayLabelDTO.note)
         lbl.textAlignment = .center
         
         mainContainer.addSubview(lbl)

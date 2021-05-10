@@ -13,4 +13,12 @@ struct CodePayLabelDTO {
     static var title: CodePayLabelDTO {
         return CodePayLabelDTO(fontSize: 17, fontColor: Colors.lightBlue, weight: .medium)
     }
+    
+    static var label: CodePayLabelDTO {
+        return CodePayLabelDTO(fontSize: 36, fontColor: Colors.lightBlue, weight: .semibold)
+    }
+    
+    static var note: CodePayLabelDTO {
+        return CodePayLabelDTO(fontSize: 22, fontColor: Colors.lightBlue, weight: .medium)
+    }
 }
