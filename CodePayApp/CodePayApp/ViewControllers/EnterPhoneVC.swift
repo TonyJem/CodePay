@@ -231,11 +231,13 @@ class EnterPhoneVC: UIViewController {
     }
     
     @objc func buttonBackDidTap(_ sender: UIButton) {
-        print("🟢 buttonBackDidTap !")
+        var phoneLabelText = phoneLabel.text
+        guard phoneLabelText != "" else { return }
+        phoneLabelText?.removeLast()
+        phoneLabel.text = phoneLabelText
     }
     
     @objc func buttonOkDidTap(_ sender: UIButton) {
-        print("🟢 buttonOkDidTap !")
         self.navigationController?.popViewController(animated: true)
     }
 }
