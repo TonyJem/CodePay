@@ -2,8 +2,8 @@ import UIKit
 
 class InputView: UIView {
     
-    var type: InputViewType = .phone
-
+    private var type: InputViewType
+    
     lazy var titleLabel: CodePayLabel = {
         let lbl = CodePayLabel(frame: .zero)
         lbl.setup(title: type.title, dto: CodePayLabelDTO.title)
@@ -41,6 +41,15 @@ class InputView: UIView {
         self.addSubview(view)
         return view
     }()
+    
+    init(type: InputViewType) {
+        self.type = type
+        super.init(frame: .zero)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 extension InputView {

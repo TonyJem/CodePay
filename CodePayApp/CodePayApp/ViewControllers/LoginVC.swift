@@ -58,16 +58,14 @@ class LoginVC: UIViewController {
     }()
     
     lazy var phoneView: InputView = {
-        let view = InputView()
-        view.type = .phone
+        let view = InputView(type: .phone)
         
         mainContainerView.addSubview(view)
         return view
     }()
     
     lazy var passwordView: InputView = {
-        let view = InputView()
-        view.type = .password
+        let view = InputView(type: .password)
         
         mainContainerView.addSubview(view)
         return view
