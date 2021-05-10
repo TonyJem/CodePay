@@ -235,6 +235,7 @@ class EnterPhoneVC: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = Colors.mainBackground
+        title = "Enter Phone Number"
         setupConstraints()
     }
     
@@ -264,29 +265,21 @@ private extension EnterPhoneVC {
         buttonStackView.snp.makeConstraints { make in
             make.top.equalTo(noteLabel.snp.bottom).inset(-30)
             make.leading.trailing.equalToSuperview()
-//            make.height.equalTo(400)
         }
         
         row1Stack.snp.makeConstraints { make in
-//            make.leading.top.trailing.equalToSuperview()
             make.height.equalTo(90)
         }
         
         row2Stack.snp.makeConstraints { make in
-//            make.top.equalTo(row1Container.snp.bottom)
-//            make.leading.trailing.equalToSuperview()
             make.height.equalTo(90)
         }
         
         row3Stack.snp.makeConstraints { make in
-//            make.top.equalTo(row2Container.snp.bottom)
-//            make.leading.trailing.equalToSuperview()
             make.height.equalTo(90)
         }
         
         row4Stack.snp.makeConstraints { make in
-//            make.top.equalTo(row3Container.snp.bottom)
-//            make.leading.trailing.equalToSuperview()
             make.height.equalTo(90)
         }
         
@@ -337,8 +330,5 @@ private extension EnterPhoneVC {
         buttonBack.snp.makeConstraints { make in
             make.height.width.equalTo(80)
         }
-        
-        
-        
     }
 }

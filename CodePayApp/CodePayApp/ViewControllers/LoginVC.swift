@@ -105,6 +105,10 @@ class LoginVC: UIViewController {
         initializeHideKeyboard()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(true)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)}
+    
     // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {
         print("🟢 'Submit' button in Login Scene did Tap")
