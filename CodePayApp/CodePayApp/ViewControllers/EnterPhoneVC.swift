@@ -89,7 +89,7 @@ class EnterPhoneVC: UIViewController {
     
     lazy var row4Stack: UIStackView = {
         let stack = UIStackView()
-        stack.backgroundColor = .blue
+        stack.backgroundColor = .purple
         stack.axis = .horizontal
         stack.distribution = .equalSpacing
         stack.alignment = .center
@@ -127,7 +127,7 @@ class EnterPhoneVC: UIViewController {
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "3", dto: CodePayButtonDTO.submit)
         
-        btn.backgroundColor = .brown
+        btn.backgroundColor = .blue
         return btn
     }()
     
@@ -137,7 +137,7 @@ class EnterPhoneVC: UIViewController {
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "4", dto: CodePayButtonDTO.submit)
         
-        btn.backgroundColor = .brown
+        btn.backgroundColor = .blue
         return btn
     }()
     
@@ -147,7 +147,7 @@ class EnterPhoneVC: UIViewController {
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "5", dto: CodePayButtonDTO.submit)
         
-        btn.backgroundColor = .brown
+        btn.backgroundColor = .blue
         return btn
     }()
     
@@ -157,7 +157,7 @@ class EnterPhoneVC: UIViewController {
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "6", dto: CodePayButtonDTO.submit)
         
-        btn.backgroundColor = .brown
+        btn.backgroundColor = .blue
         return btn
     }()
     
@@ -167,7 +167,7 @@ class EnterPhoneVC: UIViewController {
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "7", dto: CodePayButtonDTO.submit)
         
-        btn.backgroundColor = .brown
+        btn.backgroundColor = .blue
         return btn
     }()
     
@@ -177,7 +177,7 @@ class EnterPhoneVC: UIViewController {
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "8", dto: CodePayButtonDTO.submit)
         
-        btn.backgroundColor = .brown
+        btn.backgroundColor = .blue
         return btn
     }()
     
@@ -187,7 +187,7 @@ class EnterPhoneVC: UIViewController {
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "9", dto: CodePayButtonDTO.submit)
         
-        btn.backgroundColor = .brown
+        btn.backgroundColor = .blue
         return btn
     }()
     
@@ -197,7 +197,7 @@ class EnterPhoneVC: UIViewController {
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "+", dto: CodePayButtonDTO.submit)
         
-        btn.backgroundColor = .brown
+        btn.backgroundColor = .blue
         return btn
     }()
     
@@ -207,7 +207,7 @@ class EnterPhoneVC: UIViewController {
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "0", dto: CodePayButtonDTO.submit)
         
-        btn.backgroundColor = .brown
+        btn.backgroundColor = .blue
         return btn
     }()
     
@@ -217,7 +217,7 @@ class EnterPhoneVC: UIViewController {
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "B", dto: CodePayButtonDTO.submit)
         
-        btn.backgroundColor = .brown
+        btn.backgroundColor = .blue
         return btn
     }()
     
