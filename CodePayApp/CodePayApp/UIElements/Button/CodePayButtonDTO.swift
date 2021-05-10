@@ -7,6 +7,7 @@
     let weight: UIFont.Weight
     let backgroundColor: UIColor?
     let cornerRadius: CGFloat?
+    let titleAlignment: NSTextAlignment?
     
     static var submit: CodePayButtonDTO {
         return CodePayButtonDTO(fontSize: 22, fontColor: Colors.white, weight: .semibold,
@@ -17,12 +18,17 @@
         return CodePayButtonDTO(fontSize: 15, fontColor: Colors.gray, weight: .medium)
     }
     
+    static var placeholder: CodePayButtonDTO {
+        return CodePayButtonDTO(fontSize: 17, fontColor: .systemGray2, weight: .medium, titleAlignment: .left)
+    }
+    
     init(fontSize: CGFloat, fontColor: UIColor, weight: UIFont.Weight,
-         backgroundColor: UIColor? = nil, cornerRadius: CGFloat? = nil) {
+         backgroundColor: UIColor? = nil, cornerRadius: CGFloat? = nil, titleAlignment: NSTextAlignment? = nil) {
         self.fontSize = fontSize
         self.fontColor = fontColor
         self.weight = weight
         self.backgroundColor = backgroundColor
         self.cornerRadius = cornerRadius
+        self.titleAlignment = titleAlignment
     }
  }

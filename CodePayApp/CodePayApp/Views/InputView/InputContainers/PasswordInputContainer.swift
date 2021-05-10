@@ -6,7 +6,7 @@ final class PasswordInputContainer: InputContainer {
         let textField = CodePayTextField(frame: .zero)
         textField.setup(title: "", dto: CodePayTextFieldDTO.regular)
         textField.isSecureTextEntry = true
-        textFieldContainerView.addSubview(textField)
+        inputViewContainer.addSubview(textField)
         return textField
     }()
     
@@ -15,7 +15,7 @@ final class PasswordInputContainer: InputContainer {
         btn.addTarget(self, action: #selector(visibilityButtonDidTap(_:)), for: .touchUpInside)
         btn.setImage(UIImage(named: "passwordShow"), for: .normal)
         
-        textFieldContainerView.addSubview(btn)
+        inputViewContainer.addSubview(btn)
         return btn
     }()
     
@@ -50,7 +50,7 @@ final class PasswordInputContainer: InputContainer {
         }
     }
     
-    override func setPlaceHolder(placeholder: String) {
+    override func setPlaceholder(placeholder: String) {
         textField.placeholder = placeholder
     }
 }

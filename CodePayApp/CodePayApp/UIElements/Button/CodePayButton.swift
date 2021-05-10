@@ -1,7 +1,7 @@
  import UIKit
-
+ 
  class CodePayButton: UIButton {
-
+    
     var dto: CodePayButtonDTO?
     
     func setup(title: String, dto: CodePayButtonDTO) {
@@ -16,6 +16,17 @@
         
         if let cornerRadius = dto.cornerRadius {
             layer.cornerRadius = cornerRadius
+        }
+        
+        if let alignment = dto.titleAlignment {
+            switch alignment {
+            case .right:
+                self.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.right
+            case .left:
+                self.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
+            default:
+                self.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.center
+            }
         }
     }
  }

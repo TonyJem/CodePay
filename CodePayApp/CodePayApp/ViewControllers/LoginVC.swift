@@ -5,8 +5,9 @@ class LoginVC: UIViewController {
     private let imageContainerMultiplier: CGFloat = 0.2778
     private let imageResizeMultiplier: CGFloat = 0.8888
     
-    private var mainContainerViewHeight: CGFloat = 340
-    private var mainContainerCenterOffset: CGFloat = -90
+//    TODO: Refactor mainContainerViewHeight and mainContainerCenterOffset to be seted better + together Refactor Core
+    private var mainContainerViewHeight = CGFloat()
+    private var mainContainerCenterOffset = CGFloat()
     private let titleHeight: CGFloat = 70
     private let inputViewHeight: CGFloat = 70
     private let inputViewSpace: CGFloat = -30
@@ -24,6 +25,7 @@ class LoginVC: UIViewController {
     // MARK: - Views
     lazy var mainContainerView: UIView = {
         let view = UIView()
+//        TODO: Remove background color while is not needed for tests anymore
 //        view.backgroundColor = .systemGray5
         
         self.view.addSubview(view)
@@ -56,16 +58,14 @@ class LoginVC: UIViewController {
     }()
     
     lazy var phoneView: InputView = {
-        let view = InputView()
-        view.type = .phone
+        let view = InputView(type: .phone)
         
         mainContainerView.addSubview(view)
         return view
     }()
     
     lazy var passwordView: InputView = {
-        let view = InputView()
-        view.type = .password
+        let view = InputView(type: .password)
         
         mainContainerView.addSubview(view)
         return view
@@ -102,6 +102,10 @@ class LoginVC: UIViewController {
         observeKeyboardNotifications()
         initializeHideKeyboard()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(true)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)}
     
     // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {

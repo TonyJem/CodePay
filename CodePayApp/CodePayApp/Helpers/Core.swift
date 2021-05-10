@@ -1,17 +1,21 @@
 import UIKit
 
 struct Core {
-    static private let widthMultiplier: CGFloat = 0.7143
     
-    static private let screenHeigh = UIScreen.main.bounds.width
+    static let navController = UINavigationController()
+    
+    static private let widthMultiplier: CGFloat = 0.7143
+    static private let screenWidth = UIScreen.main.bounds.width
+    static private let screenHeigh = UIScreen.main.bounds.height
     
     static var itemWidth: CGFloat {
-        return UIScreen.main.bounds.width * widthMultiplier
+        return screenWidth * widthMultiplier
     }
     
     static var mainContainerViewHeight: CGFloat {
         var value = CGFloat()
-        guard 568 <= screenHeigh else { return 340 }
+        guard 568 <= screenHeigh else {
+            return 340 }
         value = 318.3843 + (screenHeigh - 568) * 0.2183
         return value
     }
