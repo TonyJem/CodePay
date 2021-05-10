@@ -23,7 +23,7 @@ class EnterPhoneVC: UIViewController {
     
     lazy var noteLabel: CodePayLabel = {
         let lbl = CodePayLabel(frame: .zero)
-        lbl.setup(title: "notes label", dto: CodePayLabelDTO.note)
+        lbl.setup(title: "Is Valid", dto: CodePayLabelDTO.note)
         lbl.textAlignment = .center
         
         mainContainer.addSubview(lbl)
@@ -219,7 +219,7 @@ class EnterPhoneVC: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = Colors.mainBackground
-        title = "Enter Phone Number"
+        title = "Phone Number"
         setupConstraints()
     }
     
@@ -242,7 +242,7 @@ private extension EnterPhoneVC {
         }
         
         noteLabel.snp.makeConstraints { make in
-            make.top.equalTo(phoneLabel.snp.bottom).inset(-10)
+            make.top.equalTo(phoneLabel.snp.bottom).inset(-30)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(40)
         }
