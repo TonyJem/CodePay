@@ -32,6 +32,7 @@
 		3AD83A42264ADD7E006A98B5 /* CreatePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A41264ADD7E006A98B5 /* CreatePasswordVC.swift */; };
 		3AD83A46264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A45264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift */; };
 		3AD83A49264AFEC2006A98B5 /* ChooseCurrencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A48264AFEC2006A98B5 /* ChooseCurrencyVC.swift */; };
+		3AD83A58264B109E006A98B5 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A57264B109E006A98B5 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		3AD83A41264ADD7E006A98B5 /* CreatePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordVC.swift; sourceTree = "<group>"; };
 		3AD83A45264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordInputContainer.swift; sourceTree = "<group>"; };
 		3AD83A48264AFEC2006A98B5 /* ChooseCurrencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCurrencyVC.swift; sourceTree = "<group>"; };
+		3AD83A57264B109E006A98B5 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				3A466BE826487B7E00494D4D /* CreatePhoneVC.swift */,
 				3AD83A41264ADD7E006A98B5 /* CreatePasswordVC.swift */,
 				3AD83A48264AFEC2006A98B5 /* ChooseCurrencyVC.swift */,
+				3AD83A57264B109E006A98B5 /* HomeVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				3A50F54F264814A5007820B0 /* InputViewType.swift in Sources */,
 				3A06B3C4263DF04B00E8C56E /* Localizations.swift in Sources */,
 				3AD83A42264ADD7E006A98B5 /* CreatePasswordVC.swift in Sources */,
+				3AD83A58264B109E006A98B5 /* HomeVC.swift in Sources */,
 				3A06B3B9263DE60500E8C56E /* CodePayButton.swift in Sources */,
 				3AD83A46264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift in Sources */,
 				3AD83A49264AFEC2006A98B5 /* ChooseCurrencyVC.swift in Sources */,

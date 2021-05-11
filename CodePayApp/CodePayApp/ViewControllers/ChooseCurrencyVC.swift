@@ -5,6 +5,17 @@ class ChooseCurrencyVC: UIViewController {
     private let myArray: NSArray = ["EUR", "USD", "GBP", "RUB", "JPY"]
     private var myTableView: UITableView!
 
+    lazy var submitButton: CodePayButton = {
+        let btn = CodePayButton(type: .custom)
+        btn.showsTouchWhenHighlighted = true
+        btn.addTarget(self, action: #selector(submitButtonDidTap(_:)), for: .touchUpInside)
+        btn.setup(title: "Confirm Registration", dto: CodePayButtonDTO.submit)
+        
+        view.addSubview(btn)
+        return btn
+    }()
+    
+    // MARK:  - Setup
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,6 +29,25 @@ class ChooseCurrencyVC: UIViewController {
         myTableView.dataSource = self
         myTableView.delegate = self
         self.view.addSubview(myTableView)
+        
+        setupConstraints()
+    }
+    
+    // MARK:  - Actions
+    @objc func submitButtonDidTap(_ sender: UIButton) {
+        Core.navController.pushViewController(HomeVC(), animated: true)
+    }
+}
+
+// MARK:  - LoginVC constraints
+private extension ChooseCurrencyVC {
+    private func setupConstraints() {
+        submitButton.snp.makeConstraints { make in
+            make.width.equalTo(Core.itemWidth)
+            make.height.equalTo(60)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
+            make.centerX.equalToSuperview()
+        }
     }
 }
 
