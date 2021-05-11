@@ -95,11 +95,7 @@ class CreatePasswordVC: UIViewController {
     
     // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {
-        print("🟢 'Submit' button in Create Password did Tap")
-    }
-    
-    @objc func secondaryButtonDidTap(_ sender: UIButton) {
-        print("🟢 'secondary' button in Create Password did Tap")
+        Core.navController.pushViewController(ChooseCurrencyVC(), animated: true)
     }
     
     @objc func dismissMyKeyboard(){

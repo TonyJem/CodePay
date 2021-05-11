@@ -31,6 +31,7 @@
 		3A8313D8263F0CB9000D79D9 /* CodePayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313D7263F0CB9000D79D9 /* CodePayTextField.swift */; };
 		3AD83A42264ADD7E006A98B5 /* CreatePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A41264ADD7E006A98B5 /* CreatePasswordVC.swift */; };
 		3AD83A46264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A45264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift */; };
+		3AD83A49264AFEC2006A98B5 /* ChooseCurrencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A48264AFEC2006A98B5 /* ChooseCurrencyVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		3A8313D7263F0CB9000D79D9 /* CodePayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayTextField.swift; sourceTree = "<group>"; };
 		3AD83A41264ADD7E006A98B5 /* CreatePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordVC.swift; sourceTree = "<group>"; };
 		3AD83A45264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordInputContainer.swift; sourceTree = "<group>"; };
+		3AD83A48264AFEC2006A98B5 /* ChooseCurrencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCurrencyVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				3A6F86C92646B60400E0EC92 /* LoginVC.swift */,
 				3A466BE826487B7E00494D4D /* CreatePhoneVC.swift */,
 				3AD83A41264ADD7E006A98B5 /* CreatePasswordVC.swift */,
+				3AD83A48264AFEC2006A98B5 /* ChooseCurrencyVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				3AD83A42264ADD7E006A98B5 /* CreatePasswordVC.swift in Sources */,
 				3A06B3B9263DE60500E8C56E /* CodePayButton.swift in Sources */,
 				3AD83A46264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift in Sources */,
+				3AD83A49264AFEC2006A98B5 /* ChooseCurrencyVC.swift in Sources */,
 				3A50F54926480838007820B0 /* Core.swift in Sources */,
 				3A06B3B5263DD75900E8C56E /* Colors.swift in Sources */,
 				3A06B3B2263DD67A00E8C56E /* CodePayLabelDTO.swift in Sources */,
