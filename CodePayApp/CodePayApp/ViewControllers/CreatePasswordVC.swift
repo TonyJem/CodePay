@@ -1,7 +1,6 @@
 import UIKit
-import SnapKit
 
-class LoginVC: UIViewController {
+class CreatePasswordVC: UIViewController {
     private let imageContainerMultiplier: CGFloat = 0.2778
     private let imageResizeMultiplier: CGFloat = 0.8888
     
@@ -105,11 +104,11 @@ class LoginVC: UIViewController {
     
     // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {
-        print("🟢 'Submit' button in Login Scene did Tap")
+        print("🟢 'Submit' button in Create Password did Tap")
     }
     
     @objc func secondaryButtonDidTap(_ sender: UIButton) {
-        Core.navController.pushViewController(CreatePhoneVC(), animated: true)
+        print("🟢 'secondary' button in Create Password did Tap")
     }
     
     @objc func dismissMyKeyboard(){
@@ -123,7 +122,7 @@ class LoginVC: UIViewController {
 }
 
 // MARK:  - LoginVC constraints
-private extension LoginVC {
+private extension CreatePasswordVC {
     private func setupConstraints() {
         
         mainContainerView.snp.makeConstraints { make in
@@ -181,7 +180,7 @@ private extension LoginVC {
 }
 
 // MARK:  - LoginVC Handle Keyboard
-private extension LoginVC {
+private extension CreatePasswordVC {
     func observeKeyboardNotifications() {
         NotificationCenter.default.addObserver(
             self,

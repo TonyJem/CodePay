@@ -1,6 +1,6 @@
 import UIKit
 
-class EnterPhoneVC: UIViewController {
+class CreatePhoneVC: UIViewController {
     
     private let buttonWidth: CGFloat = 80
     private let spacing: CGFloat = Core.spacing
@@ -238,12 +238,15 @@ class EnterPhoneVC: UIViewController {
     }
     
     @objc func buttonOkDidTap(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+//        Return to previuose ViewContoller
+//        self.navigationController?.popViewController(animated: true)
+        
+        Core.navController.pushViewController(CreatePasswordVC(), animated: true)
     }
 }
 
 // MARK:  - EnterPhoneVC constraints
-private extension EnterPhoneVC {
+private extension CreatePhoneVC {
     private func setupConstraints() {
         mainContainer.snp.makeConstraints { make in
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(30)
