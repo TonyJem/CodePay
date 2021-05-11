@@ -3,6 +3,7 @@ import UIKit
 enum InputViewType {
     case phone
     case password
+    case confirmPassword
     
     var imageName: String {
         switch self {
@@ -10,6 +11,8 @@ enum InputViewType {
             return "phone"
         case .password:
             return "lock"
+        case .confirmPassword:
+            return "passwordConfirm"
         }
     }
     
@@ -19,6 +22,8 @@ enum InputViewType {
             return __("phone_title")
         case .password:
             return __("password_title")
+        case .confirmPassword:
+            return __("confirm_password_title")
         }
     }
     
@@ -28,6 +33,8 @@ enum InputViewType {
             return __("phone_placeholder")
         case .password:
             return __("password_placeholder")
+        case .confirmPassword:
+            return __("confirm_password_placeholder")
         }
     }
     
@@ -37,6 +44,8 @@ enum InputViewType {
             return PhoneInputContainer()
         case .password:
             return PasswordInputContainer()
+        case .confirmPassword:
+            return ConfirmPasswordInputContainer()
         }
     }
 }

@@ -2,7 +2,7 @@ import UIKit
 
 class CreatePasswordVC: UIViewController {
     private let imageContainerMultiplier: CGFloat = 0.2778
-    private let imageResizeMultiplier: CGFloat = 0.8888
+    private let imageResizeMultiplier: CGFloat = 0.6666
     
     private let mainContainerViewHeight = Core.mainContainerViewHeight
     private let mainContainerCenterOffset = -1 * Core.mainContainerCenterOffset
@@ -40,7 +40,7 @@ class CreatePasswordVC: UIViewController {
     }()
     
     lazy var personImage: UIImageView = {
-        let imageView = UIImageView(image: UIImage(imageLiteralResourceName: "person"))
+        let imageView = UIImageView(image: UIImage(imageLiteralResourceName: "passwordScreen"))
         
         personImageContainer.addSubview(imageView)
         return imageView
@@ -48,18 +48,11 @@ class CreatePasswordVC: UIViewController {
     
     lazy var titleLabel: CodePayLabel = {
         let lbl = CodePayLabel(frame: .zero)
-        lbl.setup(title: __("login_title"), dto: CodePayLabelDTO.heading)
+        lbl.setup(title: "Create Password", dto: CodePayLabelDTO.heading)
         lbl.textAlignment = .center
         
         mainContainerView.addSubview(lbl)
         return lbl
-    }()
-    
-    lazy var phoneView: InputView = {
-        let view = InputView(type: .phone)
-        
-        mainContainerView.addSubview(view)
-        return view
     }()
     
     lazy var passwordView: InputView = {
@@ -69,20 +62,18 @@ class CreatePasswordVC: UIViewController {
         return view
     }()
     
+    lazy var confirmPasswordView: InputView = {
+        let view = InputView(type: .confirmPassword)
+        
+        mainContainerView.addSubview(view)
+        return view
+    }()
+    
     lazy var submitButton: CodePayButton = {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(submitButtonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: __("login_submit_btn"), dto: CodePayButtonDTO.submit)
-        
-        view.addSubview(btn)
-        return btn
-    }()
-    
-    lazy var secondaryButton: CodePayButton = {
-        let btn = CodePayButton(type: .custom)
-        btn.addTarget(self, action: #selector(secondaryButtonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: __("create_account_secondary_btn"), dto: CodePayButtonDTO.secondary)
+        btn.setup(title: "Submit", dto: CodePayButtonDTO.submit)
         
         view.addSubview(btn)
         return btn
@@ -139,8 +130,8 @@ private extension CreatePasswordVC {
         
         personImage.snp.makeConstraints { make in
             make.width.height.equalToSuperview().multipliedBy(imageResizeMultiplier)
-            make.top.equalToSuperview()
             make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().offset(5)
         }
         
         titleLabel.snp.makeConstraints { make in
@@ -150,30 +141,23 @@ private extension CreatePasswordVC {
             make.centerX.equalToSuperview()
         }
         
-        passwordView.snp.makeConstraints { make in
+        confirmPasswordView.snp.makeConstraints { make in
             make.width.bottom.equalToSuperview()
             make.height.equalTo(inputViewHeight)
         }
-        passwordView.setupConstraints()
+        confirmPasswordView.setupConstraints()
         
-        phoneView.snp.makeConstraints { make in
+        passwordView.snp.makeConstraints { make in
             make.width.equalToSuperview()
             make.height.equalTo(inputViewHeight)
-            make.bottom.equalTo(passwordView.snp.top).offset(inputViewSpace)
+            make.bottom.equalTo(confirmPasswordView.snp.top).offset(inputViewSpace)
         }
-        phoneView.setupConstraints()
+        passwordView.setupConstraints()
         
         submitButton.snp.makeConstraints { make in
             make.width.equalTo(Core.itemWidth)
             make.height.equalTo(submitButtonHeight)
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(submitButtonBottomInset)
-            make.centerX.equalToSuperview()
-        }
-        
-        secondaryButton.snp.makeConstraints { make in
-            make.width.lessThanOrEqualTo(Core.itemWidth)
-            make.height.equalTo(secondaryButtonHeight)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(secondaryButtonBottomInset)
             make.centerX.equalToSuperview()
         }
     }
@@ -198,7 +182,6 @@ private extension CreatePasswordVC {
     }
     
     func keyboardWillAppear(_ keyboardHeight: CGFloat) {
-        secondaryButton.isHidden = true
         submitButton.snp.updateConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(10 + keyboardHeight)
         }
@@ -212,7 +195,6 @@ private extension CreatePasswordVC {
     }
     
     func keyboardWillDisappear() {
-        secondaryButton.isHidden = false
         submitButton.snp.updateConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(submitButtonBottomInset)
         }

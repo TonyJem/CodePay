@@ -214,6 +214,7 @@ class CreatePhoneVC: UIViewController {
         return btn
     }()
     
+    // MARK:  - Setup
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -222,6 +223,11 @@ class CreatePhoneVC: UIViewController {
         setupConstraints()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(true)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)}
+    
+    // MARK:  - Actions
     @objc func buttonDidTap(_ sender: UIButton) {
         print("🟢 button did Tap!")
     }
@@ -240,7 +246,6 @@ class CreatePhoneVC: UIViewController {
     @objc func buttonOkDidTap(_ sender: UIButton) {
 //        Return to previuose ViewContoller
 //        self.navigationController?.popViewController(animated: true)
-        
         Core.navController.pushViewController(CreatePasswordVC(), animated: true)
     }
 }

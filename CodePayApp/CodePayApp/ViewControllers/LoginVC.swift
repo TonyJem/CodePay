@@ -24,8 +24,6 @@ class LoginVC: UIViewController {
     // MARK: - Views
     lazy var mainContainerView: UIView = {
         let view = UIView()
-//        TODO: Remove background color while is not needed for tests anymore
-//        view.backgroundColor = .systemGray5
         
         self.view.addSubview(view)
         return view

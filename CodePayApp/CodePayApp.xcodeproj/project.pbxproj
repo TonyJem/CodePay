@@ -30,6 +30,7 @@
 		3A8313D5263F0A31000D79D9 /* CodePayTextFieldDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313D4263F0A31000D79D9 /* CodePayTextFieldDTO.swift */; };
 		3A8313D8263F0CB9000D79D9 /* CodePayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313D7263F0CB9000D79D9 /* CodePayTextField.swift */; };
 		3AD83A42264ADD7E006A98B5 /* CreatePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A41264ADD7E006A98B5 /* CreatePasswordVC.swift */; };
+		3AD83A46264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A45264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		3A8313D4263F0A31000D79D9 /* CodePayTextFieldDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayTextFieldDTO.swift; sourceTree = "<group>"; };
 		3A8313D7263F0CB9000D79D9 /* CodePayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayTextField.swift; sourceTree = "<group>"; };
 		3AD83A41264ADD7E006A98B5 /* CreatePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordVC.swift; sourceTree = "<group>"; };
+		3AD83A45264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordInputContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 				3A50F551264814D9007820B0 /* InputContainer.swift */,
 				3A50F557264826B4007820B0 /* PhoneInputContainer.swift */,
 				3A50F55426482672007820B0 /* PasswordInputContainer.swift */,
+				3AD83A45264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift */,
 			);
 			path = InputContainers;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				3A06B3C4263DF04B00E8C56E /* Localizations.swift in Sources */,
 				3AD83A42264ADD7E006A98B5 /* CreatePasswordVC.swift in Sources */,
 				3A06B3B9263DE60500E8C56E /* CodePayButton.swift in Sources */,
+				3AD83A46264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift in Sources */,
 				3A50F54926480838007820B0 /* Core.swift in Sources */,
 				3A06B3B5263DD75900E8C56E /* Colors.swift in Sources */,
 				3A06B3B2263DD67A00E8C56E /* CodePayLabelDTO.swift in Sources */,

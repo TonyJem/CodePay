@@ -10,7 +10,7 @@
 "password_placeholder" = "Enter Password";
 
 "confirm_password_title" = "Confirm Password";
-"confirm_password_placeholder" = "Repeat Entering Password";
+"confirm_password_placeholder" = "Repeat Password";
 
 "currency_title"= "Currency";
 "currency_placeholder" = "Choose Currency";
