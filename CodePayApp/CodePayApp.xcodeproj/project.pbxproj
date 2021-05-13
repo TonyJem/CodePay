@@ -34,6 +34,7 @@
 		3AD83A49264AFEC2006A98B5 /* ChooseCurrencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A48264AFEC2006A98B5 /* ChooseCurrencyVC.swift */; };
 		3AD83A58264B109E006A98B5 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A57264B109E006A98B5 /* HomeVC.swift */; };
 		3AD83A5C264DA247006A98B5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3AD83A5B264DA247006A98B5 /* Alamofire */; };
+		3AD83A61264DA329006A98B5 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A5F264DA329006A98B5 /* CoreDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		3AD83A45264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordInputContainer.swift; sourceTree = "<group>"; };
 		3AD83A48264AFEC2006A98B5 /* ChooseCurrencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCurrencyVC.swift; sourceTree = "<group>"; };
 		3AD83A57264B109E006A98B5 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		3AD83A60264DA329006A98B5 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		3A06B343263C7B9400E8C56E /* CodePayApp */ = {
 			isa = PBXGroup;
 			children = (
+				3AD83A5E264DA2CB006A98B5 /* CoreData */,
 				3A06B3C2263DEFD400E8C56E /* Helpers */,
 				3A06B3A9263DD3E800E8C56E /* UIElements */,
 				3A50F55E2648282C007820B0 /* Views */,
@@ -216,6 +219,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		3AD83A5E264DA2CB006A98B5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3AD83A5F264DA329006A98B5 /* CoreDataModel.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -311,6 +322,7 @@
 				3A06B3B5263DD75900E8C56E /* Colors.swift in Sources */,
 				3A06B3B2263DD67A00E8C56E /* CodePayLabelDTO.swift in Sources */,
 				3A50F558264826B4007820B0 /* PhoneInputContainer.swift in Sources */,
+				3AD83A61264DA329006A98B5 /* CoreDataModel.xcdatamodeld in Sources */,
 				3A06B345263C7B9400E8C56E /* AppDelegate.swift in Sources */,
 				3A466BE926487B7E00494D4D /* CreatePhoneVC.swift in Sources */,
 				3A50F55526482672007820B0 /* PasswordInputContainer.swift in Sources */,
@@ -541,6 +553,19 @@
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		3AD83A5F264DA329006A98B5 /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3AD83A60264DA329006A98B5 /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 3AD83A60264DA329006A98B5 /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3A06B339263C7B9400E8C56E /* Project object */;
 }
