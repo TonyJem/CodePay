@@ -33,6 +33,7 @@
 		3AD83A46264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A45264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift */; };
 		3AD83A49264AFEC2006A98B5 /* ChooseCurrencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A48264AFEC2006A98B5 /* ChooseCurrencyVC.swift */; };
 		3AD83A58264B109E006A98B5 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A57264B109E006A98B5 /* HomeVC.swift */; };
+		3AD83A5C264DA247006A98B5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3AD83A5B264DA247006A98B5 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A06B382263D334B00E8C56E /* SnapKit in Frameworks */,
+				3AD83A5C264DA247006A98B5 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +234,7 @@
 			name = CodePayApp;
 			packageProductDependencies = (
 				3A06B381263D334B00E8C56E /* SnapKit */,
+				3AD83A5B264DA247006A98B5 /* Alamofire */,
 			);
 			productName = CodePayApp;
 			productReference = 3A06B341263C7B9400E8C56E /* CodePayApp.app */;
@@ -262,6 +265,7 @@
 			mainGroup = 3A06B338263C7B9400E8C56E;
 			packageReferences = (
 				3A06B380263D334B00E8C56E /* XCRemoteSwiftPackageReference "SnapKit" */,
+				3AD83A5A264DA247006A98B5 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 3A06B342263C7B9400E8C56E /* Products */;
 			projectDirPath = "";
@@ -515,6 +519,14 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		3AD83A5A264DA247006A98B5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -522,6 +534,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3A06B380263D334B00E8C56E /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		3AD83A5B264DA247006A98B5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AD83A5A264DA247006A98B5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
