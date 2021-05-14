@@ -3,15 +3,14 @@ import UIKit
 class CurrencyCell: BaseTableViewCell {
     
     let containerView = UIView()
-   
-    
-    
+
     override func setupView() {
         super.setupView()
         
         contentView.addSubview(containerView)
+        containerView.backgroundColor = .orange
         
-        backgroundColor = .systemGray6
+        backgroundColor = .green
         contentView.backgroundColor = .white
     }
     
@@ -19,7 +18,9 @@ class CurrencyCell: BaseTableViewCell {
         super.setupConstraints()
         
         containerView.snp.makeConstraints { make in
-            make.leading.trailing.top.bottom.equalTo(contentView).inset(10)
+            make.top.bottom.equalTo(contentView).inset(5)
+            make.leading.trailing.equalTo(contentView).inset(20)
+            make.height.equalTo(100)
         }
     }
 }
