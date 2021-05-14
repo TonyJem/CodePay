@@ -21,7 +21,10 @@ class HomeVC: UIViewController {
     
     // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {
-        print("🟢 'Home' button in Login Scene did Tap")
+        print("🟢 Current Account Data:")
+        print("\(AccountManager.candidateAccount.phone)")
+        print("\(AccountManager.candidateAccount.password)")
+        print("\(AccountManager.candidateAccount.currency)")
     }
 }
 // MARK:  - LoginVC constraints

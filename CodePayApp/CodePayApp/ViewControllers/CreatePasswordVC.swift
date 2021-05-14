@@ -95,6 +95,8 @@ class CreatePasswordVC: UIViewController {
     
     // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {
+        
+        AccountManager.addCandidatePassword(password: "PasswordHere")
         Core.navController.pushViewController(CurrencyVC(), animated: true)
     }
     

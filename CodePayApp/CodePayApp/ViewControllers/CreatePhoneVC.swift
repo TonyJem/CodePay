@@ -244,15 +244,13 @@ class CreatePhoneVC: UIViewController {
     }
     
     @objc func buttonOkDidTap(_ sender: UIButton) {
-        cashPhoneNumber()
 //      TODO:  Return to previuose ViewContoller when Register flow
-//        self.navigationController?.popViewController(animated: true)
+//      self.navigationController?.popViewController(animated: true)
+        guard let phone = phoneLabel.text else { return }
+        AccountManager.addCandidatePhone(phone: phone)
         Core.navController.pushViewController(CreatePasswordVC(), animated: true)
     }
     
-    private func cashPhoneNumber() {
-        
-    }
 }
 
 // MARK:  - EnterPhoneVC constraints

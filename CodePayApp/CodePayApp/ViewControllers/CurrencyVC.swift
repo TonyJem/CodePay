@@ -4,6 +4,8 @@ class CurrencyVC: UIViewController {
     private let submitButtonBottomInset = 120
     private let model = CurrencyModel()
     
+    private var selectedCurrency = ""
+    
     // MARK: - Views
     lazy var currencyTable: UITableView = {
         let table = UITableView()
@@ -41,6 +43,7 @@ class CurrencyVC: UIViewController {
     
     // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {
+        AccountManager.addCandidateCurrency(currency: selectedCurrency)
         Core.navController.pushViewController(HomeVC(), animated: true)
     }
 }
@@ -84,6 +87,7 @@ extension CurrencyVC: UITableViewDataSource {
 extension CurrencyVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         model.markCurrency(at: indexPath.row)
+        selectedCurrency = model.currencies[indexPath.row].acronym
         tableView.reloadData()
     }
 }
