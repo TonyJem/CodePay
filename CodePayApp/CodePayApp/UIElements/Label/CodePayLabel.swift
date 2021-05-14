@@ -7,8 +7,7 @@ class CodePayLabel: UILabel {
             return
         }
         text = title
-        font = UIFont.systemFont(ofSize: dto.fontSize, weight: dto.weight)
-        textColor = dto.fontColor
+        setDTO(dto: dto)
     }
     
     func setDTO(dto: CodePayLabelDTO) {

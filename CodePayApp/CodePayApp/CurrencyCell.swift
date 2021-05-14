@@ -19,9 +19,14 @@ class CurrencyCell: BaseTableViewCell {
         containerView.addSubview(checkIconImageView)
         
         containerView.addSubview(flagLabel)
-        flagLabel.setDTO(dto: .flag)
-//        containerView.addSubview(acronymLabel)
-//        containerView.addSubview(symbolLabel)
+        flagLabel.setDTO(dto: .currencyFlag)
+        
+        containerView.addSubview(acronymLabel)
+        acronymLabel.setDTO(dto: .currencyAcronym)
+        
+        containerView.addSubview(symbolLabel)
+        symbolLabel.setDTO(dto: .currencySymbol)
+        symbolLabel.textAlignment = .right
     }
     
     override func setupConstraints() {
@@ -29,7 +34,8 @@ class CurrencyCell: BaseTableViewCell {
         
         containerView.snp.makeConstraints { make in
             make.top.bottom.equalTo(contentView).inset(5)
-            make.leading.trailing.equalTo(contentView).inset(20)
+            make.width.equalTo(Core.itemWidth)
+            make.centerX.equalToSuperview()
             make.height.equalTo(60)
         }
         
@@ -40,9 +46,22 @@ class CurrencyCell: BaseTableViewCell {
         }
         
         flagLabel.snp.makeConstraints { make in
-            make.width.equalTo(60)
+            make.width.equalTo(50)
             make.height.equalTo(40)
-            make.leading.equalTo(checkIconImageView.snp.trailing).offset(5)
+            make.leading.equalTo(checkIconImageView.snp.trailing).offset(10)
+            make.centerY.equalToSuperview()
+        }
+        
+        acronymLabel.snp.makeConstraints { make in
+            make.width.equalTo(80)
+            make.height.equalTo(40)
+            make.leading.equalTo(flagLabel.snp.trailing).offset(10)
+            make.centerY.equalToSuperview()
+        }
+        
+        symbolLabel.snp.makeConstraints { make in
+            make.width.height.equalTo(40)
+            make.trailing.equalToSuperview().inset(20)
             make.centerY.equalToSuperview()
         }
     }

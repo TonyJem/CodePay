@@ -26,7 +26,15 @@ struct CodePayLabelDTO {
         return CodePayLabelDTO(fontSize: 19, fontColor: Colors.gray, weight: .medium)
     }
     
-    static var flag: CodePayLabelDTO {
+    static var currencyFlag: CodePayLabelDTO {
+        return CodePayLabelDTO(fontSize: 45, fontColor: Colors.lightBlue, weight: .medium)
+    }
+    
+    static var currencyAcronym: CodePayLabelDTO {
+        return CodePayLabelDTO(fontSize: 35, fontColor: Colors.lightBlue, weight: .semibold)
+    }
+    
+    static var currencySymbol: CodePayLabelDTO {
         return CodePayLabelDTO(fontSize: 45, fontColor: Colors.lightBlue, weight: .medium)
     }
 }
