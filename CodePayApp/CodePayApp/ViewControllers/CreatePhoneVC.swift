@@ -244,9 +244,14 @@ class CreatePhoneVC: UIViewController {
     }
     
     @objc func buttonOkDidTap(_ sender: UIButton) {
-//        Return to previuose ViewContoller
+        cashPhoneNumber()
+//      TODO:  Return to previuose ViewContoller when Register flow
 //        self.navigationController?.popViewController(animated: true)
         Core.navController.pushViewController(CreatePasswordVC(), animated: true)
+    }
+    
+    private func cashPhoneNumber() {
+        
     }
 }
 

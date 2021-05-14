@@ -1,13 +1,13 @@
 import Foundation
 
 struct Account: Codable {
-    var phoneFullNumber: String
+    var phone: String
     var password: String
-    var currencyAcronym: String
+    var currency: String
     
-    init(phoneFullNumber: String, password: String, currencyAcronym: String) {
-        self.phoneFullNumber = phoneFullNumber
+    init(phone: String, password: String, currency: String) {
+        self.phone = phone
         self.password = password
-        self.currencyAcronym = currencyAcronym
+        self.currency = currency
     }
 }
