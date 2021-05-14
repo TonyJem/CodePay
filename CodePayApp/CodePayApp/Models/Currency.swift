@@ -22,17 +22,10 @@ class CurrencyModel {
         Currency(isSelected: false, flag: "🇯🇵", acronym: "JPY", symbol: "\u{00A5}", description: "Japanese yen")
     ]
     
-//        for currency in currencies {
-//            currency.isSelected = false
-//        }
-    
     func markCurrency(at row: Int) {
-        currencies[0].isSelected = false
-        currencies[1].isSelected = false
-        currencies[2].isSelected = false
-        currencies[3].isSelected = false
-        currencies[4].isSelected = false
-        
+        if let index = currencies.firstIndex(where: {$0.isSelected == true}) {
+            currencies[index].isSelected = false
+        }
         currencies[row].isSelected = true
     }
 }
