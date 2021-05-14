@@ -6,6 +6,11 @@ class CurrencyVC: UIViewController {
     
     lazy var currencyTable: UITableView = {
         let table = UITableView()
+        table.rowHeight = 70
+        table.delegate = self
+        table.dataSource = self
+        table.tableFooterView = UIView()
+        table.register(CurrencyCell.self, forCellReuseIdentifier: CurrencyCell.reuseID)
         
         view.addSubview(table)
         return table
@@ -26,14 +31,6 @@ class CurrencyVC: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = Colors.mainBackground
-        
-        currencyTable.tableFooterView = UIView()
-        currencyTable.rowHeight = 70
-        currencyTable.register(CurrencyCell.self, forCellReuseIdentifier: CurrencyCell.reuseID)
-        currencyTable.dataSource = self
-        currencyTable.delegate = self
-        self.view.addSubview(currencyTable)
-        
         setupConstraints()
     }
     
