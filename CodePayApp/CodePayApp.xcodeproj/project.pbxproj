@@ -35,6 +35,7 @@
 		3AD83A58264B109E006A98B5 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A57264B109E006A98B5 /* HomeVC.swift */; };
 		3AD83A5C264DA247006A98B5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3AD83A5B264DA247006A98B5 /* Alamofire */; };
 		3AD83A61264DA329006A98B5 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A5F264DA329006A98B5 /* CoreDataModel.xcdatamodeld */; };
+		3AD83A66264E4AD5006A98B5 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A65264E4AD5006A98B5 /* Currency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		3AD83A48264AFEC2006A98B5 /* ChooseCurrencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCurrencyVC.swift; sourceTree = "<group>"; };
 		3AD83A57264B109E006A98B5 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		3AD83A60264DA329006A98B5 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		3AD83A65264E4AD5006A98B5 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		3A06B343263C7B9400E8C56E /* CodePayApp */ = {
 			isa = PBXGroup;
 			children = (
+				3AD83A64264E4A97006A98B5 /* Models */,
 				3AD83A5E264DA2CB006A98B5 /* CoreData */,
 				3A06B3C2263DEFD400E8C56E /* Helpers */,
 				3A06B3A9263DD3E800E8C56E /* UIElements */,
@@ -227,6 +230,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		3AD83A64264E4A97006A98B5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3AD83A65264E4AD5006A98B5 /* Currency.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -317,6 +328,7 @@
 				3AD83A58264B109E006A98B5 /* HomeVC.swift in Sources */,
 				3A06B3B9263DE60500E8C56E /* CodePayButton.swift in Sources */,
 				3AD83A46264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift in Sources */,
+				3AD83A66264E4AD5006A98B5 /* Currency.swift in Sources */,
 				3AD83A49264AFEC2006A98B5 /* ChooseCurrencyVC.swift in Sources */,
 				3A50F54926480838007820B0 /* Core.swift in Sources */,
 				3A06B3B5263DD75900E8C56E /* Colors.swift in Sources */,
