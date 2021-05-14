@@ -44,7 +44,7 @@ class CurrencyCell: BaseTableViewCell {
         
         containerView.snp.makeConstraints { make in
             make.top.bottom.equalTo(contentView).inset(5)
-            make.width.equalTo(Core.itemWidth)
+            make.width.equalTo(DimensionsUI.itemWidth)
             make.centerX.equalToSuperview()
         }
         

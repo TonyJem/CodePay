@@ -3,7 +3,7 @@ import UIKit
 class CreatePhoneVC: UIViewController {
     
     private let buttonWidth: CGFloat = 80
-    private let spacing: CGFloat = Core.spacing
+    private let spacing: CGFloat = DimensionsUI.spacing
     
     lazy var mainContainer: UIView = {
         let view = UIView()
@@ -255,7 +255,7 @@ private extension CreatePhoneVC {
     private func setupConstraints() {
         mainContainer.snp.makeConstraints { make in
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(30)
-            make.top.bottom.equalTo(view.safeAreaLayoutGuide).inset(Core.topBottomInset)
+            make.top.bottom.equalTo(view.safeAreaLayoutGuide).inset(DimensionsUI.topBottomInset)
         }
         
         phoneLabel.snp.makeConstraints { make in
@@ -264,14 +264,14 @@ private extension CreatePhoneVC {
         }
         
         noteLabel.snp.makeConstraints { make in
-            make.top.equalTo(phoneLabel.snp.bottom).inset(-1 * Core.noteLabelInset)
+            make.top.equalTo(phoneLabel.snp.bottom).inset(-1 * DimensionsUI.noteLabelInset)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(40)
         }
         
         buttonStackView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(view.safeAreaLayoutGuide).inset(Core.stackViewInset)
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(DimensionsUI.stackViewInset)
         }
         
         button1.snp.makeConstraints { make in

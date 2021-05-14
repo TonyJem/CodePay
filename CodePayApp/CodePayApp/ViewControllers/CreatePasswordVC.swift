@@ -4,8 +4,8 @@ class CreatePasswordVC: UIViewController {
     private let imageContainerMultiplier: CGFloat = 0.2778
     private let imageResizeMultiplier: CGFloat = 0.6666
     
-    private let mainContainerViewHeight = Core.mainContainerViewHeight
-    private let mainContainerCenterOffset = -1 * Core.mainContainerCenterOffset
+    private let mainContainerViewHeight = DimensionsUI.mainContainerViewHeight
+    private let mainContainerCenterOffset = -1 * DimensionsUI.mainContainerCenterOffset
     private let titleHeight: CGFloat = 70
     private let inputViewHeight: CGFloat = 70
     private let inputViewSpace: CGFloat = -30
@@ -113,7 +113,7 @@ private extension CreatePasswordVC {
     private func setupConstraints() {
         
         mainContainerView.snp.makeConstraints { make in
-            make.width.equalTo(Core.itemWidth)
+            make.width.equalTo(DimensionsUI.itemWidth)
             make.height.equalTo(mainContainerViewHeight)
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview().offset(mainContainerCenterOffset)
@@ -151,7 +151,7 @@ private extension CreatePasswordVC {
         passwordView.setupConstraints()
         
         submitButton.snp.makeConstraints { make in
-            make.width.equalTo(Core.itemWidth)
+            make.width.equalTo(DimensionsUI.itemWidth)
             make.height.equalTo(submitButtonHeight)
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(submitButtonBottomInset)
             make.centerX.equalToSuperview()
@@ -183,8 +183,8 @@ private extension CreatePasswordVC {
         }
         
         mainContainerView.snp.updateConstraints { make in
-            make.height.equalTo(mainContainerViewHeight-Core.deltaMainContainerViewHeight)
-            make.centerY.equalToSuperview().offset(-1*Core.deltaMainContainerCenterOffset)
+            make.height.equalTo(mainContainerViewHeight-DimensionsUI.deltaMainContainerViewHeight)
+            make.centerY.equalToSuperview().offset(-1*DimensionsUI.deltaMainContainerCenterOffset)
         }
         
         UIView.animate(withDuration: 1.5, animations: view.layoutIfNeeded)

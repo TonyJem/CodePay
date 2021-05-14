@@ -50,14 +50,14 @@ private extension CurrencyVC {
     func setupConstraints() {
         
         submitButton.snp.makeConstraints { make in
-            make.width.equalTo(Core.itemWidth)
+            make.width.equalTo(DimensionsUI.itemWidth)
             make.height.equalTo(60)
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(submitButtonBottomInset)
             make.centerX.equalToSuperview()
         }
         
         currencyTable.snp.makeConstraints { make in
-            make.width.equalTo(Core.itemWidth + 30)
+            make.width.equalTo(DimensionsUI.itemWidth + 30)
             make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
             make.height.equalTo(currencyTable.rowHeight * 7)
             make.centerX.equalToSuperview()

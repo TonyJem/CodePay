@@ -28,7 +28,7 @@ class HomeVC: UIViewController {
 private extension HomeVC {
     private func setupConstraints() {
         submitButton.snp.makeConstraints { make in
-            make.width.equalTo(Core.itemWidth)
+            make.width.equalTo(DimensionsUI.itemWidth)
             make.height.equalTo(60)
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
             make.centerX.equalToSuperview()

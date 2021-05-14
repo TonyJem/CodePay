@@ -40,6 +40,7 @@
 		3AD83A70264E54F8006A98B5 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A6F264E54F8006A98B5 /* BaseTableViewCell.swift */; };
 		3AD83A73264E5553006A98B5 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A72264E5553006A98B5 /* CurrencyCell.swift */; };
 		3AD83A7F264EB89F006A98B5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A7E264EB89F006A98B5 /* UIView+Extension.swift */; };
+		3AD83A86264ED6F7006A98B5 /* DimensionsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A85264ED6F7006A98B5 /* DimensionsUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		3AD83A6F264E54F8006A98B5 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		3AD83A72264E5553006A98B5 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
 		3AD83A7E264EB89F006A98B5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		3AD83A85264ED6F7006A98B5 /* DimensionsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionsUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,13 +112,14 @@
 		3A06B343263C7B9400E8C56E /* CodePayApp */ = {
 			isa = PBXGroup;
 			children = (
+				3A50F54826480838007820B0 /* Core.swift */,
+				3AD83A85264ED6F7006A98B5 /* DimensionsUI.swift */,
 				3AD83A6B264E5465006A98B5 /* ReusableView.swift */,
-				3AD83A6F264E54F8006A98B5 /* BaseTableViewCell.swift */,
-				3AD83A72264E5553006A98B5 /* CurrencyCell.swift */,
 				3AD83A64264E4A97006A98B5 /* Models */,
 				3AD83A5E264DA2CB006A98B5 /* CoreData */,
 				3A06B3C2263DEFD400E8C56E /* Helpers */,
 				3A06B3A9263DD3E800E8C56E /* UIElements */,
+				3AD83A88264ED73B006A98B5 /* Cells */,
 				3A50F55E2648282C007820B0 /* Views */,
 				3A06B390263D423B00E8C56E /* ViewControllers */,
 				3A06B38A263D415600E8C56E /* Resources */,
@@ -199,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				3A06B3C3263DF04B00E8C56E /* Localizations.swift */,
-				3A50F54826480838007820B0 /* Core.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -248,6 +250,15 @@
 				3AD83A65264E4AD5006A98B5 /* Currency.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3AD83A88264ED73B006A98B5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3AD83A6F264E54F8006A98B5 /* BaseTableViewCell.swift */,
+				3AD83A72264E5553006A98B5 /* CurrencyCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +367,7 @@
 				3A06B3AE263DD5F900E8C56E /* CodePayLabel.swift in Sources */,
 				3AD83A70264E54F8006A98B5 /* BaseTableViewCell.swift in Sources */,
 				3A06B347263C7B9400E8C56E /* SceneDelegate.swift in Sources */,
+				3AD83A86264ED6F7006A98B5 /* DimensionsUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
