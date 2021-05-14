@@ -52,7 +52,7 @@ private extension CurrencyVC {
     }
 }
 
-// MARK:  - TableViewDataSource
+// MARK:  - CurrencyTable ViewDataSource
 extension CurrencyVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.currencies.count
@@ -66,6 +66,7 @@ extension CurrencyVC: UITableViewDataSource {
     }
 }
 
+// MARK:  - CurrencyTable ViewDelegate
 extension CurrencyVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Num: \(indexPath.row)")
