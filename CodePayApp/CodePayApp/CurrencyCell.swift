@@ -8,10 +8,7 @@ class CurrencyCell: BaseTableViewCell {
     private let acronymLabel = CodePayLabel()
     private let symbolLabel = CodePayLabel()
     
-    private let containerViewCornerRadius: CGFloat = 15
-    private let containerViewShadowOffset = CGSize(width: 5, height: 5)
-    private let containerViewShadowOpacity: Float  = 0.2
-    private let containerViewShadowRadius: CGFloat = 5
+    private let cornerRadius: CGFloat = 15
     
     override func setupView() {
         super.setupView()
@@ -73,10 +70,8 @@ class CurrencyCell: BaseTableViewCell {
         if let icon = currency.icon {
             checkIconImageView.image = icon
             containerView.backgroundColor = .white
-            containerView.roundCorners(radius: containerViewCornerRadius)
-            containerView.setShadow(offsetSize: containerViewShadowOffset,
-                                    opacity: containerViewShadowOpacity,
-                                    radius: containerViewShadowRadius)
+            containerView.roundCorners(radius: cornerRadius)
+            containerView.setShadow()
         } else {
             checkIconImageView.image = UIImage()
             containerView.backgroundColor = Colors.mainBackground
