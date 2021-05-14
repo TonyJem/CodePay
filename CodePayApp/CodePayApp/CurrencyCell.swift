@@ -2,22 +2,24 @@ import UIKit
 
 class CurrencyCell: BaseTableViewCell {
     
-    let containerView = UIView()
-    let checkIconImageView = UIImageView()
-    let flagLabel = CodePayLabel()
-    let acronymLabel = CodePayLabel()
-    let symbolLabel = CodePayLabel()
+    private let containerView = UIView()
+    private let checkIconImageView = UIImageView()
+    private let flagLabel = CodePayLabel()
+    private let acronymLabel = CodePayLabel()
+    private let symbolLabel = CodePayLabel()
+    
+    private let containerViewCornerRadius: CGFloat = 15
+    private let containerViewShadowOffset = CGSize(width: 5, height: 5)
+    private let containerViewShadowOpacity: Float  = 0.2
+    private let containerViewShadowRadius: CGFloat = 5
     
     override func setupView() {
         super.setupView()
         
         contentView.backgroundColor = Colors.mainBackground
-        
         contentView.addSubview(containerView)
-        containerView.backgroundColor = Colors.mainBackground
         
         containerView.addSubview(checkIconImageView)
-        
         containerView.addSubview(flagLabel)
         flagLabel.setDTO(dto: .currencyFlag)
         
@@ -40,7 +42,7 @@ class CurrencyCell: BaseTableViewCell {
         
         checkIconImageView.snp.makeConstraints { make in
             make.width.height.equalTo(40)
-            make.leading.equalToSuperview()
+            make.leading.equalToSuperview().inset(15)
             make.centerY.equalToSuperview()
         }
         
@@ -60,7 +62,7 @@ class CurrencyCell: BaseTableViewCell {
         
         symbolLabel.snp.makeConstraints { make in
             make.width.height.equalTo(40)
-            make.trailing.equalToSuperview()
+            make.trailing.equalToSuperview().inset(20)
             make.centerY.equalToSuperview()
         }
     }
@@ -70,10 +72,16 @@ class CurrencyCell: BaseTableViewCell {
         
         if let icon = currency.icon {
             checkIconImageView.image = icon
-            containerView.backgroundColor = .orange
+            containerView.backgroundColor = .white
+            containerView.roundCorners(radius: containerViewCornerRadius)
+            containerView.setShadow(offsetSize: containerViewShadowOffset,
+                                    opacity: containerViewShadowOpacity,
+                                    radius: containerViewShadowRadius)
         } else {
             checkIconImageView.image = UIImage()
             containerView.backgroundColor = Colors.mainBackground
+            containerView.roundCorners(radius: 0)
+            containerView.removeShadow()
         }
         
         flagLabel.text = currency.flag

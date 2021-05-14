@@ -39,6 +39,7 @@
 		3AD83A6C264E5465006A98B5 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A6B264E5465006A98B5 /* ReusableView.swift */; };
 		3AD83A70264E54F8006A98B5 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A6F264E54F8006A98B5 /* BaseTableViewCell.swift */; };
 		3AD83A73264E5553006A98B5 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A72264E5553006A98B5 /* CurrencyCell.swift */; };
+		3AD83A7F264EB89F006A98B5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A7E264EB89F006A98B5 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		3AD83A6B264E5465006A98B5 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		3AD83A6F264E54F8006A98B5 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		3AD83A72264E5553006A98B5 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
+		3AD83A7E264EB89F006A98B5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				3A50F55C26482804007820B0 /* InputView */,
+				3AD83A7E264EB89F006A98B5 /* UIView+Extension.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				3A50F558264826B4007820B0 /* PhoneInputContainer.swift in Sources */,
 				3AD83A61264DA329006A98B5 /* CoreDataModel.xcdatamodeld in Sources */,
 				3A06B345263C7B9400E8C56E /* AppDelegate.swift in Sources */,
+				3AD83A7F264EB89F006A98B5 /* UIView+Extension.swift in Sources */,
 				3A466BE926487B7E00494D4D /* CreatePhoneVC.swift in Sources */,
 				3A50F55526482672007820B0 /* PasswordInputContainer.swift in Sources */,
 				3A06B3AE263DD5F900E8C56E /* CodePayLabel.swift in Sources */,

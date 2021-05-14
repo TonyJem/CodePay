@@ -57,7 +57,7 @@ private extension CurrencyVC {
         }
         
         currencyTable.snp.makeConstraints { make in
-            make.width.equalTo(Core.itemWidth)
+            make.width.equalTo(Core.itemWidth + 30)
             make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
             make.height.equalTo(currencyTable.rowHeight * 7)
             make.centerX.equalToSuperview()
