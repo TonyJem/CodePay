@@ -14,7 +14,7 @@ class CurrencyCell: BaseTableViewCell {
         contentView.backgroundColor = Colors.mainBackground
         
         contentView.addSubview(containerView)
-        containerView.backgroundColor = .orange
+        containerView.backgroundColor = Colors.mainBackground
         
         containerView.addSubview(checkIconImageView)
         
@@ -70,8 +70,10 @@ class CurrencyCell: BaseTableViewCell {
         
         if let icon = currency.icon {
             checkIconImageView.image = icon
+            containerView.backgroundColor = .orange
         } else {
             checkIconImageView.image = UIImage()
+            containerView.backgroundColor = Colors.mainBackground
         }
         
         flagLabel.text = currency.flag
