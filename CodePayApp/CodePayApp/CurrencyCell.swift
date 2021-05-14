@@ -7,6 +7,20 @@ class CurrencyCell: BaseTableViewCell {
     private let flagLabel = CodePayLabel()
     private let acronymLabel = CodePayLabel()
     private let symbolLabel = CodePayLabel()
+    private let spacing: CGFloat = 10
+    
+    lazy var rowStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.distribution = .equalSpacing
+        stack.alignment = .leading
+        stack.spacing = spacing;
+        
+        stack.addArrangedSubview(checkIconImageView)
+        stack.addArrangedSubview(flagLabel)
+        stack.addArrangedSubview(acronymLabel)
+        return stack
+    }()
     
     private let cornerRadius: CGFloat = 15
     
@@ -16,12 +30,9 @@ class CurrencyCell: BaseTableViewCell {
         contentView.backgroundColor = Colors.mainBackground
         contentView.addSubview(containerView)
         
-        containerView.addSubview(checkIconImageView)
-        containerView.addSubview(flagLabel)
         flagLabel.setDTO(dto: .currencyFlag)
-        
-        containerView.addSubview(acronymLabel)
         acronymLabel.setDTO(dto: .currencyAcronym)
+        containerView.addSubview(rowStack)
         
         containerView.addSubview(symbolLabel)
         symbolLabel.setDTO(dto: .currencySymbol)
@@ -37,24 +48,23 @@ class CurrencyCell: BaseTableViewCell {
             make.centerX.equalToSuperview()
         }
         
+        rowStack.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview()
+        }
+        
         checkIconImageView.snp.makeConstraints { make in
             make.width.height.equalTo(40)
-            make.leading.equalToSuperview().inset(15)
-            make.centerY.equalToSuperview()
         }
         
         flagLabel.snp.makeConstraints { make in
             make.width.equalTo(50)
             make.height.equalTo(40)
-            make.leading.equalTo(checkIconImageView.snp.trailing).offset(10)
-            make.centerY.equalToSuperview()
         }
         
         acronymLabel.snp.makeConstraints { make in
             make.width.equalTo(80)
             make.height.equalTo(40)
-            make.leading.equalTo(flagLabel.snp.trailing).offset(10)
-            make.centerY.equalToSuperview()
         }
         
         symbolLabel.snp.makeConstraints { make in
