@@ -37,6 +37,8 @@
 		3AD83A61264DA329006A98B5 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A5F264DA329006A98B5 /* CoreDataModel.xcdatamodeld */; };
 		3AD83A66264E4AD5006A98B5 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A65264E4AD5006A98B5 /* Currency.swift */; };
 		3AD83A6C264E5465006A98B5 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A6B264E5465006A98B5 /* ReusableView.swift */; };
+		3AD83A70264E54F8006A98B5 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A6F264E54F8006A98B5 /* BaseTableViewCell.swift */; };
+		3AD83A73264E5553006A98B5 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A72264E5553006A98B5 /* CurrencyCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		3AD83A60264DA329006A98B5 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		3AD83A65264E4AD5006A98B5 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		3AD83A6B264E5465006A98B5 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		3AD83A6F264E54F8006A98B5 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		3AD83A72264E5553006A98B5 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				3AD83A6B264E5465006A98B5 /* ReusableView.swift */,
+				3AD83A6F264E54F8006A98B5 /* BaseTableViewCell.swift */,
+				3AD83A72264E5553006A98B5 /* CurrencyCell.swift */,
 				3AD83A64264E4A97006A98B5 /* Models */,
 				3AD83A5E264DA2CB006A98B5 /* CoreData */,
 				3A06B3C2263DEFD400E8C56E /* Helpers */,
@@ -325,6 +331,7 @@
 				3A6F86CA2646B60400E0EC92 /* LoginVC.swift in Sources */,
 				3AD83A6C264E5465006A98B5 /* ReusableView.swift in Sources */,
 				3A8313D5263F0A31000D79D9 /* CodePayTextFieldDTO.swift in Sources */,
+				3AD83A73264E5553006A98B5 /* CurrencyCell.swift in Sources */,
 				3A50F552264814D9007820B0 /* InputContainer.swift in Sources */,
 				3A50F54F264814A5007820B0 /* InputViewType.swift in Sources */,
 				3A06B3C4263DF04B00E8C56E /* Localizations.swift in Sources */,
@@ -343,6 +350,7 @@
 				3A466BE926487B7E00494D4D /* CreatePhoneVC.swift in Sources */,
 				3A50F55526482672007820B0 /* PasswordInputContainer.swift in Sources */,
 				3A06B3AE263DD5F900E8C56E /* CodePayLabel.swift in Sources */,
+				3AD83A70264E54F8006A98B5 /* BaseTableViewCell.swift in Sources */,
 				3A06B347263C7B9400E8C56E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
