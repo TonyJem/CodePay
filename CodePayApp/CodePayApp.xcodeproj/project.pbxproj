@@ -42,6 +42,7 @@
 		3AD83A7F264EB89F006A98B5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A7E264EB89F006A98B5 /* UIView+Extension.swift */; };
 		3AD83A86264ED6F7006A98B5 /* DimensionsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A85264ED6F7006A98B5 /* DimensionsUI.swift */; };
 		3AD83A8C264ED9CD006A98B5 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A8B264ED9CD006A98B5 /* Account.swift */; };
+		3AD83A8F264EDC26006A98B5 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A8E264EDC26006A98B5 /* AccountManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		3AD83A7E264EB89F006A98B5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3AD83A85264ED6F7006A98B5 /* DimensionsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionsUI.swift; sourceTree = "<group>"; };
 		3AD83A8B264ED9CD006A98B5 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		3AD83A8E264EDC26006A98B5 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +118,7 @@
 			children = (
 				3A50F54826480838007820B0 /* Core.swift */,
 				3AD83A85264ED6F7006A98B5 /* DimensionsUI.swift */,
-				3AD83A6B264E5465006A98B5 /* ReusableView.swift */,
+				3AD83A8E264EDC26006A98B5 /* AccountManager.swift */,
 				3AD83A64264E4A97006A98B5 /* Models */,
 				3AD83A5E264DA2CB006A98B5 /* CoreData */,
 				3A06B3C2263DEFD400E8C56E /* Helpers */,
@@ -204,6 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				3A06B3C3263DF04B00E8C56E /* Localizations.swift */,
+				3AD83A7E264EB89F006A98B5 /* UIView+Extension.swift */,
+				3AD83A6B264E5465006A98B5 /* ReusableView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -233,7 +237,6 @@
 			isa = PBXGroup;
 			children = (
 				3A50F55C26482804007820B0 /* InputView */,
-				3AD83A7E264EB89F006A98B5 /* UIView+Extension.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				3A50F54C26481473007820B0 /* InputView.swift in Sources */,
 				3A8313D8263F0CB9000D79D9 /* CodePayTextField.swift in Sources */,
 				3A06B3BC263DE64800E8C56E /* CodePayButtonDTO.swift in Sources */,
+				3AD83A8F264EDC26006A98B5 /* AccountManager.swift in Sources */,
 				3A6F86CA2646B60400E0EC92 /* LoginVC.swift in Sources */,
 				3AD83A6C264E5465006A98B5 /* ReusableView.swift in Sources */,
 				3AD83A8C264ED9CD006A98B5 /* Account.swift in Sources */,
