@@ -1,6 +1,6 @@
 import UIKit
 
-class ChooseCurrencyVC: UIViewController {
+class CurrencyVC: UIViewController {
 
     private let myArray: NSArray = ["EUR", "USD", "GBP", "RUB", "JPY"]
     private var myTableView: UITableView!
@@ -40,7 +40,7 @@ class ChooseCurrencyVC: UIViewController {
 }
 
 // MARK:  - LoginVC constraints
-private extension ChooseCurrencyVC {
+private extension CurrencyVC {
     private func setupConstraints() {
         submitButton.snp.makeConstraints { make in
             make.width.equalTo(Core.itemWidth)
@@ -51,7 +51,7 @@ private extension ChooseCurrencyVC {
     }
 }
 
-extension ChooseCurrencyVC: UITableViewDataSource {
+extension CurrencyVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myArray.count
     }
@@ -63,7 +63,7 @@ extension ChooseCurrencyVC: UITableViewDataSource {
     }
 }
 
-extension ChooseCurrencyVC: UITableViewDelegate {
+extension CurrencyVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Num: \(indexPath.row)")
         print("Value: \(myArray[indexPath.row])")

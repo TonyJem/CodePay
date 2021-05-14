@@ -95,7 +95,7 @@ class CreatePasswordVC: UIViewController {
     
     // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {
-        Core.navController.pushViewController(ChooseCurrencyVC(), animated: true)
+        Core.navController.pushViewController(CurrencyVC(), animated: true)
     }
     
     @objc func dismissMyKeyboard(){
