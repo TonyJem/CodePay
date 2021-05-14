@@ -29,11 +29,10 @@ class CurrencyCell: BaseTableViewCell {
         
         contentView.backgroundColor = Colors.mainBackground
         contentView.addSubview(containerView)
-        
         flagLabel.setDTO(dto: .currencyFlag)
         acronymLabel.setDTO(dto: .currencyAcronym)
         containerView.addSubview(rowStack)
-        
+        checkIconImageView.image = UIImage(imageLiteralResourceName: "circleChecked")
         containerView.addSubview(symbolLabel)
         symbolLabel.setDTO(dto: .currencySymbol)
         symbolLabel.textAlignment = .right
@@ -77,15 +76,13 @@ class CurrencyCell: BaseTableViewCell {
     override func fill(currency: Currency) {
         super.fill(currency: currency)
         
-        if let icon = currency.icon {
+        if currency.isSelected {
             checkIconImageView.isHidden = false
-            checkIconImageView.image = icon
             containerView.backgroundColor = .white
             containerView.roundCorners(radius: cornerRadius)
             containerView.setShadow()
         } else {
             checkIconImageView.isHidden = true
-            checkIconImageView.image = UIImage()
             containerView.backgroundColor = Colors.mainBackground
             containerView.roundCorners(radius: 0)
             containerView.removeShadow()

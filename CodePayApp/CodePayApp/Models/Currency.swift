@@ -6,10 +6,6 @@ struct Currency: Codable {
     let acronym: String
     let symbol: String
     let description: String
-    
-    var icon: UIImage? {
-        isSelected ? UIImage(imageLiteralResourceName: "circleChecked") : nil
-    }
 }
 
 class CurrencyModel {
