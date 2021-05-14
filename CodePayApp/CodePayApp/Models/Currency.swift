@@ -1,6 +1,6 @@
 import UIKit
 
-struct Currency {
+struct Currency: Codable {
     var isSelected: Bool
     let flag: String
     let acronym: String

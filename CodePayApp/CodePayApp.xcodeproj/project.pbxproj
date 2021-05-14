@@ -41,6 +41,7 @@
 		3AD83A73264E5553006A98B5 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A72264E5553006A98B5 /* CurrencyCell.swift */; };
 		3AD83A7F264EB89F006A98B5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A7E264EB89F006A98B5 /* UIView+Extension.swift */; };
 		3AD83A86264ED6F7006A98B5 /* DimensionsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A85264ED6F7006A98B5 /* DimensionsUI.swift */; };
+		3AD83A8C264ED9CD006A98B5 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A8B264ED9CD006A98B5 /* Account.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		3AD83A72264E5553006A98B5 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
 		3AD83A7E264EB89F006A98B5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3AD83A85264ED6F7006A98B5 /* DimensionsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionsUI.swift; sourceTree = "<group>"; };
+		3AD83A8B264ED9CD006A98B5 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 		3AD83A64264E4A97006A98B5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3AD83A8B264ED9CD006A98B5 /* Account.swift */,
 				3AD83A65264E4AD5006A98B5 /* Currency.swift */,
 			);
 			path = Models;
@@ -344,6 +347,7 @@
 				3A06B3BC263DE64800E8C56E /* CodePayButtonDTO.swift in Sources */,
 				3A6F86CA2646B60400E0EC92 /* LoginVC.swift in Sources */,
 				3AD83A6C264E5465006A98B5 /* ReusableView.swift in Sources */,
+				3AD83A8C264ED9CD006A98B5 /* Account.swift in Sources */,
 				3A8313D5263F0A31000D79D9 /* CodePayTextFieldDTO.swift in Sources */,
 				3AD83A73264E5553006A98B5 /* CurrencyCell.swift in Sources */,
 				3A50F552264814D9007820B0 /* InputContainer.swift in Sources */,
