@@ -1,10 +1,16 @@
 import UIKit
 
 class CurrencyVC: UIViewController {
-
+    private let submitButtonBottomInset = 120
     private let model = CurrencyModel()
-    private var currencyTable = UITableView()
-
+    
+    lazy var currencyTable: UITableView = {
+        let table = UITableView()
+        
+        view.addSubview(table)
+        return table
+    }()
+    
     lazy var submitButton: CodePayButton = {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
@@ -21,12 +27,8 @@ class CurrencyVC: UIViewController {
         
         view.backgroundColor = Colors.mainBackground
         
-        let displayWidth: CGFloat = self.view.frame.width
-        let displayHeight: CGFloat = self.view.frame.height
-
-        currencyTable = UITableView(frame: CGRect(x: 0, y: 0, width: displayWidth, height: displayHeight - 150))
         currencyTable.tableFooterView = UIView()
-        currencyTable.rowHeight = 80
+        currencyTable.rowHeight = 70
         currencyTable.register(CurrencyCell.self, forCellReuseIdentifier: CurrencyCell.reuseID)
         currencyTable.dataSource = self
         currencyTable.delegate = self
@@ -44,10 +46,18 @@ class CurrencyVC: UIViewController {
 // MARK:  - LoginVC constraints
 private extension CurrencyVC {
     func setupConstraints() {
+        
+        currencyTable.snp.makeConstraints { make in
+            make.width.equalTo(Core.itemWidth)
+            make.height.equalTo(500)
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
+            make.centerX.equalToSuperview()
+        }
+        
         submitButton.snp.makeConstraints { make in
             make.width.equalTo(Core.itemWidth)
             make.height.equalTo(60)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(submitButtonBottomInset)
             make.centerX.equalToSuperview()
         }
     }
@@ -58,7 +68,7 @@ extension CurrencyVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.currencies.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CurrencyCell.reuseID, for: indexPath) as? BaseTableViewCell else {
             return UITableViewCell()
