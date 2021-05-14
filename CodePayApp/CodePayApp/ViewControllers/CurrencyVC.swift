@@ -44,6 +44,9 @@ class CurrencyVC: UIViewController {
     // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {
         AccountManager.addCandidateCurrency(currency: selectedCurrency)
+        
+//        Jump directly to rootViewController
+        Core.navController.popToRootViewController(animated: true)
         Core.navController.pushViewController(HomeVC(), animated: true)
     }
 }
