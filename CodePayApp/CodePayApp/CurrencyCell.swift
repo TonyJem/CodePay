@@ -7,14 +7,14 @@ class CurrencyCell: BaseTableViewCell {
     private let flagLabel = CodePayLabel()
     private let acronymLabel = CodePayLabel()
     private let symbolLabel = CodePayLabel()
-    private let spacing: CGFloat = 10
+    private let spacing: CGFloat = 15
     
     lazy var rowStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.distribution = .equalSpacing
         stack.alignment = .leading
-        stack.spacing = spacing;
+        stack.spacing = spacing
         
         stack.addArrangedSubview(checkIconImageView)
         stack.addArrangedSubview(flagLabel)
@@ -50,7 +50,7 @@ class CurrencyCell: BaseTableViewCell {
         
         rowStack.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalToSuperview()
+            make.leading.equalToSuperview().inset(5)
         }
         
         checkIconImageView.snp.makeConstraints { make in
@@ -69,7 +69,7 @@ class CurrencyCell: BaseTableViewCell {
         
         symbolLabel.snp.makeConstraints { make in
             make.width.height.equalTo(40)
-            make.trailing.equalToSuperview().inset(20)
+            make.trailing.equalToSuperview().inset(10)
             make.centerY.equalToSuperview()
         }
     }
@@ -78,17 +78,18 @@ class CurrencyCell: BaseTableViewCell {
         super.fill(currency: currency)
         
         if let icon = currency.icon {
+            checkIconImageView.isHidden = false
             checkIconImageView.image = icon
             containerView.backgroundColor = .white
             containerView.roundCorners(radius: cornerRadius)
             containerView.setShadow()
         } else {
+            checkIconImageView.isHidden = true
             checkIconImageView.image = UIImage()
             containerView.backgroundColor = Colors.mainBackground
             containerView.roundCorners(radius: 0)
             containerView.removeShadow()
         }
-        
         flagLabel.text = currency.flag
         acronymLabel.text = currency.acronym
         symbolLabel.text = currency.symbol
