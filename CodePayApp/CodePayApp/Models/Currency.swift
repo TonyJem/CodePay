@@ -7,9 +7,8 @@ struct Currency {
     let symbol: String
     let description: String
     
-    var icon: UIImage {
-        let iconName = isSelected ? "circleChecked" : "circle"
-        return UIImage(imageLiteralResourceName: iconName)
+    var icon: UIImage? {
+        isSelected ? UIImage(imageLiteralResourceName: "circleChecked") : nil
     }
 }
 

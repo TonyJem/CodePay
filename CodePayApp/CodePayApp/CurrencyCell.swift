@@ -68,7 +68,12 @@ class CurrencyCell: BaseTableViewCell {
     override func fill(currency: Currency) {
         super.fill(currency: currency)
         
-        checkIconImageView.image = currency.icon
+        if let icon = currency.icon {
+            checkIconImageView.image = icon
+        } else {
+            checkIconImageView.image = UIImage()
+        }
+        
         flagLabel.text = currency.flag
         acronymLabel.text = currency.acronym
         symbolLabel.text = currency.symbol
