@@ -25,4 +25,8 @@ struct CodePayLabelDTO {
     static var navBarTitle: CodePayLabelDTO {
         return CodePayLabelDTO(fontSize: 19, fontColor: Colors.gray, weight: .medium)
     }
+    
+    static var flag: CodePayLabelDTO {
+        return CodePayLabelDTO(fontSize: 45, fontColor: Colors.lightBlue, weight: .medium)
+    }
 }

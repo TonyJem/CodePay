@@ -62,6 +62,7 @@ extension CurrencyVC: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CurrencyCell.reuseID, for: indexPath) as? BaseTableViewCell else {
             return UITableViewCell()
         }
+        cell.fill(currency: model.currencies[indexPath.row])
         return cell
     }
 }

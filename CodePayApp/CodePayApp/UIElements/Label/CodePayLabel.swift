@@ -10,4 +10,9 @@ class CodePayLabel: UILabel {
         font = UIFont.systemFont(ofSize: dto.fontSize, weight: dto.weight)
         textColor = dto.fontColor
     }
+    
+    func setDTO(dto: CodePayLabelDTO) {
+        font = UIFont.systemFont(ofSize: dto.fontSize, weight: dto.weight)
+        textColor = dto.fontColor
+    }
 }

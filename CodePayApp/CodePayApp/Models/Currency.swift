@@ -6,6 +6,11 @@ struct Currency {
     let acronym: String
     let symbol: String
     let description: String
+    
+    var icon: UIImage {
+        let iconName = isSelected ? "circleChecked" : "circle"
+        return UIImage(imageLiteralResourceName: iconName)
+    }
 }
 
 class CurrencyModel {

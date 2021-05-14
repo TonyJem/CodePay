@@ -14,4 +14,5 @@ class BaseTableViewCell: UITableViewCell, ReusableView {
     
     func setupView() {}
     func setupConstraints() {}
+    func fill(currency: Currency) {}
 }
