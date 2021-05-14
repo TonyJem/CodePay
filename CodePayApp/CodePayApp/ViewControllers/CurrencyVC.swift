@@ -24,8 +24,9 @@ class CurrencyVC: UIViewController {
         let displayWidth: CGFloat = self.view.frame.width
         let displayHeight: CGFloat = self.view.frame.height
 
-        currencyTable = UITableView(frame: CGRect(x: 0, y: 0, width: displayWidth, height: displayHeight - 100))
+        currencyTable = UITableView(frame: CGRect(x: 0, y: 0, width: displayWidth, height: displayHeight - 150))
         currencyTable.tableFooterView = UIView()
+        currencyTable.rowHeight = 80
         currencyTable.register(CurrencyCell.self, forCellReuseIdentifier: CurrencyCell.reuseID)
         currencyTable.dataSource = self
         currencyTable.delegate = self

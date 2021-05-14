@@ -36,12 +36,11 @@ class CurrencyCell: BaseTableViewCell {
             make.top.bottom.equalTo(contentView).inset(5)
             make.width.equalTo(Core.itemWidth)
             make.centerX.equalToSuperview()
-            make.height.equalTo(60)
         }
         
         checkIconImageView.snp.makeConstraints { make in
             make.width.height.equalTo(40)
-            make.leading.equalToSuperview().offset(20)
+            make.leading.equalToSuperview()
             make.centerY.equalToSuperview()
         }
         
@@ -61,7 +60,7 @@ class CurrencyCell: BaseTableViewCell {
         
         symbolLabel.snp.makeConstraints { make in
             make.width.height.equalTo(40)
-            make.trailing.equalToSuperview().inset(20)
+            make.trailing.equalToSuperview()
             make.centerY.equalToSuperview()
         }
     }
