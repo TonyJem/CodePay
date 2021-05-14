@@ -4,13 +4,16 @@ class CurrencyVC: UIViewController {
     private let submitButtonBottomInset = 120
     private let model = CurrencyModel()
     
+    // MARK: - Views
     lazy var currencyTable: UITableView = {
         let table = UITableView()
         table.rowHeight = 70
         table.delegate = self
         table.dataSource = self
+        table.separatorStyle = .none
         table.tableFooterView = UIView()
         table.alwaysBounceVertical = false
+        table.showsVerticalScrollIndicator = false
         table.backgroundColor = Colors.mainBackground
         table.register(CurrencyCell.self, forCellReuseIdentifier: CurrencyCell.reuseID)
         
@@ -56,7 +59,7 @@ private extension CurrencyVC {
         currencyTable.snp.makeConstraints { make in
             make.width.equalTo(Core.itemWidth)
             make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
-            make.bottom.equalTo(submitButton.snp.top).offset(-30)
+            make.height.equalTo(currencyTable.rowHeight * 7)
             make.centerX.equalToSuperview()
         }
     }

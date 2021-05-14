@@ -11,7 +11,7 @@ class CurrencyCell: BaseTableViewCell {
     override func setupView() {
         super.setupView()
         
-        contentView.backgroundColor = .green
+        contentView.backgroundColor = Colors.mainBackground
         
         contentView.addSubview(containerView)
         containerView.backgroundColor = .orange
