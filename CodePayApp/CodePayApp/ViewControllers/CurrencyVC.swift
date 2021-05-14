@@ -2,8 +2,8 @@ import UIKit
 
 class CurrencyVC: UIViewController {
 
-    private let myArray: NSArray = ["EUR", "USD", "GBP", "RUB", "JPY"]
-    private var myTableView: UITableView!
+    private let model = CurrencyModel()
+    private var currencyTable = UITableView()
 
     lazy var submitButton: CodePayButton = {
         let btn = CodePayButton(type: .custom)
@@ -24,11 +24,11 @@ class CurrencyVC: UIViewController {
         let displayWidth: CGFloat = self.view.frame.width
         let displayHeight: CGFloat = self.view.frame.height
 
-        myTableView = UITableView(frame: CGRect(x: 0, y: 0, width: displayWidth, height: displayHeight - 100))
-        myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
-        myTableView.dataSource = self
-        myTableView.delegate = self
-        self.view.addSubview(myTableView)
+        currencyTable = UITableView(frame: CGRect(x: 0, y: 0, width: displayWidth, height: displayHeight - 100))
+        currencyTable.register(CurrencyCell.self, forCellReuseIdentifier: CurrencyCell.reuseID)
+        currencyTable.dataSource = self
+        currencyTable.delegate = self
+        self.view.addSubview(currencyTable)
         
         setupConstraints()
     }
@@ -41,7 +41,7 @@ class CurrencyVC: UIViewController {
 
 // MARK:  - LoginVC constraints
 private extension CurrencyVC {
-    private func setupConstraints() {
+    func setupConstraints() {
         submitButton.snp.makeConstraints { make in
             make.width.equalTo(Core.itemWidth)
             make.height.equalTo(60)
@@ -51,14 +51,16 @@ private extension CurrencyVC {
     }
 }
 
+// MARK:  - TableViewDataSource
 extension CurrencyVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myArray.count
+        return model.currencies.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
-        cell.textLabel!.text = "\(myArray[indexPath.row])"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CurrencyCell.reuseID, for: indexPath) as? BaseTableViewCell else {
+            return UITableViewCell()
+        }
         return cell
     }
 }
@@ -66,6 +68,5 @@ extension CurrencyVC: UITableViewDataSource {
 extension CurrencyVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Num: \(indexPath.row)")
-        print("Value: \(myArray[indexPath.row])")
     }
 }
