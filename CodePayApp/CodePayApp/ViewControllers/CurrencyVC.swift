@@ -10,6 +10,8 @@ class CurrencyVC: UIViewController {
         table.delegate = self
         table.dataSource = self
         table.tableFooterView = UIView()
+        table.alwaysBounceVertical = false
+        table.backgroundColor = Colors.mainBackground
         table.register(CurrencyCell.self, forCellReuseIdentifier: CurrencyCell.reuseID)
         
         view.addSubview(table)
@@ -44,17 +46,17 @@ class CurrencyVC: UIViewController {
 private extension CurrencyVC {
     func setupConstraints() {
         
-        currencyTable.snp.makeConstraints { make in
-            make.width.equalTo(Core.itemWidth)
-            make.height.equalTo(500)
-            make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
-            make.centerX.equalToSuperview()
-        }
-        
         submitButton.snp.makeConstraints { make in
             make.width.equalTo(Core.itemWidth)
             make.height.equalTo(60)
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(submitButtonBottomInset)
+            make.centerX.equalToSuperview()
+        }
+        
+        currencyTable.snp.makeConstraints { make in
+            make.width.equalTo(Core.itemWidth)
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
+            make.bottom.equalTo(submitButton.snp.top).offset(-30)
             make.centerX.equalToSuperview()
         }
     }
