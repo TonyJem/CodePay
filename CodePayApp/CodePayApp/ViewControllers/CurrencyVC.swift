@@ -71,6 +71,7 @@ extension CurrencyVC: UITableViewDataSource {
 // MARK:  - CurrencyTable ViewDelegate
 extension CurrencyVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Num: \(indexPath.row)")
+        model.markCurrency(at: indexPath.row)
+        tableView.reloadData()
     }
 }
