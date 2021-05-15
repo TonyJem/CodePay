@@ -1,21 +1,18 @@
 import UIKit
 
 class PasswordViewController: UIViewController {
-    
     private let validator = PasswordValidator()
-    
+    private let passwordField = Core.passwordField
+    private let confirmPasswordField = Core.confirmPasswordField
     private let imageContainerMultiplier: CGFloat = 0.2778
     private let imageResizeMultiplier: CGFloat = 0.6666
-    
     private let mainContainerViewHeight = DimensionsUI.mainContainerViewHeight
     private let mainContainerCenterOffset = -1 * DimensionsUI.mainContainerCenterOffset
     private let titleHeight: CGFloat = 70
     private let inputViewHeight: CGFloat = 70
     private let inputViewSpace: CGFloat = -30
-    
     private let submitButtonHeight: CGFloat = 60
     private let submitButtonBottomInset = 120
-    
     private let secondaryButtonHeight: CGFloat = 40
     private let secondaryButtonBottomInset = 50
     
@@ -75,6 +72,7 @@ class PasswordViewController: UIViewController {
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(submitButtonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "Submit", dto: CodePayButtonDTO.submit)
+        btn.isHidden = true
         
         view.addSubview(btn)
         return btn
@@ -89,12 +87,34 @@ class PasswordViewController: UIViewController {
         observeKeyboardNotifications()
         initializeHideKeyboard()
         
-        Core.passwordField.delegate = self
-        Core.confirmPasswordField.delegate = self
+        passwordField.delegate = self
+        passwordField.addTarget(self, action: #selector(passwordFieldDidChange), for: .editingChanged)
+        
+        confirmPasswordField.delegate = self
+        confirmPasswordField.addTarget(self, action: #selector(confirmPasswordFieldDidChange), for: .editingChanged)
+    }
+    
+    @objc private func passwordFieldDidChange(textField: CodePayTextField) {
+        showSubmitButtonIfPossible()
+    }
+    
+    @objc private func confirmPasswordFieldDidChange(textField: CodePayTextField) {
+        showSubmitButtonIfPossible()
+    }
+    
+    private func showSubmitButtonIfPossible() {
+        guard let password = passwordField.text,
+              let comfirmPassword = confirmPasswordField.text,
+              password != "",
+              comfirmPassword != "" else {
+            submitButton.isHidden = true
+            return
+        }
+        submitButton.isHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(true)
+        super.viewWillDisappear(true)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)}
     
     // MARK:  - Actions
