@@ -14,6 +14,7 @@ class SplashViewController: UIViewController {
     }
     
     private func makeServiceCall() {
+        //      TODO: Replace with real data fetching functionality
         activityIndicator.startAnimating()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
             self.activityIndicator.stopAnimating()
