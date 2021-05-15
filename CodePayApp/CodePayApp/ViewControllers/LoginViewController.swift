@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-class LoginViewConroller: UIViewController {
+class LoginViewController: UIViewController {
     private let imageContainerMultiplier: CGFloat = 0.2778
     private let imageResizeMultiplier: CGFloat = 0.8888
     
@@ -91,14 +91,21 @@ class LoginViewConroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = Colors.mainBackground
+        //        view.backgroundColor = Colors.mainBackground
+        view.backgroundColor = .yellow
+        title = "Login Screen"
+        let loginButton = UIBarButtonItem(title: "Log In", style: .plain, target: self, action: #selector(login))
+        navigationItem.setLeftBarButton(loginButton, animated: true)
+        
+        
+        
         setupConstraints()
         observeKeyboardNotifications()
         initializeHideKeyboard()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(true)
+        super.viewWillDisappear(true)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)}
     
     // MARK:  - Actions
@@ -114,6 +121,13 @@ class LoginViewConroller: UIViewController {
         view.endEditing(true)
     }
     
+    @objc private func login() {
+        // store the user session (example only, not for the production)
+        UserDefaults.standard.set(true, forKey: "LOGGED_IN")
+        // navigate to the Main Screen
+        SceneDelegate.shared.rootViewController.switchToMainScreen()
+    }
+    
     private func initializeHideKeyboard() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissMyKeyboard))
         view.addGestureRecognizer(tap)
@@ -121,7 +135,7 @@ class LoginViewConroller: UIViewController {
 }
 
 // MARK:  - LoginVC constraints
-private extension LoginViewConroller {
+private extension LoginViewController {
     private func setupConstraints() {
         
         mainContainerView.snp.makeConstraints { make in
@@ -179,7 +193,7 @@ private extension LoginViewConroller {
 }
 
 // MARK:  - LoginVC Handle Keyboard
-private extension LoginViewConroller {
+private extension LoginViewController {
     func observeKeyboardNotifications() {
         NotificationCenter.default.addObserver(
             self,
