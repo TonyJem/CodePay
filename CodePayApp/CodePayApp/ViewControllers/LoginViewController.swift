@@ -112,7 +112,6 @@ class LoginViewController: UIViewController {
     }
     
     @objc func secondaryButtonDidTap(_ sender: UIButton) {
-//        Core.navController.pushViewController(PhoneViewController(), animated: true)
         SceneDelegate.shared.rootViewController.startRegisterFlow()
     }
     

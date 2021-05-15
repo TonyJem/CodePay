@@ -221,7 +221,7 @@ class PhoneViewController: UIViewController {
         view.backgroundColor = Colors.mainBackground
         title = "Phone Number"
         
-        let loginButton = UIBarButtonItem(title: "Log In", style: .plain, target: self, action: #selector(switchToLogout))
+        let loginButton = UIBarButtonItem(title: "< Log In", style: .plain, target: self, action: #selector(switchToLogout))
         navigationItem.setLeftBarButton(loginButton, animated: true)
         
         setupConstraints()

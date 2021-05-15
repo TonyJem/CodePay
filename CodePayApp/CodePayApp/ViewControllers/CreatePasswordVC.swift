@@ -23,8 +23,6 @@ class PasswordViewController: UIViewController {
     // MARK: - Views
     lazy var mainContainerView: UIView = {
         let view = UIView()
-//        TODO: Remove background color while is not needed for tests anymore
-//        view.backgroundColor = .systemGray5
         
         self.view.addSubview(view)
         return view
@@ -96,8 +94,8 @@ class PasswordViewController: UIViewController {
     // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {
         
-        AccountManager.addCandidatePassword(password: "PasswordHere")
-        Core.navController.pushViewController(CurrencyViewController(), animated: true)
+        AccountManager.addCandidatePassword(password: "PasswordTestRecord")
+        self.navigationController?.pushViewController(CurrencyViewController(), animated: true)
     }
     
     @objc func dismissMyKeyboard(){
