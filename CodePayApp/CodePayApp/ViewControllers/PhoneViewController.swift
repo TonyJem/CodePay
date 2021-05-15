@@ -104,7 +104,7 @@ class PhoneViewController: UIViewController {
         
         stack.addArrangedSubview(buttonPlusContainer)
         stack.addArrangedSubview(button0)
-        stack.addArrangedSubview(buttonBack)
+        stack.addArrangedSubview(buttonBackContainer)
         return stack
     }()
     
@@ -214,11 +214,18 @@ class PhoneViewController: UIViewController {
         return btn
     }()
     
+    lazy var buttonBackContainer: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
     lazy var buttonBack: CodePayButton = {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonBackDidTap(_:)), for: .touchUpInside)
         btn.setImage(UIImage(named: "backSpace"), for: .normal)
+        
+        buttonBackContainer.addSubview(btn)
         return btn
     }()
     
@@ -341,8 +348,12 @@ private extension PhoneViewController {
             make.height.width.equalTo(buttonWidth)
         }
         
-        buttonBack.snp.makeConstraints { make in
+        buttonBackContainer.snp.makeConstraints { make in
             make.height.width.equalTo(buttonWidth)
+        }
+        
+        buttonBack.snp.makeConstraints { make in
+            make.leading.top.trailing.bottom.equalToSuperview()
         }
         
         buttonOk.snp.makeConstraints { make in
