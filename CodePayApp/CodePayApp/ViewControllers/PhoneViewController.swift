@@ -5,6 +5,14 @@ class PhoneViewController: UIViewController {
     private let buttonWidth: CGFloat = 80
     private let spacing: CGFloat = DimensionsUI.spacing
     
+    private var phone = "+37060190090" {
+        didSet {
+            phoneLabel.text = phone
+            buttonBack.isHidden = phone == ""
+        }
+    }
+    
+    // MARK: - Views
     lazy var mainContainer: UIView = {
         let view = UIView()
         
@@ -14,7 +22,7 @@ class PhoneViewController: UIViewController {
     
     lazy var phoneLabel: CodePayLabel = {
         let lbl = CodePayLabel(frame: .zero)
-        lbl.setup(title: "+370 601 90090", dto: CodePayLabelDTO.label)
+        lbl.setup(title: phone, dto: CodePayLabelDTO.label)
         lbl.textAlignment = .center
         
         mainContainer.addSubview(lbl)
@@ -229,10 +237,13 @@ class PhoneViewController: UIViewController {
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
+}
+
+// MARK:  - Actions
+private extension PhoneViewController {
     
-    // MARK:  - Actions
     @objc func buttonDidTap(_ sender: UIButton) {
-        print("🟢 Phone button did Tap!")
+        phone = "\(phone)8"
     }
     
     @objc func buttonPlus(_ sender: UIButton) {
@@ -240,10 +251,8 @@ class PhoneViewController: UIViewController {
     }
     
     @objc func buttonBackDidTap(_ sender: UIButton) {
-        var phoneLabelText = phoneLabel.text
-        guard phoneLabelText != "" else { return }
-        phoneLabelText?.removeLast()
-        phoneLabel.text = phoneLabelText
+        guard phone != "" else { return }
+        phone.removeLast()
     }
     
     @objc func buttonOkDidTap(_ sender: UIButton) {
@@ -251,8 +260,8 @@ class PhoneViewController: UIViewController {
         AccountManager.addCandidatePhone(phone: phone)
         self.navigationController?.pushViewController(PasswordViewController(), animated: true)
     }
-    
 }
+
 
 // MARK:  - EnterPhoneVC constraints
 private extension PhoneViewController {
