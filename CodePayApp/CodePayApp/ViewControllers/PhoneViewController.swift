@@ -11,6 +11,13 @@ class PhoneViewController: UIViewController {
             phoneLabel.text = phone
             buttonBack.isHidden = phone == ""
             buttonPlus.isHidden = phone != ""
+            validatePhone()
+        }
+    }
+    
+    private var isValid: Bool = false {
+        didSet {
+            buttonOk.isHidden = !isValid
         }
     }
     
@@ -33,7 +40,7 @@ class PhoneViewController: UIViewController {
     
     lazy var noteLabel: CodePayLabel = {
         let lbl = CodePayLabel(frame: .zero)
-        lbl.setup(title: "Is Valid", dto: CodePayLabelDTO.note)
+        lbl.setup(title: "", dto: CodePayLabelDTO.note)
         lbl.textAlignment = .center
         
         mainContainer.addSubview(lbl)
@@ -264,7 +271,7 @@ private extension PhoneViewController {
               phone.count <= phoneLengthLimit else {
             return
         }
-        phone += number
+        phone += number == "+" ? "+3706" : number
     }
     
     @objc func buttonBackDidTap(_ sender: UIButton) {
@@ -276,6 +283,11 @@ private extension PhoneViewController {
         guard let phone = phoneLabel.text else { return }
         AccountManager.addCandidatePhone(phone: phone)
         self.navigationController?.pushViewController(PasswordViewController(), animated: true)
+    }
+    
+    func validatePhone() {
+        isValid = phone != "" && phone.count == 12
+        noteLabel.text = isValid ? "Is Valid" : ""
     }
 }
 
