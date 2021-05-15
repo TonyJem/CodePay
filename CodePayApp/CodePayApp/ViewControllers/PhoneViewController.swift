@@ -3,7 +3,7 @@ import UIKit
 class PhoneViewController: UIViewController {
     
     private let buttonWidth: CGFloat = 80
-    private let phoneLengthLimit = 13
+    private let phoneLengthLimit = 12
     private let spacing: CGFloat = DimensionsUI.spacing
     private let validator = PhoneValidator()
     
@@ -297,8 +297,7 @@ private extension PhoneViewController {
         }
         
         phoneLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.trailing.equalToSuperview().inset(-5)
+            make.leading.top.trailing.equalToSuperview()
             make.height.equalTo(30)
         }
         
