@@ -26,7 +26,7 @@
 		3A50F552264814D9007820B0 /* InputContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50F551264814D9007820B0 /* InputContainer.swift */; };
 		3A50F55526482672007820B0 /* PasswordInputContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50F55426482672007820B0 /* PasswordInputContainer.swift */; };
 		3A50F558264826B4007820B0 /* PhoneInputContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50F557264826B4007820B0 /* PhoneInputContainer.swift */; };
-		3A6F86CA2646B60400E0EC92 /* LoginViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F86C92646B60400E0EC92 /* LoginViewConroller.swift */; };
+		3A6F86CA2646B60400E0EC92 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F86C92646B60400E0EC92 /* LoginVC.swift */; };
 		3A8313D5263F0A31000D79D9 /* CodePayTextFieldDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313D4263F0A31000D79D9 /* CodePayTextFieldDTO.swift */; };
 		3A8313D8263F0CB9000D79D9 /* CodePayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313D7263F0CB9000D79D9 /* CodePayTextField.swift */; };
 		3AD83A42264ADD7E006A98B5 /* CreatePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A41264ADD7E006A98B5 /* CreatePasswordVC.swift */; };
@@ -68,7 +68,7 @@
 		3A50F551264814D9007820B0 /* InputContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainer.swift; sourceTree = "<group>"; };
 		3A50F55426482672007820B0 /* PasswordInputContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputContainer.swift; sourceTree = "<group>"; };
 		3A50F557264826B4007820B0 /* PhoneInputContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInputContainer.swift; sourceTree = "<group>"; };
-		3A6F86C92646B60400E0EC92 /* LoginViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewConroller.swift; sourceTree = "<group>"; };
+		3A6F86C92646B60400E0EC92 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		3A8313D4263F0A31000D79D9 /* CodePayTextFieldDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayTextFieldDTO.swift; sourceTree = "<group>"; };
 		3A8313D7263F0CB9000D79D9 /* CodePayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayTextField.swift; sourceTree = "<group>"; };
 		3AD83A41264ADD7E006A98B5 /* CreatePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordVC.swift; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 			children = (
 				3AD83AD6264F783B006A98B5 /* RootViewController.swift */,
 				3AD83AD9264F789B006A98B5 /* SplashViewController.swift */,
-				3A6F86C92646B60400E0EC92 /* LoginViewConroller.swift */,
+				3A6F86C92646B60400E0EC92 /* LoginVC.swift */,
 				3A466BE826487B7E00494D4D /* CreatePhoneVC.swift */,
 				3AD83A41264ADD7E006A98B5 /* CreatePasswordVC.swift */,
 				3AD83A48264AFEC2006A98B5 /* CurrencyVC.swift */,
@@ -355,7 +355,7 @@
 				3A8313D8263F0CB9000D79D9 /* CodePayTextField.swift in Sources */,
 				3A06B3BC263DE64800E8C56E /* CodePayButtonDTO.swift in Sources */,
 				3AD83A8F264EDC26006A98B5 /* AccountManager.swift in Sources */,
-				3A6F86CA2646B60400E0EC92 /* LoginViewConroller.swift in Sources */,
+				3A6F86CA2646B60400E0EC92 /* LoginVC.swift in Sources */,
 				3AD83A6C264E5465006A98B5 /* ReusableView.swift in Sources */,
 				3AD83A8C264ED9CD006A98B5 /* Account.swift in Sources */,
 				3A8313D5263F0A31000D79D9 /* CodePayTextFieldDTO.swift in Sources */,
