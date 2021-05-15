@@ -54,4 +54,8 @@ final class PasswordInputContainer: InputContainer {
     override func setPlaceholder(placeholder: String) {
         textField.placeholder = placeholder
     }
+    
+    override func contentText() -> String? {
+        return textField.text
+    }
 }

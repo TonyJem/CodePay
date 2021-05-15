@@ -99,24 +99,18 @@ class PasswordViewController: UIViewController {
     
     // MARK:  - Actions
     @objc private func submitButtonDidTap(_ sender: UIButton) {
-        
-//        let testPassword = passwordView.inputContainer.contentText()
-//        let textField = passwordView.inputContainer.inputTextField()
-//        print(testPassword)
-        
-        let testPassword = "test1tesT!"
-        let testConfirmationPassword = "test1tesT!"
-        
+        guard let password = passwordView.inputContainer.contentText(),
+              let confirmPassword = confirmPasswordView.inputContainer.contentText()
+        else { return }
         do {
-            try validator.createPassword(password: testPassword, confirmPassword: testConfirmationPassword)
-            AccountManager.addCandidatePassword(password: testPassword)
+            try validator.createPassword(password: password, confirmPassword: confirmPassword)
+            AccountManager.addCandidatePassword(password: password)
             self.navigationController?.pushViewController(CurrencyViewController(), animated: true)
         } catch {
             if let error = error as? PasswordValidator.PasswordError {
                 callPasswordAlert(with: error.errorDescription)
             }
         }
-   
     }
     
     @objc private func dismissMyKeyboard(){

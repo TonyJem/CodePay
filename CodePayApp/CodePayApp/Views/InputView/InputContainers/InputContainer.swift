@@ -16,8 +16,8 @@ class InputContainer: UIView {
     
     func setPlaceholder(placeholder: String) {}
     
-    func contentText() -> String {
-        return "🟢 Here is test content"
+    func contentText() -> String? {
+        return nil
     }
     
     func inputTextField() -> CodePayTextField {
