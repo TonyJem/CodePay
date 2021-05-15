@@ -5,23 +5,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
-        UINavigationBar.appearance().shadowImage = UIImage()
-        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let navController = Core.navController
-        let viewController = LoginViewConroller()
-        navController.viewControllers = [viewController]
-        navController.navigationBar.barTintColor = Colors.mainBackground
-        
-        let titleDTO = CodePayLabelDTO.navBarTitle
-        let attributes = [.foregroundColor: titleDTO.fontColor,
-                           NSAttributedString.Key.font: UIFont.systemFont(ofSize: titleDTO.fontSize,
-                                                           weight: titleDTO.weight)]
-        navController.navigationBar.titleTextAttributes = attributes
-        window.rootViewController = navController
+        window.rootViewController = RootViewController()
         self.window = window
         window.makeKeyAndVisible()
     }
@@ -53,5 +39,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+}
+
+extension SceneDelegate {
+    static var shared: SceneDelegate {
+        return UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+    }
     
+    var rootViewController: RootViewController {
+        return window!.rootViewController as! RootViewController
+    }
 }
