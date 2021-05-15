@@ -43,8 +43,6 @@
 		3AD83A86264ED6F7006A98B5 /* DimensionsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A85264ED6F7006A98B5 /* DimensionsUI.swift */; };
 		3AD83A8C264ED9CD006A98B5 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A8B264ED9CD006A98B5 /* Account.swift */; };
 		3AD83A8F264EDC26006A98B5 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A8E264EDC26006A98B5 /* AccountManager.swift */; };
-		3AD83AD7264F783B006A98B5 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83AD6264F783B006A98B5 /* RootViewController.swift */; };
-		3AD83ADA264F789B006A98B5 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83AD9264F789B006A98B5 /* SplashViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,8 +82,6 @@
 		3AD83A85264ED6F7006A98B5 /* DimensionsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionsUI.swift; sourceTree = "<group>"; };
 		3AD83A8B264ED9CD006A98B5 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		3AD83A8E264EDC26006A98B5 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
-		3AD83AD6264F783B006A98B5 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		3AD83AD9264F789B006A98B5 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,8 +155,6 @@
 		3A06B390263D423B00E8C56E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3AD83AD6264F783B006A98B5 /* RootViewController.swift */,
-				3AD83AD9264F789B006A98B5 /* SplashViewController.swift */,
 				3A6F86C92646B60400E0EC92 /* LoginVC.swift */,
 				3A466BE826487B7E00494D4D /* CreatePhoneVC.swift */,
 				3AD83A41264ADD7E006A98B5 /* CreatePasswordVC.swift */,
@@ -372,9 +366,7 @@
 				3A50F54926480838007820B0 /* Core.swift in Sources */,
 				3A06B3B5263DD75900E8C56E /* Colors.swift in Sources */,
 				3A06B3B2263DD67A00E8C56E /* CodePayLabelDTO.swift in Sources */,
-				3AD83ADA264F789B006A98B5 /* SplashViewController.swift in Sources */,
 				3A50F558264826B4007820B0 /* PhoneInputContainer.swift in Sources */,
-				3AD83AD7264F783B006A98B5 /* RootViewController.swift in Sources */,
 				3AD83A61264DA329006A98B5 /* CoreDataModel.xcdatamodeld in Sources */,
 				3A06B345263C7B9400E8C56E /* AppDelegate.swift in Sources */,
 				3AD83A7F264EB89F006A98B5 /* UIView+Extension.swift in Sources */,
