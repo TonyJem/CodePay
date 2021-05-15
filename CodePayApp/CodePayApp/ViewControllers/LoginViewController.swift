@@ -112,7 +112,7 @@ class LoginViewController: UIViewController {
     }
     
     @objc func secondaryButtonDidTap(_ sender: UIButton) {
-        SceneDelegate.shared.rootViewController.startRegisterFlow()
+        self.navigationController?.pushViewController(PhoneViewController(), animated: true)
     }
     
     @objc func dismissMyKeyboard(){

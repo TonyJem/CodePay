@@ -221,9 +221,6 @@ class PhoneViewController: UIViewController {
         view.backgroundColor = Colors.mainBackground
         title = "Phone Number"
         
-        let loginButton = UIBarButtonItem(title: "< Log In", style: .plain, target: self, action: #selector(switchToLogout))
-        navigationItem.setLeftBarButton(loginButton, animated: true)
-        
         setupConstraints()
     }
     
@@ -253,10 +250,6 @@ class PhoneViewController: UIViewController {
         guard let phone = phoneLabel.text else { return }
         AccountManager.addCandidatePhone(phone: phone)
         self.navigationController?.pushViewController(PasswordViewController(), animated: true)
-    }
-    
-    @objc private func switchToLogout(_ sender: UIButton) {
-        SceneDelegate.shared.rootViewController.switchToLogout()
     }
     
 }

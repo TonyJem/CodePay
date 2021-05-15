@@ -50,12 +50,6 @@ class RootViewController: UIViewController {
         let logoutScreen = UINavigationController(rootViewController: loginViewController)
         animateDismissTransition(to: logoutScreen)
     }
-    
-    func startRegisterFlow() {
-        let phoneViewController = PhoneViewController()
-        let registerFlow = UINavigationController(rootViewController: phoneViewController)
-        animateFadeTransition(to: registerFlow)
-    }
 }
 
 private extension RootViewController {
