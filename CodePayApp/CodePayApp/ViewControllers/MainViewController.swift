@@ -1,6 +1,6 @@
 import UIKit
 
-class HomeVC: UIViewController {
+class MainViewController: UIViewController {
     
     lazy var submitButton: CodePayButton = {
         let btn = CodePayButton(type: .custom)
@@ -28,7 +28,7 @@ class HomeVC: UIViewController {
     }
 }
 // MARK:  - LoginVC constraints
-private extension HomeVC {
+private extension MainViewController {
     private func setupConstraints() {
         submitButton.snp.makeConstraints { make in
             make.width.equalTo(DimensionsUI.itemWidth)

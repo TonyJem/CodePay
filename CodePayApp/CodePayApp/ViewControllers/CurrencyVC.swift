@@ -47,7 +47,7 @@ class CurrencyVC: UIViewController {
         
 //        Jump directly to rootViewController
         Core.navController.popToRootViewController(animated: true)
-        Core.navController.pushViewController(HomeVC(), animated: true)
+        Core.navController.pushViewController(MainViewController(), animated: true)
     }
 }
 
