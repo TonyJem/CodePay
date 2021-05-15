@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-class LoginVC: UIViewController {
+class LoginViewConroller: UIViewController {
     private let imageContainerMultiplier: CGFloat = 0.2778
     private let imageResizeMultiplier: CGFloat = 0.8888
     
@@ -121,7 +121,7 @@ class LoginVC: UIViewController {
 }
 
 // MARK:  - LoginVC constraints
-private extension LoginVC {
+private extension LoginViewConroller {
     private func setupConstraints() {
         
         mainContainerView.snp.makeConstraints { make in
@@ -179,7 +179,7 @@ private extension LoginVC {
 }
 
 // MARK:  - LoginVC Handle Keyboard
-private extension LoginVC {
+private extension LoginViewConroller {
     func observeKeyboardNotifications() {
         NotificationCenter.default.addObserver(
             self,
