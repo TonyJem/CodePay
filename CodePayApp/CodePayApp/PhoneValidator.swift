@@ -39,15 +39,25 @@ class PhoneValidator {
                 number == maskPrefix.prefix(number.count) {
                 return compactMasks[index]
             }
+            
+            guard number.hasPrefix(maskPrefix) else { continue }
+            let maskSuffix = compactMasks[index].dropFirst(number.count)
             if compactMasks[index].count < number.count {
                 return "Too long number"
-            }
-            if number.hasPrefix(maskPrefix) {
-                let maskSuffix = compactMasks[index].dropFirst(number.count)
+            } else {
                 return number + maskSuffix
             }
         }
         return "Invalid number"
+    }
+    
+    func initialNumber(from number: String) -> String {
+        for maskPrefix in maskPrefixes {
+            if number == maskPrefix.prefix(number.count) {
+                return maskPrefix
+            }
+        }
+        return number
     }
 }
 

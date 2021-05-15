@@ -276,7 +276,13 @@ private extension PhoneViewController {
               phone.count <= phoneLengthLimit else {
             return
         }
-        phone += number == "+" ? "+3706" : number
+        
+        if phone.isEmpty {
+            phone = validator.initialNumber(from: number)
+        } else {
+            phone += number
+        }
+        
     }
     
     @objc private func buttonBackDidTap(_ sender: UIButton) {
