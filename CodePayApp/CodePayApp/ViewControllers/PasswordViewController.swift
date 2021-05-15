@@ -102,8 +102,8 @@ class PasswordViewController: UIViewController {
 //        textField.delegate = self
 //        print(testPassword)
         
-        let testPassword = "test1tesT"
-        let testConfirmationPassword = "test1tesT"
+        let testPassword = "test1tesT!"
+        let testConfirmationPassword = "test1tesT!"
         
         do {
             try validator.createPassword(password: testPassword, confirmPassword: testConfirmationPassword)
