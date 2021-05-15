@@ -3,6 +3,7 @@ import UIKit
 class PhoneViewController: UIViewController {
     
     private let buttonWidth: CGFloat = 80
+    private let phoneLengthLimit = 13
     private let spacing: CGFloat = DimensionsUI.spacing
     
     private var phone = "" {
@@ -259,7 +260,10 @@ class PhoneViewController: UIViewController {
 private extension PhoneViewController {
     
     @objc func buttonDidTap(_ sender: UIButton) {
-        guard let number = sender.title(for: .normal) else { return }
+        guard let number = sender.title(for: .normal),
+              phone.count <= phoneLengthLimit else {
+            return
+        }
         phone += number
     }
     
@@ -285,7 +289,8 @@ private extension PhoneViewController {
         }
         
         phoneLabel.snp.makeConstraints { make in
-            make.leading.top.trailing.equalToSuperview()
+            make.top.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(-5)
             make.height.equalTo(30)
         }
         
