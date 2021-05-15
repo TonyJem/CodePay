@@ -1,6 +1,6 @@
 import UIKit
 
-class CreatePasswordVC: UIViewController {
+class PasswordViewController: UIViewController {
     private let imageContainerMultiplier: CGFloat = 0.2778
     private let imageResizeMultiplier: CGFloat = 0.6666
     
@@ -97,7 +97,7 @@ class CreatePasswordVC: UIViewController {
     @objc func submitButtonDidTap(_ sender: UIButton) {
         
         AccountManager.addCandidatePassword(password: "PasswordHere")
-        Core.navController.pushViewController(CurrencyVC(), animated: true)
+        Core.navController.pushViewController(CurrencyViewController(), animated: true)
     }
     
     @objc func dismissMyKeyboard(){
@@ -111,7 +111,7 @@ class CreatePasswordVC: UIViewController {
 }
 
 // MARK:  - LoginVC constraints
-private extension CreatePasswordVC {
+private extension PasswordViewController {
     private func setupConstraints() {
         
         mainContainerView.snp.makeConstraints { make in
@@ -162,7 +162,7 @@ private extension CreatePasswordVC {
 }
 
 // MARK:  - LoginVC Handle Keyboard
-private extension CreatePasswordVC {
+private extension PasswordViewController {
     func observeKeyboardNotifications() {
         NotificationCenter.default.addObserver(
             self,

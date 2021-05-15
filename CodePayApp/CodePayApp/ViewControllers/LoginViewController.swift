@@ -115,7 +115,7 @@ class LoginViewController: UIViewController {
     }
     
     @objc func secondaryButtonDidTap(_ sender: UIButton) {
-        Core.navController.pushViewController(CreatePhoneVC(), animated: true)
+        Core.navController.pushViewController(PhoneViewController(), animated: true)
     }
     
     @objc func dismissMyKeyboard(){
