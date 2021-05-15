@@ -1,6 +1,6 @@
 struct AccountManager {
     static var candidateAccount = Account(phone: "", password: "", currency: "")
-
+    
     static func addCandidatePhone(phone: String) {
         candidateAccount.phone = phone
     }
