@@ -5,13 +5,14 @@ class PhoneViewController: UIViewController {
     private let buttonWidth: CGFloat = 80
     private let phoneLengthLimit = 13
     private let spacing: CGFloat = DimensionsUI.spacing
+    private let validator = PhoneValidator()
     
     private var phone = "" {
         didSet {
             phoneLabel.text = phone
             buttonBack.isHidden = phone == ""
             buttonPlus.isHidden = phone != ""
-            validatePhone()
+            isValid = validator.isValid(number: phone)
         }
     }
     
@@ -283,11 +284,6 @@ private extension PhoneViewController {
         guard let phone = phoneLabel.text else { return }
         AccountManager.addCandidatePhone(phone: phone)
         self.navigationController?.pushViewController(PasswordViewController(), animated: true)
-    }
-    
-    func validatePhone() {
-        isValid = phone != "" && phone.count == 12
-        noteLabel.text = isValid ? "Is Valid" : ""
     }
 }
 
