@@ -3,9 +3,10 @@ import UIKit
 final class ConfirmPasswordInputContainer: InputContainer {
     
     lazy var textField: CodePayTextField = {
-        let textField = CodePayTextField(frame: .zero)
+        let textField = Core.confirmPasswordField
         textField.setup(title: "", dto: CodePayTextFieldDTO.regular)
         textField.isSecureTextEntry = true
+        textField.tag = 2
         inputViewContainer.addSubview(textField)
         return textField
     }()

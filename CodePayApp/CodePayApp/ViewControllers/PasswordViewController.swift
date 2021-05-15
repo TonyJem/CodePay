@@ -88,6 +88,9 @@ class PasswordViewController: UIViewController {
         setupConstraints()
         observeKeyboardNotifications()
         initializeHideKeyboard()
+        
+        Core.passwordField.delegate = self
+        Core.confirmPasswordField.delegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -99,7 +102,6 @@ class PasswordViewController: UIViewController {
         
 //        let testPassword = passwordView.inputContainer.contentText()
 //        let textField = passwordView.inputContainer.inputTextField()
-//        textField.delegate = self
 //        print(testPassword)
         
         let testPassword = "test1tesT!"
@@ -136,7 +138,13 @@ class PasswordViewController: UIViewController {
 
 // MARK:  - UITextFieldDelegate
 extension PasswordViewController : UITextFieldDelegate {
-    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.tag == 1 {
+            print("🟢 Password TextField")
+        } else {
+            print("🟣 Confirm Password TextField")
+        }
+    }
 }
 
 // MARK:  - Constraints
