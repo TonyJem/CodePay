@@ -102,7 +102,7 @@ class PhoneViewController: UIViewController {
         stack.alignment = .center
         stack.spacing = spacing;
         
-        stack.addArrangedSubview(buttonPlus)
+        stack.addArrangedSubview(buttonPlusContainer)
         stack.addArrangedSubview(button0)
         stack.addArrangedSubview(buttonBack)
         return stack
@@ -191,11 +191,18 @@ class PhoneViewController: UIViewController {
         return btn
     }()
     
+    lazy var buttonPlusContainer: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
     lazy var buttonPlus: CodePayButton = {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "+", dto: CodePayButtonDTO.phone)
+        
+        buttonPlusContainer.addSubview(btn)
         return btn
     }()
     
@@ -231,6 +238,7 @@ class PhoneViewController: UIViewController {
         title = "Phone Number"
         
         setupConstraints()
+        buttonBack.isHidden = phone == ""
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -321,8 +329,12 @@ private extension PhoneViewController {
             make.height.width.equalTo(buttonWidth)
         }
         
-        buttonPlus.snp.makeConstraints { make in
+        buttonPlusContainer.snp.makeConstraints { make in
             make.height.width.equalTo(buttonWidth)
+        }
+        
+        buttonPlus.snp.makeConstraints { make in
+            make.leading.top.trailing.bottom.equalToSuperview()
         }
         
         button0.snp.makeConstraints { make in
