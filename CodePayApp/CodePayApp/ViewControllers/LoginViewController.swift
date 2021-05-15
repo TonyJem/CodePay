@@ -94,10 +94,8 @@ class LoginViewController: UIViewController {
         //        view.backgroundColor = Colors.mainBackground
         view.backgroundColor = .yellow
         title = "Login Screen"
-        let loginButton = UIBarButtonItem(title: "Log In", style: .plain, target: self, action: #selector(login))
-        navigationItem.setLeftBarButton(loginButton, animated: true)
-        
-        
+//        let loginButton = UIBarButtonItem(title: "Log In", style: .plain, target: self, action: #selector(submitButtonDidTap))
+//        navigationItem.setLeftBarButton(loginButton, animated: true)
         
         setupConstraints()
         observeKeyboardNotifications()
@@ -110,7 +108,10 @@ class LoginViewController: UIViewController {
     
     // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {
-        print("🟢 'Submit' button in Login Scene did Tap")
+        // store the user session (example only, not for the production)
+        UserDefaults.standard.set(true, forKey: "LOGGED_IN")
+        // navigate to the Main Screen
+        SceneDelegate.shared.rootViewController.switchToMainScreen()
     }
     
     @objc func secondaryButtonDidTap(_ sender: UIButton) {
@@ -119,13 +120,6 @@ class LoginViewController: UIViewController {
     
     @objc func dismissMyKeyboard(){
         view.endEditing(true)
-    }
-    
-    @objc private func login() {
-        // store the user session (example only, not for the production)
-        UserDefaults.standard.set(true, forKey: "LOGGED_IN")
-        // navigate to the Main Screen
-        SceneDelegate.shared.rootViewController.switchToMainScreen()
     }
     
     private func initializeHideKeyboard() {
