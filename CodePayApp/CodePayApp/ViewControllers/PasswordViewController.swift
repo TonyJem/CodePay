@@ -1,6 +1,9 @@
 import UIKit
 
 class PasswordViewController: UIViewController {
+    
+    private let validator = PasswordValidator()
+    
     private let imageContainerMultiplier: CGFloat = 0.2778
     private let imageResizeMultiplier: CGFloat = 0.6666
     
@@ -92,13 +95,42 @@ class PasswordViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)}
     
     // MARK:  - Actions
-    @objc func submitButtonDidTap(_ sender: UIButton) {
+    @objc private func submitButtonDidTap(_ sender: UIButton) {
         
-        AccountManager.addCandidatePassword(password: "PasswordTestRecord")
-        self.navigationController?.pushViewController(CurrencyViewController(), animated: true)
+//        let testPassword = passwordView.inputContainer.contentText()
+//        let textField = passwordView.inputContainer.inputTextField()
+//        
+//        textField.delegate = self
+//        
+//        print(testPassword)
+        
+//        AccountManager.addCandidatePassword(password: "PasswordTestRecord")
+//        self.navigationController?.pushViewController(CurrencyViewController(), animated: true)
+        
+//        do {
+//            try validator.createPassword(password: <#T##String#>, confirmPassword: <#T##String#>)
+//        }
+        
+        
+        
+        
+        /*
+         
+         do {
+             try AccountManager.registerAccount(username: usernameTextField.text, password: passwordTextField.text, confirmPassword: confirmPasswordTextField.text)
+             print("🟢🟢 No Errors in Register Flow")
+         
+         } catch {
+             if let error = error as? AccountManager.AccountManagerError {
+                 callAlert(with: error.errorDescription)
+             }
+         }
+         */
+        
+        
     }
     
-    @objc func dismissMyKeyboard(){
+    @objc private func dismissMyKeyboard(){
         view.endEditing(true)
     }
     
@@ -108,7 +140,12 @@ class PasswordViewController: UIViewController {
     }
 }
 
-// MARK:  - LoginVC constraints
+// MARK:  - UITextFieldDelegate
+extension PasswordViewController : UITextFieldDelegate {
+    
+}
+
+// MARK:  - Constraints
 private extension PasswordViewController {
     private func setupConstraints() {
         
