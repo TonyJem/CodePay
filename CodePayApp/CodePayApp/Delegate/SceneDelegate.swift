@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         let navController = Core.navController
-        let viewController = LoginVC()
+        let viewController = LoginViewConroller()
         navController.viewControllers = [viewController]
         navController.navigationBar.barTintColor = Colors.mainBackground
         
