@@ -5,10 +5,11 @@ class PhoneViewController: UIViewController {
     private let buttonWidth: CGFloat = 80
     private let spacing: CGFloat = DimensionsUI.spacing
     
-    private var phone = "+37060190090" {
+    private var phone = "" {
         didSet {
             phoneLabel.text = phone
             buttonBack.isHidden = phone == ""
+            buttonPlus.isHidden = phone != ""
         }
     }
     
@@ -193,7 +194,7 @@ class PhoneViewController: UIViewController {
     lazy var buttonPlus: CodePayButton = {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
-        btn.addTarget(self, action: #selector(buttonPlus(_:)), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "+", dto: CodePayButtonDTO.phone)
         return btn
     }()
@@ -243,11 +244,8 @@ class PhoneViewController: UIViewController {
 private extension PhoneViewController {
     
     @objc func buttonDidTap(_ sender: UIButton) {
-        phone = "\(phone)8"
-    }
-    
-    @objc func buttonPlus(_ sender: UIButton) {
-        print("🟢 buttonPlus !")
+        guard let number = sender.title(for: .normal) else { return }
+        phone += number
     }
     
     @objc func buttonBackDidTap(_ sender: UIButton) {

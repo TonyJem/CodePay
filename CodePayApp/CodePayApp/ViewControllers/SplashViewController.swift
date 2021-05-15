@@ -16,7 +16,7 @@ class SplashViewController: UIViewController {
     private func makeServiceCall() {
         //      TODO: Replace with real data fetching functionality
         activityIndicator.startAnimating()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(Int(0.5))) {
             self.activityIndicator.stopAnimating()
             
             if UserDefaults.standard.bool(forKey: "LOGGED_IN") {
