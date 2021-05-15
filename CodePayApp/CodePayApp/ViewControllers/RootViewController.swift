@@ -45,6 +45,20 @@ class RootViewController: UIViewController {
         animateFadeTransition(to: mainScreen)
     }
     
+    func switchToLogout() {
+        let loginViewController = LoginViewController()
+        let logoutScreen = UINavigationController(rootViewController: loginViewController)
+        animateDismissTransition(to: logoutScreen)
+    }
+    
+    func startRegisterFlow() {
+        let phoneViewController = PhoneViewController()
+        let registerFlow = UINavigationController(rootViewController: phoneViewController)
+        animateFadeTransition(to: registerFlow)
+    }
+}
+
+private extension RootViewController {
     private func animateFadeTransition(to new: UIViewController, completion: (() -> Void)? = nil) {
         current.willMove(toParent: nil)
         addChild(new)
@@ -55,12 +69,6 @@ class RootViewController: UIViewController {
             self.current = new
             completion?()
         }
-    }
-    
-    func switchToLogout() {
-        let loginViewController = LoginViewController()
-        let logoutScreen = UINavigationController(rootViewController: loginViewController)
-        animateDismissTransition(to: logoutScreen)
     }
     
     private func animateDismissTransition(to new: UIViewController, completion: (() -> Void)? = nil) {

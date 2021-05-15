@@ -220,16 +220,22 @@ class PhoneViewController: UIViewController {
         
         view.backgroundColor = Colors.mainBackground
         title = "Phone Number"
+        
+        let loginButton = UIBarButtonItem(title: "Log In", style: .plain, target: self, action: #selector(switchToLogout))
+        navigationItem.setLeftBarButton(loginButton, animated: true)
+        
         setupConstraints()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(true)
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)}
+        super.viewWillDisappear(true)
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
     
     // MARK:  - Actions
     @objc func buttonDidTap(_ sender: UIButton) {
-        print("🟢 button did Tap!")
+        print("🟢 Phone button did Tap!")
     }
     
     @objc func buttonPlus(_ sender: UIButton) {
@@ -244,11 +250,13 @@ class PhoneViewController: UIViewController {
     }
     
     @objc func buttonOkDidTap(_ sender: UIButton) {
-//      TODO:  Return to previuose ViewContoller when Register flow
-//      self.navigationController?.popViewController(animated: true)
         guard let phone = phoneLabel.text else { return }
         AccountManager.addCandidatePhone(phone: phone)
-        Core.navController.pushViewController(PasswordViewController(), animated: true)
+        self.navigationController?.pushViewController(PasswordViewController(), animated: true)
+    }
+    
+    @objc private func switchToLogout(_ sender: UIButton) {
+        SceneDelegate.shared.rootViewController.switchToLogout()
     }
     
 }

@@ -94,9 +94,7 @@ class LoginViewController: UIViewController {
         //        view.backgroundColor = Colors.mainBackground
         view.backgroundColor = .yellow
         title = "Login Screen"
-//        let loginButton = UIBarButtonItem(title: "Log In", style: .plain, target: self, action: #selector(submitButtonDidTap))
-//        navigationItem.setLeftBarButton(loginButton, animated: true)
-        
+
         setupConstraints()
         observeKeyboardNotifications()
         initializeHideKeyboard()
@@ -110,12 +108,12 @@ class LoginViewController: UIViewController {
     @objc func submitButtonDidTap(_ sender: UIButton) {
         // store the user session (example only, not for the production)
         UserDefaults.standard.set(true, forKey: "LOGGED_IN")
-        // navigate to the Main Screen
         SceneDelegate.shared.rootViewController.switchToMainScreen()
     }
     
     @objc func secondaryButtonDidTap(_ sender: UIButton) {
-        Core.navController.pushViewController(PhoneViewController(), animated: true)
+//        Core.navController.pushViewController(PhoneViewController(), animated: true)
+        SceneDelegate.shared.rootViewController.startRegisterFlow()
     }
     
     @objc func dismissMyKeyboard(){
