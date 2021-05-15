@@ -30,6 +30,7 @@
 		3A8313D5263F0A31000D79D9 /* CodePayTextFieldDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313D4263F0A31000D79D9 /* CodePayTextFieldDTO.swift */; };
 		3A8313D8263F0CB9000D79D9 /* CodePayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8313D7263F0CB9000D79D9 /* CodePayTextField.swift */; };
 		3AC3646F2650448F00D9FF7A /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC3646E2650448F00D9FF7A /* PasswordValidator.swift */; };
+		3AC364722650475A00D9FF7A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC364712650475A00D9FF7A /* String+Extension.swift */; };
 		3AD83A42264ADD7E006A98B5 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A41264ADD7E006A98B5 /* PasswordViewController.swift */; };
 		3AD83A46264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A45264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift */; };
 		3AD83A49264AFEC2006A98B5 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A48264AFEC2006A98B5 /* CurrencyViewController.swift */; };
@@ -74,6 +75,7 @@
 		3A8313D4263F0A31000D79D9 /* CodePayTextFieldDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayTextFieldDTO.swift; sourceTree = "<group>"; };
 		3A8313D7263F0CB9000D79D9 /* CodePayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePayTextField.swift; sourceTree = "<group>"; };
 		3AC3646E2650448F00D9FF7A /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
+		3AC364712650475A00D9FF7A /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		3AD83A41264ADD7E006A98B5 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		3AD83A45264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordInputContainer.swift; sourceTree = "<group>"; };
 		3AD83A48264AFEC2006A98B5 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			children = (
 				3A06B3C3263DF04B00E8C56E /* Localizations.swift */,
 				3AD83A7E264EB89F006A98B5 /* UIView+Extension.swift */,
+				3AC364712650475A00D9FF7A /* String+Extension.swift */,
 				3AD83A6B264E5465006A98B5 /* ReusableView.swift */,
 			);
 			path = Helpers;
@@ -385,6 +388,7 @@
 				3AD83AD7264F783B006A98B5 /* RootViewController.swift in Sources */,
 				3AD83A61264DA329006A98B5 /* CoreDataModel.xcdatamodeld in Sources */,
 				3A06B345263C7B9400E8C56E /* AppDelegate.swift in Sources */,
+				3AC364722650475A00D9FF7A /* String+Extension.swift in Sources */,
 				3AD83A7F264EB89F006A98B5 /* UIView+Extension.swift in Sources */,
 				3A466BE926487B7E00494D4D /* PhoneViewController.swift in Sources */,
 				3A50F55526482672007820B0 /* PasswordInputContainer.swift in Sources */,

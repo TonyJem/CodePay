@@ -30,8 +30,6 @@ class PasswordValidator {
     
     static func createPassword(password: String, confirmPassword: String) throws {
         
-
-        
         guard password == confirmPassword else {
             throw PasswordError.passwordDoNotMatch
         }
@@ -52,16 +50,10 @@ class PasswordValidator {
             throw PasswordError.noNumericCharacterInPassword
         }
         
-        
         guard password.hasSpecialCharacter else {
             throw PasswordError.noSpecialCharacterInPassword
         }
-        
-    
     }
-    
-    
-    
 }
 
 
