@@ -232,8 +232,10 @@ class PhoneViewController: UIViewController {
     lazy var buttonBack: CodePayButton = {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
-        btn.addTarget(self, action: #selector(buttonBackDidTap(_:)), for: .touchUpInside)
         btn.setImage(UIImage(named: "backSpace"), for: .normal)
+        btn.addTarget(self, action: #selector(buttonBackDidTap(_:)), for: .touchUpInside)
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(buttonBackDidTapLong))
+        btn.addGestureRecognizer(longGesture)
         
         buttonBackContainer.addSubview(btn)
         return btn
@@ -269,7 +271,7 @@ class PhoneViewController: UIViewController {
 // MARK:  - Actions
 private extension PhoneViewController {
     
-    @objc func buttonDidTap(_ sender: UIButton) {
+    @objc private func buttonDidTap(_ sender: UIButton) {
         guard let number = sender.title(for: .normal),
               phone.count <= phoneLengthLimit else {
             return
@@ -277,12 +279,16 @@ private extension PhoneViewController {
         phone += number == "+" ? "+3706" : number
     }
     
-    @objc func buttonBackDidTap(_ sender: UIButton) {
+    @objc private func buttonBackDidTap(_ sender: UIButton) {
         guard phone != "" else { return }
         phone.removeLast()
     }
     
-    @objc func buttonOkDidTap(_ sender: UIButton) {
+    @objc private func buttonBackDidTapLong(_ sender: UIButton) {
+        phone = ""
+    }
+    
+    @objc private func buttonOkDidTap(_ sender: UIButton) {
         guard let phone = phoneLabel.text else { return }
         AccountManager.addCandidatePhone(phone: phone)
         self.navigationController?.pushViewController(PasswordViewController(), animated: true)
