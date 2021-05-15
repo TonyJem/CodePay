@@ -15,7 +15,12 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = Colors.mainBackground
+        //        view.backgroundColor = Colors.mainBackground
+        view.backgroundColor = .purple // to visually distinguish the protected part
+        title = "Main Screen"
+        let logoutButton = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logout))
+        navigationItem.setLeftBarButton(logoutButton, animated: true)
+        
         setupConstraints()
     }
     
@@ -25,6 +30,12 @@ class MainViewController: UIViewController {
         print("\(AccountManager.candidateAccount.phone)")
         print("\(AccountManager.candidateAccount.password)")
         print("\(AccountManager.candidateAccount.currency)")
+    }
+    
+    @objc private func logout() {
+        // clear the user session (example only, not for the production)
+        UserDefaults.standard.set(false, forKey: "LOGGED_IN")
+        SceneDelegate.shared.rootViewController.switchToLogout()
     }
 }
 // MARK:  - LoginVC constraints

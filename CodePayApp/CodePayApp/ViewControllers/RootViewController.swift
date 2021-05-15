@@ -17,7 +17,7 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .systemPink
-        print("🟢 viewDidLoad")
+        print("🟢 Root ViewDidLoad")
         
         addChild(current)
         current.view.frame = view.bounds
@@ -45,10 +45,18 @@ class RootViewController: UIViewController {
         animateFadeTransition(to: mainScreen)
     }
     
+    func switchToLogout() {
+        let loginViewController = LoginViewController()
+        let logoutScreen = UINavigationController(rootViewController: loginViewController)
+        animateDismissTransition(to: logoutScreen)
+    }
+}
+
+private extension RootViewController {
     private func animateFadeTransition(to new: UIViewController, completion: (() -> Void)? = nil) {
         current.willMove(toParent: nil)
         addChild(new)
-        transition(from: current, to: new, duration: 2, options: [.transitionCrossDissolve, .curveEaseOut], animations: {
+        transition(from: current, to: new, duration: 0.3, options: [.transitionCrossDissolve, .curveEaseOut], animations: {
         }) { completed in
             self.current.removeFromParent()
             new.didMove(toParent: self)
@@ -57,16 +65,10 @@ class RootViewController: UIViewController {
         }
     }
     
-    func switchToLogout() {
-        let loginViewController = LoginViewController()
-        let logoutScreen = UINavigationController(rootViewController: loginViewController)
-        animateDismissTransition(to: logoutScreen)
-    }
-    
     private func animateDismissTransition(to new: UIViewController, completion: (() -> Void)? = nil) {
         current.willMove(toParent: nil)
         addChild(new)
-        transition(from: current, to: new, duration: 2, options: [], animations: {
+        transition(from: current, to: new, duration: 0.3, options: [], animations: {
             new.view.frame = self.view.bounds
         }) { completed in
             self.current.removeFromParent()

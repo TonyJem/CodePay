@@ -1,9 +1,8 @@
 import UIKit
-import SnapKit
 
-class LoginViewConroller: UIViewController {
+class PasswordViewController: UIViewController {
     private let imageContainerMultiplier: CGFloat = 0.2778
-    private let imageResizeMultiplier: CGFloat = 0.8888
+    private let imageResizeMultiplier: CGFloat = 0.6666
     
     private let mainContainerViewHeight = DimensionsUI.mainContainerViewHeight
     private let mainContainerCenterOffset = -1 * DimensionsUI.mainContainerCenterOffset
@@ -39,7 +38,7 @@ class LoginViewConroller: UIViewController {
     }()
     
     lazy var personImage: UIImageView = {
-        let imageView = UIImageView(image: UIImage(imageLiteralResourceName: "person"))
+        let imageView = UIImageView(image: UIImage(imageLiteralResourceName: "passwordScreen"))
         
         personImageContainer.addSubview(imageView)
         return imageView
@@ -47,18 +46,11 @@ class LoginViewConroller: UIViewController {
     
     lazy var titleLabel: CodePayLabel = {
         let lbl = CodePayLabel(frame: .zero)
-        lbl.setup(title: __("login_title"), dto: CodePayLabelDTO.heading)
+        lbl.setup(title: "Create Password", dto: CodePayLabelDTO.heading)
         lbl.textAlignment = .center
         
         mainContainerView.addSubview(lbl)
         return lbl
-    }()
-    
-    lazy var phoneView: InputView = {
-        let view = InputView(type: .phone)
-        
-        mainContainerView.addSubview(view)
-        return view
     }()
     
     lazy var passwordView: InputView = {
@@ -68,20 +60,18 @@ class LoginViewConroller: UIViewController {
         return view
     }()
     
+    lazy var confirmPasswordView: InputView = {
+        let view = InputView(type: .confirmPassword)
+        
+        mainContainerView.addSubview(view)
+        return view
+    }()
+    
     lazy var submitButton: CodePayButton = {
         let btn = CodePayButton(type: .custom)
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(submitButtonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: __("login_submit_btn"), dto: CodePayButtonDTO.submit)
-        
-        view.addSubview(btn)
-        return btn
-    }()
-    
-    lazy var secondaryButton: CodePayButton = {
-        let btn = CodePayButton(type: .custom)
-        btn.addTarget(self, action: #selector(secondaryButtonDidTap(_:)), for: .touchUpInside)
-        btn.setup(title: __("create_account_secondary_btn"), dto: CodePayButtonDTO.secondary)
+        btn.setup(title: "Submit", dto: CodePayButtonDTO.submit)
         
         view.addSubview(btn)
         return btn
@@ -103,11 +93,9 @@ class LoginViewConroller: UIViewController {
     
     // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {
-        print("🟢 'Submit' button in Login Scene did Tap")
-    }
-    
-    @objc func secondaryButtonDidTap(_ sender: UIButton) {
-        Core.navController.pushViewController(CreatePhoneVC(), animated: true)
+        
+        AccountManager.addCandidatePassword(password: "PasswordTestRecord")
+        self.navigationController?.pushViewController(CurrencyViewController(), animated: true)
     }
     
     @objc func dismissMyKeyboard(){
@@ -121,7 +109,7 @@ class LoginViewConroller: UIViewController {
 }
 
 // MARK:  - LoginVC constraints
-private extension LoginViewConroller {
+private extension PasswordViewController {
     private func setupConstraints() {
         
         mainContainerView.snp.makeConstraints { make in
@@ -138,8 +126,8 @@ private extension LoginViewConroller {
         
         personImage.snp.makeConstraints { make in
             make.width.height.equalToSuperview().multipliedBy(imageResizeMultiplier)
-            make.top.equalToSuperview()
             make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().offset(5)
         }
         
         titleLabel.snp.makeConstraints { make in
@@ -149,18 +137,18 @@ private extension LoginViewConroller {
             make.centerX.equalToSuperview()
         }
         
-        passwordView.snp.makeConstraints { make in
+        confirmPasswordView.snp.makeConstraints { make in
             make.width.bottom.equalToSuperview()
             make.height.equalTo(inputViewHeight)
         }
-        passwordView.setupConstraints()
+        confirmPasswordView.setupConstraints()
         
-        phoneView.snp.makeConstraints { make in
+        passwordView.snp.makeConstraints { make in
             make.width.equalToSuperview()
             make.height.equalTo(inputViewHeight)
-            make.bottom.equalTo(passwordView.snp.top).offset(inputViewSpace)
+            make.bottom.equalTo(confirmPasswordView.snp.top).offset(inputViewSpace)
         }
-        phoneView.setupConstraints()
+        passwordView.setupConstraints()
         
         submitButton.snp.makeConstraints { make in
             make.width.equalTo(DimensionsUI.itemWidth)
@@ -168,18 +156,11 @@ private extension LoginViewConroller {
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(submitButtonBottomInset)
             make.centerX.equalToSuperview()
         }
-        
-        secondaryButton.snp.makeConstraints { make in
-            make.width.lessThanOrEqualTo(DimensionsUI.itemWidth)
-            make.height.equalTo(secondaryButtonHeight)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(secondaryButtonBottomInset)
-            make.centerX.equalToSuperview()
-        }
     }
 }
 
 // MARK:  - LoginVC Handle Keyboard
-private extension LoginViewConroller {
+private extension PasswordViewController {
     func observeKeyboardNotifications() {
         NotificationCenter.default.addObserver(
             self,
@@ -197,7 +178,6 @@ private extension LoginViewConroller {
     }
     
     func keyboardWillAppear(_ keyboardHeight: CGFloat) {
-        secondaryButton.isHidden = true
         submitButton.snp.updateConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(10 + keyboardHeight)
         }
@@ -211,7 +191,6 @@ private extension LoginViewConroller {
     }
     
     func keyboardWillDisappear() {
-        secondaryButton.isHidden = false
         submitButton.snp.updateConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(submitButtonBottomInset)
         }

@@ -1,6 +1,6 @@
 import UIKit
 
-class CurrencyVC: UIViewController {
+class CurrencyViewController: UIViewController {
     private let submitButtonBottomInset = 120
     private let model = CurrencyModel()
     
@@ -44,15 +44,12 @@ class CurrencyVC: UIViewController {
     // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {
         AccountManager.addCandidateCurrency(currency: selectedCurrency)
-        
-//        Jump directly to rootViewController
-        Core.navController.popToRootViewController(animated: true)
-        Core.navController.pushViewController(MainViewController(), animated: true)
+        SceneDelegate.shared.rootViewController.switchToMainScreen()
     }
 }
 
 // MARK:  - LoginVC constraints
-private extension CurrencyVC {
+private extension CurrencyViewController {
     func setupConstraints() {
         
         submitButton.snp.makeConstraints { make in
@@ -72,7 +69,7 @@ private extension CurrencyVC {
 }
 
 // MARK:  - CurrencyTable ViewDataSource
-extension CurrencyVC: UITableViewDataSource {
+extension CurrencyViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.currencies.count
     }
@@ -87,7 +84,7 @@ extension CurrencyVC: UITableViewDataSource {
 }
 
 // MARK:  - CurrencyTable ViewDelegate
-extension CurrencyVC: UITableViewDelegate {
+extension CurrencyViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         model.markCurrency(at: indexPath.row)
         selectedCurrency = model.currencies[indexPath.row].acronym

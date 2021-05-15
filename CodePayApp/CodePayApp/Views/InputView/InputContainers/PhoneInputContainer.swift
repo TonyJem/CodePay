@@ -14,7 +14,7 @@ final class PhoneInputContainer: InputContainer {
     }()
     
     @objc func phoneButtonDidTap(_ sender: UIButton) {
-        Core.navController.pushViewController(CreatePhoneVC(), animated: true)
+        Core.navController.pushViewController(PhoneViewController(), animated: true)
     }
     
     override func setupContainerConstraints() {

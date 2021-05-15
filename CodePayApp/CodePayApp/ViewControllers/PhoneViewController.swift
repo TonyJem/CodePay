@@ -1,6 +1,6 @@
 import UIKit
 
-class CreatePhoneVC: UIViewController {
+class PhoneViewController: UIViewController {
     
     private let buttonWidth: CGFloat = 80
     private let spacing: CGFloat = DimensionsUI.spacing
@@ -220,16 +220,19 @@ class CreatePhoneVC: UIViewController {
         
         view.backgroundColor = Colors.mainBackground
         title = "Phone Number"
+        
         setupConstraints()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(true)
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)}
+        super.viewWillDisappear(true)
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
     
     // MARK:  - Actions
     @objc func buttonDidTap(_ sender: UIButton) {
-        print("🟢 button did Tap!")
+        print("🟢 Phone button did Tap!")
     }
     
     @objc func buttonPlus(_ sender: UIButton) {
@@ -244,17 +247,15 @@ class CreatePhoneVC: UIViewController {
     }
     
     @objc func buttonOkDidTap(_ sender: UIButton) {
-//      TODO:  Return to previuose ViewContoller when Register flow
-//      self.navigationController?.popViewController(animated: true)
         guard let phone = phoneLabel.text else { return }
         AccountManager.addCandidatePhone(phone: phone)
-        Core.navController.pushViewController(CreatePasswordVC(), animated: true)
+        self.navigationController?.pushViewController(PasswordViewController(), animated: true)
     }
     
 }
 
 // MARK:  - EnterPhoneVC constraints
-private extension CreatePhoneVC {
+private extension PhoneViewController {
     private func setupConstraints() {
         mainContainer.snp.makeConstraints { make in
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(30)

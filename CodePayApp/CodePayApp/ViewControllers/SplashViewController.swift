@@ -14,15 +14,14 @@ class SplashViewController: UIViewController {
     }
     
     private func makeServiceCall() {
+        //      TODO: Replace with real data fetching functionality
         activityIndicator.startAnimating()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
             self.activityIndicator.stopAnimating()
             
             if UserDefaults.standard.bool(forKey: "LOGGED_IN") {
-                // navigate to protected page
                 SceneDelegate.shared.rootViewController.switchToMainScreen()
             } else {
-                // navigate to login screen
                 SceneDelegate.shared.rootViewController.switchToLogout()
             }
         }
