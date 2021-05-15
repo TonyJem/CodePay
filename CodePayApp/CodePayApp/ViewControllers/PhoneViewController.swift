@@ -13,6 +13,7 @@ class PhoneViewController: UIViewController {
             buttonBack.isHidden = phone == ""
             buttonPlus.isHidden = phone != ""
             isValid = validator.isValid(number: phone)
+            noteLabel.text = validator.validationNote(number: phone)
         }
     }
     
@@ -240,6 +241,7 @@ class PhoneViewController: UIViewController {
     
     lazy var buttonOk: CodePayButton = {
         let btn = CodePayButton(type: .custom)
+        btn.isHidden = true
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(buttonOkDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "OK", dto: CodePayButtonDTO.phoneOK)
