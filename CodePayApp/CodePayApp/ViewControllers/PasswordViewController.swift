@@ -99,35 +99,22 @@ class PasswordViewController: UIViewController {
         
 //        let testPassword = passwordView.inputContainer.contentText()
 //        let textField = passwordView.inputContainer.inputTextField()
-//        
 //        textField.delegate = self
-//        
 //        print(testPassword)
         
-//        AccountManager.addCandidatePassword(password: "PasswordTestRecord")
-//        self.navigationController?.pushViewController(CurrencyViewController(), animated: true)
+        let testPassword = "test1tesT"
+        let testConfirmationPassword = "test1tesT"
         
-//        do {
-//            try validator.createPassword(password: <#T##String#>, confirmPassword: <#T##String#>)
-//        }
-        
-        
-        
-        
-        /*
-         
-         do {
-             try AccountManager.registerAccount(username: usernameTextField.text, password: passwordTextField.text, confirmPassword: confirmPasswordTextField.text)
-             print("🟢🟢 No Errors in Register Flow")
-         
-         } catch {
-             if let error = error as? AccountManager.AccountManagerError {
-                 callAlert(with: error.errorDescription)
-             }
-         }
-         */
-        
-        
+        do {
+            try validator.createPassword(password: testPassword, confirmPassword: testConfirmationPassword)
+            AccountManager.addCandidatePassword(password: testPassword)
+            self.navigationController?.pushViewController(CurrencyViewController(), animated: true)
+        } catch {
+            if let error = error as? PasswordValidator.PasswordError {
+                callPasswordAlert(with: error.errorDescription)
+            }
+        }
+   
     }
     
     @objc private func dismissMyKeyboard(){
@@ -137,6 +124,13 @@ class PasswordViewController: UIViewController {
     private func initializeHideKeyboard() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissMyKeyboard))
         view.addGestureRecognizer(tap)
+    }
+    
+    private func callPasswordAlert(with errorMessage: String) {
+        let alert = UIAlertController(title: "Password creation Error", message: errorMessage,
+                                      preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
