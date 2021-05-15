@@ -9,21 +9,11 @@ class PhoneValidator {
     ]
     
     lazy private var compactMasks: [String] = {
-        var masks: [String] = []
-        validMasks.forEach {
-            let compactMask = $0.replacingOccurrences(of: " ", with: "")
-            masks.append(compactMask)
-        }
-        return masks
+        return without(symbol: " ", in: validMasks)
     }()
     
     lazy private var maskPrefixes: [String] = {
-        var prefixes: [String] = []
-        compactMasks.forEach {
-            let prefix = $0.replacingOccurrences(of: "x", with: "")
-            prefixes.append(prefix)
-        }
-        return prefixes
+        return without(symbol: "x", in: compactMasks)
     }()
     
     func isValid(number: String) -> Bool {
@@ -49,13 +39,25 @@ class PhoneValidator {
                 number == maskPrefix.prefix(number.count) {
                 return compactMasks[index]
             }
-            
-            if number.hasPrefix(maskPrefix) &&
-                number.count <= compactMasks[index].count {
+            if compactMasks[index].count < number.count {
+                return "Too long number"
+            }
+            if number.hasPrefix(maskPrefix) {
                 let maskSuffix = compactMasks[index].dropFirst(number.count)
                 return number + maskSuffix
             }
         }
         return "Invalid number"
+    }
+}
+
+private extension PhoneValidator {
+    func without(symbol: String, in array: [String] ) -> [String] {
+        var new: [String] = []
+        array.forEach {
+            let newItem = $0.replacingOccurrences(of: symbol, with: "")
+            new.append(newItem)
+        }
+        return new
     }
 }
