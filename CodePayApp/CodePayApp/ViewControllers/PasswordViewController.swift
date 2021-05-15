@@ -57,6 +57,7 @@ class PasswordViewController: UIViewController {
         let view = InputView(type: .password)
         
         mainContainerView.addSubview(view)
+        passwordField.addTarget(self, action: #selector(passwordFieldDidChange), for: .editingChanged)
         return view
     }()
     
@@ -64,6 +65,7 @@ class PasswordViewController: UIViewController {
         let view = InputView(type: .confirmPassword)
         
         mainContainerView.addSubview(view)
+        confirmPasswordField.addTarget(self, action: #selector(confirmPasswordFieldDidChange), for: .editingChanged)
         return view
     }()
     
@@ -86,39 +88,18 @@ class PasswordViewController: UIViewController {
         setupConstraints()
         observeKeyboardNotifications()
         initializeHideKeyboard()
-        
-        passwordField.delegate = self
-        passwordField.addTarget(self, action: #selector(passwordFieldDidChange), for: .editingChanged)
-        
-        confirmPasswordField.delegate = self
-        confirmPasswordField.addTarget(self, action: #selector(confirmPasswordFieldDidChange), for: .editingChanged)
-    }
-    
-    @objc private func passwordFieldDidChange(textField: CodePayTextField) {
-        showSubmitButtonIfPossible()
-    }
-    
-    @objc private func confirmPasswordFieldDidChange(textField: CodePayTextField) {
-        showSubmitButtonIfPossible()
-    }
-    
-    private func showSubmitButtonIfPossible() {
-        guard let password = passwordField.text,
-              let comfirmPassword = confirmPasswordField.text,
-              password != "",
-              comfirmPassword != "" else {
-            submitButton.isHidden = true
-            return
-        }
-        submitButton.isHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)}
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+}
+
+// MARK:  - Actions
+private extension PasswordViewController {
     
-    // MARK:  - Actions
-    @objc private func submitButtonDidTap(_ sender: UIButton) {
+    @objc func submitButtonDidTap(_ sender: UIButton) {
         guard let password = passwordView.inputContainer.contentText(),
               let confirmPassword = confirmPasswordView.inputContainer.contentText()
         else { return }
@@ -133,31 +114,39 @@ class PasswordViewController: UIViewController {
         }
     }
     
-    @objc private func dismissMyKeyboard(){
+    @objc func dismissMyKeyboard(){
         view.endEditing(true)
     }
     
-    private func initializeHideKeyboard() {
+    @objc func passwordFieldDidChange(textField: CodePayTextField) {
+        showSubmitButtonIfPossible()
+    }
+    
+    @objc func confirmPasswordFieldDidChange(textField: CodePayTextField) {
+        showSubmitButtonIfPossible()
+    }
+    
+    func showSubmitButtonIfPossible() {
+        guard let password = passwordField.text,
+              let comfirmPassword = confirmPasswordField.text,
+              password != "",
+              comfirmPassword != "" else {
+            submitButton.isHidden = true
+            return
+        }
+        submitButton.isHidden = false
+    }
+    
+    func initializeHideKeyboard() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissMyKeyboard))
         view.addGestureRecognizer(tap)
     }
     
-    private func callPasswordAlert(with errorMessage: String) {
+    func callPasswordAlert(with errorMessage: String) {
         let alert = UIAlertController(title: "Password creation Error", message: errorMessage,
                                       preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
-    }
-}
-
-// MARK:  - UITextFieldDelegate
-extension PasswordViewController : UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField.tag == 1 {
-            print("🟢 Password TextField")
-        } else {
-            print("🟣 Confirm Password TextField")
-        }
     }
 }
 
