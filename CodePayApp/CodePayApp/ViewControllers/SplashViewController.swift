@@ -19,10 +19,8 @@ class SplashViewController: UIViewController {
             self.activityIndicator.stopAnimating()
             
             if UserDefaults.standard.bool(forKey: "LOGGED_IN") {
-                // navigate to protected page
                 SceneDelegate.shared.rootViewController.switchToMainScreen()
             } else {
-                // navigate to login screen
                 SceneDelegate.shared.rootViewController.switchToLogout()
             }
         }
