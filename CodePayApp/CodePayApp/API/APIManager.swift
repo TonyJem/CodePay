@@ -35,12 +35,15 @@ struct APIManager {
         }
     }
 
-    func postNewAccount(currency: String, balance: Int = 0 ) {
+    func postNewAccount(phoneNumber: String, currency: String, balance: Int = 0 ) {
         
         var params: Parameters = [
+            "phoneNumber": "",
             "currency": "",
             "balance": 0
         ]
+        
+        params["phoneNumber"] = phoneNumber
         params["currency"] = currency
         
         AF.request("https://60850e319b2bed001704180b.mockapi.io/api/v1/account", method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { AFdata in
