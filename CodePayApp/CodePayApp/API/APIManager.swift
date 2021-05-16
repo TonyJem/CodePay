@@ -48,7 +48,9 @@ struct APIManager {
         params["phoneNumber"] = phoneNumber
         params["currency"] = currency
         
-        AF.request("https://60850e319b2bed001704180b.mockapi.io/api/v1/account", method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { AFdata in
+        guard let destination = APIEndpoint.accounts.url else { return }
+        
+        AF.request(destination, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { AFdata in
             do {
                 guard let jsonObject = try JSONSerialization.jsonObject(with: AFdata.data!) as? [String: Any] else {
                     print("🔴 Error: Cannot convert data to JSON object")
