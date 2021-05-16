@@ -28,6 +28,7 @@ class CurrencyViewController: UIViewController {
         btn.showsTouchWhenHighlighted = true
         btn.addTarget(self, action: #selector(submitButtonDidTap(_:)), for: .touchUpInside)
         btn.setup(title: "Confirm Registration", dto: CodePayButtonDTO.submit)
+        btn.isHidden = true
         
         view.addSubview(btn)
         return btn
@@ -88,6 +89,7 @@ extension CurrencyViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         model.markCurrency(at: indexPath.row)
         selectedCurrency = model.currencies[indexPath.row].acronym
+        submitButton.isHidden = false
         tableView.reloadData()
     }
 }

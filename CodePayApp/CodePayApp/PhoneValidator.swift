@@ -2,6 +2,8 @@ import Foundation
 
 class PhoneValidator {
     
+    private let convencionalPrefix = "3706"
+    
     private let validMasks = [ "+370 6xx xxxxx",
                                "8 6xx xxxxx",
                                "6xx xxxxx",
@@ -59,6 +61,10 @@ class PhoneValidator {
         }
         return number
     }
+    
+    func converted(number: String) -> String {
+        return convencionalPrefix + deletingPrefix(from: number)
+    }
 }
 
 private extension PhoneValidator {
@@ -69,5 +75,14 @@ private extension PhoneValidator {
             new.append(newItem)
         }
         return new
+    }
+    
+    func deletingPrefix(from number: String) -> String {
+        for maskPrefix in maskPrefixes {
+            if number.hasPrefix(maskPrefix) {
+                return String(number.dropFirst(maskPrefix.count))
+            }
+        }
+        return ""
     }
 }
