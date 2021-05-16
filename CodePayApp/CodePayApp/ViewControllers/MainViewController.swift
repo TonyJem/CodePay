@@ -25,9 +25,9 @@ class MainViewController: UIViewController {
     
     // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {
-        print("🟢 Current Account Data:")
-        print("\(UserManager.candidateUser.phone)")
-        print("\(UserManager.candidateUser.password)")
+        print("🟢 Current User Data:")
+        print("\(RegisterFlow.candidateUser.phone)")
+        print("\(RegisterFlow.candidateUser.password)")
     }
     
     @objc private func logout() {

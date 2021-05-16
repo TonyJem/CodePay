@@ -1,6 +1,6 @@
 import Foundation
 
-struct UserManager {
+struct RegisterFlow {
     static var candidateUser = User(phone: "", password: "")
     
     static func addCandidatePhone(phone: String) {

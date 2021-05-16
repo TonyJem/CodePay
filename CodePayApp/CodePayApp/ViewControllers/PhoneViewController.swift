@@ -296,7 +296,7 @@ private extension PhoneViewController {
     
     @objc private func buttonOkDidTap(_ sender: UIButton) {
         guard let phone = phoneLabel.text else { return }
-        UserManager.addCandidatePhone(phone: validator.converted(number: phone))
+        RegisterFlow.addCandidatePhone(phone: validator.converted(number: phone))
         self.navigationController?.pushViewController(PasswordViewController(), animated: true)
     }
 }
