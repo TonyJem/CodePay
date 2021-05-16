@@ -65,4 +65,18 @@ struct DimensionsUI {
         value = 65.4148 + (screenHeigh - 568) * 0.3493
         return value
     }
+    
+    static let tableRowHeight: CGFloat = 70
+    
+    static var tableHeightMultiplicator: CGFloat {
+        guard 568 <= screenHeigh else { return 4 }
+        guard 667 < screenHeigh else { return 5 }
+        return 7
+    }
+    
+    static var tableTopInset: CGFloat {
+        guard 568 <= screenHeigh else { return 5 }
+        guard 667 < screenHeigh else { return 10 }
+        return 30
+    }
 }

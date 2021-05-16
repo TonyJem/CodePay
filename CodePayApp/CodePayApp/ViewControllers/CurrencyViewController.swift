@@ -9,7 +9,7 @@ class CurrencyViewController: UIViewController {
     // MARK: - Views
     lazy var currencyTable: UITableView = {
         let table = UITableView()
-        table.rowHeight = 70
+        table.rowHeight = DimensionsUI.tableRowHeight
         table.delegate = self
         table.dataSource = self
         table.separatorStyle = .none
@@ -61,8 +61,8 @@ private extension CurrencyViewController {
         
         currencyTable.snp.makeConstraints { make in
             make.width.equalTo(DimensionsUI.itemWidth + 30)
-            make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
-            make.height.equalTo(currencyTable.rowHeight * 7)
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(DimensionsUI.tableTopInset)
+            make.height.equalTo(currencyTable.rowHeight * DimensionsUI.tableHeightMultiplicator)
             make.centerX.equalToSuperview()
         }
     }
