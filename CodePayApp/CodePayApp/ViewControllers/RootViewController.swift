@@ -16,9 +16,6 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemPink
-        print("🟢 Root ViewDidLoad")
-        
         addChild(current)
         current.view.frame = view.bounds
         view.addSubview(current.view)

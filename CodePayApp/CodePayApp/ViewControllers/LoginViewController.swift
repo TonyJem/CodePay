@@ -91,10 +91,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        view.backgroundColor = Colors.mainBackground
-        view.backgroundColor = .yellow
-        title = "Login Screen"
-
+        view.backgroundColor = Colors.mainBackground
         setupConstraints()
         observeKeyboardNotifications()
         initializeHideKeyboard()
