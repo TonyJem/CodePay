@@ -44,10 +44,9 @@ class CurrencyViewController: UIViewController {
     
     // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {
-        Core.apiManager.postNewUser(phoneNumber: RegisterFlow.candidateUser.phone,
-                                    password: RegisterFlow.candidateUser.password)
-        Core.apiManager.postNewAccount(phoneNumber: RegisterFlow.candidateUser.phone,
-                                       currency: selectedCurrency)
+        Core.apiManager.postNewUserAccount(phoneNumber: RegisterFlow.candidateUser.phone,
+                                           password: RegisterFlow.candidateUser.password,
+                                           currency: selectedCurrency)
         SceneDelegate.shared.rootViewController.switchToMainScreen()
     }
 }
