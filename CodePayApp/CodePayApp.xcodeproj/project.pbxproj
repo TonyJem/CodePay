@@ -32,6 +32,7 @@
 		3AC3646F2650448F00D9FF7A /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC3646E2650448F00D9FF7A /* PasswordValidator.swift */; };
 		3AC364722650475A00D9FF7A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC364712650475A00D9FF7A /* String+Extension.swift */; };
 		3AD35A3C265132C600C158D2 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD35A3B265132C600C158D2 /* Account.swift */; };
+		3AD35A402651397500C158D2 /* APIEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD35A3F2651397500C158D2 /* APIEndPoint.swift */; };
 		3AD83A42264ADD7E006A98B5 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A41264ADD7E006A98B5 /* PasswordViewController.swift */; };
 		3AD83A46264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A45264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift */; };
 		3AD83A49264AFEC2006A98B5 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83A48264AFEC2006A98B5 /* CurrencyViewController.swift */; };
@@ -79,6 +80,7 @@
 		3AC3646E2650448F00D9FF7A /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
 		3AC364712650475A00D9FF7A /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		3AD35A3B265132C600C158D2 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		3AD35A3F2651397500C158D2 /* APIEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoint.swift; sourceTree = "<group>"; };
 		3AD83A41264ADD7E006A98B5 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		3AD83A45264AE22C006A98B5 /* ConfirmPasswordInputContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordInputContainer.swift; sourceTree = "<group>"; };
 		3AD83A48264AFEC2006A98B5 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				3ADD420C265127E10051DE15 /* APIManager.swift */,
+				3AD35A3F2651397500C158D2 /* APIEndPoint.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				3A06B3BC263DE64800E8C56E /* CodePayButtonDTO.swift in Sources */,
 				3AD83AEA264FBFEC006A98B5 /* PhoneValidator.swift in Sources */,
 				3AD83A8F264EDC26006A98B5 /* RegisterFlow.swift in Sources */,
+				3AD35A402651397500C158D2 /* APIEndPoint.swift in Sources */,
 				3A6F86CA2646B60400E0EC92 /* LoginViewController.swift in Sources */,
 				3ADD420D265127E10051DE15 /* APIManager.swift in Sources */,
 				3AD83A6C264E5465006A98B5 /* ReusableView.swift in Sources */,
