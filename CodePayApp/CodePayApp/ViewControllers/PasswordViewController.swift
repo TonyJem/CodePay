@@ -105,7 +105,7 @@ private extension PasswordViewController {
         else { return }
         do {
             try validator.createPassword(password: password, confirmPassword: confirmPassword)
-            AccountManager.addCandidatePassword(password: password)
+            UserManager.addCandidatePassword(password: password)
             self.navigationController?.pushViewController(CurrencyViewController(), animated: true)
         } catch {
             if let error = error as? PasswordValidator.PasswordError {

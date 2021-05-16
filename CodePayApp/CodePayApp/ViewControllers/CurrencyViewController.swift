@@ -44,7 +44,6 @@ class CurrencyViewController: UIViewController {
     
     // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {
-        AccountManager.addCandidateCurrency(currency: selectedCurrency)
         SceneDelegate.shared.rootViewController.switchToMainScreen()
     }
 }
