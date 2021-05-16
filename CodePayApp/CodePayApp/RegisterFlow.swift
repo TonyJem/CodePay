@@ -1,6 +1,8 @@
 import Foundation
 
 struct RegisterFlow {
+    
+//    TODO: Move all temp to userDefaults
     static var candidateUser = User(phone: "", password: "")
     
     static func addCandidatePhone(phone: String) {
