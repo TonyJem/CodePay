@@ -44,6 +44,7 @@ class CurrencyViewController: UIViewController {
     
     // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {
+        Core.apiManager.postMethod()
         SceneDelegate.shared.rootViewController.switchToMainScreen()
     }
 }

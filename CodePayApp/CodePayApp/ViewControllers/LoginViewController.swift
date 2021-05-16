@@ -104,10 +104,8 @@ class LoginViewController: UIViewController {
     // MARK:  - Actions
     @objc func submitButtonDidTap(_ sender: UIButton) {
         // store the user session (example only, not for the production)
-//        UserDefaults.standard.set(true, forKey: "LOGGED_IN")
-//        SceneDelegate.shared.rootViewController.switchToMainScreen()
-        
-        UserManager.postMethod()
+        UserDefaults.standard.set(true, forKey: "LOGGED_IN")
+        SceneDelegate.shared.rootViewController.switchToMainScreen()
     }
     
     @objc func secondaryButtonDidTap(_ sender: UIButton) {

@@ -48,6 +48,7 @@
 		3AD83AD7264F783B006A98B5 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83AD6264F783B006A98B5 /* RootViewController.swift */; };
 		3AD83ADA264F789B006A98B5 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83AD9264F789B006A98B5 /* SplashViewController.swift */; };
 		3AD83AEA264FBFEC006A98B5 /* PhoneValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD83AE9264FBFEC006A98B5 /* PhoneValidator.swift */; };
+		3ADD420D265127E10051DE15 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADD420C265127E10051DE15 /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		3AD83AD6264F783B006A98B5 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		3AD83AD9264F789B006A98B5 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		3AD83AE9264FBFEC006A98B5 /* PhoneValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneValidator.swift; sourceTree = "<group>"; };
+		3ADD420C265127E10051DE15 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				3AD83A8E264EDC26006A98B5 /* UserManager.swift */,
 				3AD83AE9264FBFEC006A98B5 /* PhoneValidator.swift */,
 				3AC3646E2650448F00D9FF7A /* PasswordValidator.swift */,
+				3ADD420B265127C70051DE15 /* API */,
 				3AD83A64264E4A97006A98B5 /* Models */,
 				3AD83A5E264DA2CB006A98B5 /* CoreData */,
 				3A06B3C2263DEFD400E8C56E /* Helpers */,
@@ -282,6 +285,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		3ADD420B265127C70051DE15 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3ADD420C265127E10051DE15 /* APIManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -366,6 +377,7 @@
 				3AD83AEA264FBFEC006A98B5 /* PhoneValidator.swift in Sources */,
 				3AD83A8F264EDC26006A98B5 /* UserManager.swift in Sources */,
 				3A6F86CA2646B60400E0EC92 /* LoginViewController.swift in Sources */,
+				3ADD420D265127E10051DE15 /* APIManager.swift in Sources */,
 				3AD83A6C264E5465006A98B5 /* ReusableView.swift in Sources */,
 				3AC3646F2650448F00D9FF7A /* PasswordValidator.swift in Sources */,
 				3AD83A8C264ED9CD006A98B5 /* User.swift in Sources */,
