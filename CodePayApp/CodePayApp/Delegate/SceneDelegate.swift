@@ -5,6 +5,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = RootViewController()
