@@ -3,12 +3,14 @@ import Alamofire
 
 struct APIManager {
     
-    func postMethod() {
+    func postNewUser(phoneNumber: String, password: String) {
         
-        let params: Parameters = [
-            "phoneNumber": "37060088888",
-            "password": "testPassword"
+        var params: Parameters = [
+            "phoneNumber": "",
+            "password": ""
         ]
+        params["phoneNumber"] = phoneNumber
+        params["password"] = password
         
         AF.request("https://60850e319b2bed001704180b.mockapi.io/api/v1/user", method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { AFdata in
             do {

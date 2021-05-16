@@ -15,8 +15,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        view.backgroundColor = Colors.mainBackground
-        view.backgroundColor = .purple // to visually distinguish the protected part
+        view.backgroundColor = Colors.mainBackground
         title = "Main Screen"
         let logoutButton = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logout))
         navigationItem.setLeftBarButton(logoutButton, animated: true)
