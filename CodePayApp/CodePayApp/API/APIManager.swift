@@ -45,7 +45,7 @@ private extension APIManager {
                     return
                 }
                 guard let prettyPrintedJson = String(data: prettyJsonData, encoding: .utf8) else {
-                    print("🔴 Error: Could print JSON in String")
+                    print("🔴 Error: Cannot print JSON in String")
                     return
                 }
                 
